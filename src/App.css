@@ -1,0 +1,7 @@
+.bannerTarjeta {
+    background-image: url("/public/bannerTarjeta.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    height: 200PX;
+
+}
