@@ -8,6 +8,10 @@ function Whatsapp()  {
         console.log("Click en whatsapp")
         // Aquí puedes agregar la lógica para redirigir al enlace de WhatsApp
         // Puedes utilizar window.location.href o React Router según tu configuración
+        const whatsappLink = `https://web.whatsapp.com/`;
+
+    // Redirige a la página de WhatsApp
+    window.location.href = whatsappLink;
       };
     
       return (
