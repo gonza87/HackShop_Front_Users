@@ -10,7 +10,9 @@ function App() {
   return (
    <>
    <NavbarComponent/>
+   
    <Carrusel/>
+   
    <div className='main'>
       <div className='container'>
         <Product/>

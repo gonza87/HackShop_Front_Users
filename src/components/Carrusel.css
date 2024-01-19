@@ -5,3 +5,15 @@
     width: 100vw;
     object-fit:cover;
   }
+                                .msjCarrusel {
+                                  height: 30px;
+                                  align-items: center;
+                                  text-align: center;
+                                  background-color: #35ffd2;
+                
+                                }
+                
+                                .msjCarrusel p {
+                                  padding-top: 3px;
+                                  font-weight: bold;
+                                }

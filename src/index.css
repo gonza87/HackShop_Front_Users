@@ -1,3 +1,21 @@
 body{
-    background-color: #fff;
-}
+    background-color: #ffffff;
+    }
+    
+    .mianav .navbar-toggler-icon {
+        background-color: #380487;
+    
+    }
+    
+    .mianav {
+        background-color: #09072c;
+        color: #ffffff;
+    }
+    
+    .nav-link {
+        color: #ffffff;
+    }
+    
+    .btn-light {
+        color: #09072c;
+    }

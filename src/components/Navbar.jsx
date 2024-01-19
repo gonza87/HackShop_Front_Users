@@ -12,7 +12,7 @@ import './nav.css';
 
 function NavbarComponent() {
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar collapseOnSelect expand="lg" className='mianav'>
     <Container>
       <Navbar.Brand href="#home"><img className='logo' src="/public/logo.png" alt="logo" /></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -26,14 +26,14 @@ function NavbarComponent() {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="light">Search</Button>{' '}
           </Form>
           
           </div>
           <div className='col-12'>
             <Nav className="me-auto d-flex justify-content-between">
              <h3 className='mt-1'>Categorias</h3>
-             <h3>test</h3>
+             
             </Nav>
             
           </div>
