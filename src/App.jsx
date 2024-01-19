@@ -2,6 +2,7 @@
 import Carrusel from './components/Carrusel';
 import NavbarComponent from './components/Navbar';
 import Product from './components/Product';
+import Whatsapp from './components/Whatsapp';
 import './App.css'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <div className='bannerTarjeta mt-4'> </div>
         </div>
       </div>
+      <Whatsapp/>
     </div>
    </div>
    
