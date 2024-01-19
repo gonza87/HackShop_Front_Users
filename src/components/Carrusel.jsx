@@ -5,7 +5,7 @@ function Carrusel(){
     return ( 
             
         <>
-       <div >
+       <div className='mt-2' >
         <Carousel>
       <Carousel.Item interval={5000}>
         <img
@@ -77,6 +77,17 @@ function Carrusel(){
         <img
           className="d-block imgCarrusel"
           src="/public/intel.jpg"
+          alt="Second slide"
+        />
+        <Carousel.Caption>
+          <h5>Second slide label</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item interval={5000}>
+        <img
+          className="d-block imgCarrusel"
+          src="/public/asus-rx7900xt.jpg"
           alt="Second slide"
         />
         <Carousel.Caption>
