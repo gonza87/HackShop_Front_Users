@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import Carrito from './Carrito';
 import './nav.css';
 
 
@@ -56,7 +57,8 @@ function NavbarComponent() {
       
       </Navbar.Collapse>
       <Button variant="outline-light" className="ms-2">Login</Button>
-      <FontAwesomeIcon className='ms-2' icon={faShoppingCart} />
+      
+      <Carrito/>
     </Container>
   </Navbar>
   );
