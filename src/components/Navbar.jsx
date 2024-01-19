@@ -4,7 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import './nav.css';
 
 
@@ -54,6 +55,8 @@ function NavbarComponent() {
         
       
       </Navbar.Collapse>
+      <Button variant="outline-light" className="ms-2">Login</Button>
+      <FontAwesomeIcon className='ms-2' icon={faShoppingCart} />
     </Container>
   </Navbar>
   );
