@@ -4,6 +4,7 @@ import NavbarComponent from './components/Navbar';
 import Product from './components/Product';
 import Whatsapp from './components/Whatsapp';
 import CarruselDestacados from './components/CarruselDestacados';
+import CategoriasDestacadas from './components/CategoriasDestacadas';
 //import Carrito from './components/Carrito';
 import './App.css'
 
@@ -20,6 +21,9 @@ function App() {
       <div className='container'>
         
       <div className='row'>
+        <div className='col-12'>
+        <CategoriasDestacadas/>
+        </div>
         <div className='col-12'>
         <CarruselDestacados/>
         </div>

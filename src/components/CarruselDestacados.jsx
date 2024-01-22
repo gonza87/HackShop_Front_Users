@@ -8,7 +8,7 @@ function CarruselDestacados(){
     return ( 
             
         <>
-        <div className='destacados'><p>PRODUCTOS DESTACADOS</p></div>
+        <div className='prodDestacados'><p>PRODUCTOS DESTACADOS</p></div>
         <div>
             <Carousel >
                 <Carousel.Item interval={5000} className='d-flex justify-content-between flex-wrap'>
