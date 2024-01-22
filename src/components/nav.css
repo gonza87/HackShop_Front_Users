@@ -7,3 +7,6 @@
     height: 120px;
     margin-top: 0px;
 }
+.mianav {
+    position: fixed;
+}

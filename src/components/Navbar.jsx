@@ -14,7 +14,7 @@ import './nav.css';
 
 function NavbarComponent() {
   return (
-    <Navbar collapseOnSelect expand="lg" className='mianav'>
+    <Navbar collapseOnSelect expand="lg" className='mianav' fixed="top">
     <Container>
       <Navbar.Brand href="#home"><img className='logo' src="/public/logo.png" alt="logo" /></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
