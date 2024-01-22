@@ -23,7 +23,7 @@ function App() {
         <div className='col-12'>
         <CarruselDestacados/>
         </div>
-        <p className='text-center fw-bold pt-2'>* Todos los precios del sitio tiene IVA incluído</p>
+        <p className='text-center fw-bold pt-2 ivaText'>* Todos los precios del sitio tiene IVA incluído</p>
         <div className='col-12'>
           <div className='bannerTarjeta mt-2'> </div>
         </div>
