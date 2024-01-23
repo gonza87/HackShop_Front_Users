@@ -50,9 +50,9 @@ function CategoryList() {
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
+                            PROCESADOR INTEL I7 12700 1700
                             </Card.Text>
+                            <Card.Title>$600</Card.Title>
                             <Button variant="primary">Go somewhere</Button>
                         </Card.Body>
                     </Card>
@@ -61,9 +61,9 @@ function CategoryList() {
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
+                            PROCESADOR INTEL I5 12400F S/VIDEO 12VA 1700 
                             </Card.Text>
+                            <Card.Title>$300</Card.Title>
                             <Button variant="primary">Go somewhere</Button>
                         </Card.Body>
                     </Card>
@@ -72,9 +72,9 @@ function CategoryList() {
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
+                            PROCESADOR INTEL I7 12700 1700
                             </Card.Text>
+                            <Card.Title>$600</Card.Title>
                             <Button variant="primary">Go somewhere</Button>
                         </Card.Body>
                     </Card>
@@ -83,9 +83,9 @@ function CategoryList() {
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
+                            PROCESADOR INTEL I5 12400F S/VIDEO 12VA 1700 
                             </Card.Text>
+                            <Card.Title>$300</Card.Title>
                             <Button variant="primary">Go somewhere</Button>
                         </Card.Body>
                     </Card>
