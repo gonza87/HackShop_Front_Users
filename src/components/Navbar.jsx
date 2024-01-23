@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import {  Link } from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
@@ -47,6 +48,9 @@ function NavbarComponent() {
           <Nav.Link href="#deets">PC ARMADAS</Nav.Link>
           <Nav.Link href="#deets">NOTEBOOKS</Nav.Link>
           <Nav.Link href="#deets">SILLAS GAMER</Nav.Link>
+          <Nav.Link> <Link to="/about" className='search'>About</Link></Nav.Link>
+          
+          
 
           
         </Nav>
