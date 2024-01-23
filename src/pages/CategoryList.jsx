@@ -46,7 +46,7 @@ function CategoryList() {
                 <div className='row'>
                     <div className='col-12 d-flex flex-wrap'>
                     <Card style={{ width: '15rem' }} className='m-1'>
-                        <Card.Img variant="top" src="/public/procesadores/PROCESADOR-INTEL-I7-12700-1700.jpg" />
+                        <Card.Img variant="top" src="/public/procesadores/PROCESADOR-INTEL-I7-12700-1700.jpg" className='imgListCat' />
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
@@ -57,7 +57,7 @@ function CategoryList() {
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '15rem' }} className='m-1'>
-                        <Card.Img variant="top" src="/public/procesadores/PROCESADOR-INTEL-I5-12400F-SVIDEO-12VA-1700.jpg" />
+                        <Card.Img variant="top" src="/public/procesadores/PROCESADOR-INTEL-I5-12400F-SVIDEO-12VA-1700.jpg" className='imgListCat' />
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
@@ -68,7 +68,7 @@ function CategoryList() {
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '15rem' }} className='m-1'>
-                        <Card.Img variant="top" src="/public/procesadores/PROCESADOR-INTEL-I7-12700-1700.jpg" />
+                        <Card.Img variant="top" src="/public/procesadores/PROCESADOR-INTEL-I7-12700-1700.jpg" className='imgListCat' />
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
@@ -79,7 +79,7 @@ function CategoryList() {
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '15rem' }} className='m-1'>
-                        <Card.Img variant="top" src="/public/procesadores/PROCESADOR-INTEL-I5-12400F-SVIDEO-12VA-1700.jpg" />
+                        <Card.Img variant="top" src="/public/procesadores/PROCESADOR-INTEL-I5-12400F-SVIDEO-12VA-1700.jpg" className='imgListCat' />
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
