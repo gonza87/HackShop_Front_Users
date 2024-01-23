@@ -1,5 +1,6 @@
 import React from "react";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 import './Whatsapp.css';
 
@@ -15,8 +16,8 @@ function Whatsapp()  {
       };
     
       return (
-       
-        <img className="whatsapp-icon" onClick={handleWhatsappClick} src="/public/whatsapp.png" alt="whatsapp" />
+        <FontAwesomeIcon icon={faWhatsapp } style={{ color: "#ffffff" }} onClick={handleWhatsappClick} className="whatsapp-icon" />
+        // <img className="whatsapp-icon" onClick={handleWhatsappClick} src="/public/whatsapp.png" alt="whatsapp" />
       );
     
 };

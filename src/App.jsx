@@ -4,7 +4,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Abouts from "./pages/Abouts";
 import Whatsapp from "./components/Whatsapp";
 import Footer from "./components/Footer";
-
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 //import Carrito from './components/Carrito';
 import "./App.css";

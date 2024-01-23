@@ -1,13 +1,22 @@
 .whatsapp-icon {
-    width: 50px;
+    font-size: 40px;
+        width: 40px;
+        height: 100px;
     position: fixed;
     bottom: 20px;
     right: 20px;
     cursor: pointer;
     animation: bounce 0.5s infinite alternate;
+        border-radius: 50%;
+            background-color: #09072c;
+            padding: 10px;
+        }
+        
+        .whatsapp-icon:hover {
+            background-color: #25D366;
 }
 
-@keyframes bounce {
+ @keyframes bounce {
     0% {
         transform: translateY(0);
     }
@@ -15,4 +24,5 @@
     100% {
         transform: translateY(-10px);
     }
+    
 }
