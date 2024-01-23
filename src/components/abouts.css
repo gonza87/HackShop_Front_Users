@@ -1,7 +1,25 @@
 .about-image {
-  max-width: 100%;
-  height:auto;
-  opacity: 60%;
+  width: 100%;
+  height: auto;
+  opacity: 80%;
   margin-top: 146px;
-  
+  height: 500px;
 }
+.image-container img {
+  position: relative;
+  height: 300px;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:white;
+  text-align: center;
+  font-size: 24px;
+  padding: 20px;
+  width: 70%;
+  box-sizing: border-box;
+}
+
