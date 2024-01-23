@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import { Routes, Route, Link } from 'react-router-dom';
 import Abouts from "./pages/Abouts";
 import Whatsapp from "./components/Whatsapp";
+import Footer from "./components/Footer";
 
 
 //import Carrito from './components/Carrito';
@@ -20,6 +21,7 @@ function App() {
       
       </Routes>
       <Whatsapp />
+      <Footer/>
     </>
   );
 }
