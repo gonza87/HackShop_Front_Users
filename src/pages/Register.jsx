@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import './Login.css';
 
-function Login(){
+function Register(){
     return(
         <>  
            <div className="container-fluid">
@@ -17,7 +17,7 @@ function Login(){
                         <Form className='formLogin mt-4'>
                             <Row>
                                 <Col>
-                                <Form.Label className='textCampoLogin'>Email Addres</Form.Label><span className='testRegistro'>No tenés cuenta? <Link to="/register">Registraté acá</Link></span>
+                                <Form.Label className='textCampoLogin'>Email Addres</Form.Label><span className='testRegistro'>Ya tenés cuenta? <Link to="/login">Inicia sesión</Link></span>
                                 
                                 <Form.Control type="email" placeholder="Escribí tu email acá"/>
                                 </Col>
@@ -30,7 +30,7 @@ function Login(){
                                 </Col>
                                 
                             </Row>
-                            <Button type="submit"className='btnLogin mt-4'>Iniciar Sesión</Button>
+                            <Button type="submit"className='btnLogin mt-4'>Registrarse</Button>
                         </Form>
                         
                     </div>
@@ -48,4 +48,4 @@ function Login(){
     )
 }
 
-export default Login;
+export default Register;
