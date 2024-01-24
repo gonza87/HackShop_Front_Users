@@ -1,0 +1,20 @@
+.loginDerecha{
+    background: rgb(54,142,159);
+    background: linear-gradient(141deg, rgba(54,142,159,1) 0%, rgba(9,7,44,1) 20%, rgba(9,7,44,1) 80%, rgba(54,142,159,1) 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logoLogin{
+    height: 200px;
+    border-radius: 30%;
+}
+
+.loginIzquierda p{
+    color: #09072c;
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 50px;
+}

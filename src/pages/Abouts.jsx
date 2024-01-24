@@ -1,3 +1,6 @@
+import NavbarComponent from "../components/Navbar";
+import Footer from "../components/Footer";
+import Whatsapp from "../components/Whatsapp";
 import CardsPerson from "../components/CardsPerson";
 import CardsDescription from "../components/cardsDescription";
 import "../components/abouts.css";
@@ -7,8 +10,8 @@ import "../components/abouts.css";
 function Abouts() {
   return (
     <>
-      <div className="container">
-        
+        <NavbarComponent/>
+        <div className="container">
           <img
             src="/public/Presentacion-Plan-BA-Gaming-5-www.culturageek.com_.ar-1.jpg"
             alt=""
@@ -25,10 +28,10 @@ function Abouts() {
             </h3>
           </div>
         </div>
-        
-      
-      <CardsDescription />
+        <CardsDescription />
         <CardsPerson />
+        <Whatsapp/>
+        <Footer/>
     </>
   );
 }
