@@ -13,7 +13,7 @@ function CarruselDestacados(){
             <Carousel >
                 <Carousel.Item interval={5000} className='d-flex justify-content-between flex-wrap'>
                     <Card style={{ width: '14rem' }}>
-                        <Card.Img variant="top" src="/public/prodGeForceRTX 4080.jpg" />
+                        <Card.Img variant="top" src="/public/prodGeForceRTX 4080.jpg"className='imgDestacados' />
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
@@ -26,7 +26,7 @@ function CarruselDestacados(){
                     </Card>
                   
                     <Card style={{ width: '14rem' }}>
-                        <Card.Img variant="top" src="/public/prodi5-12600K.jpg" />
+                        <Card.Img variant="top" src="/public/prodi5-12600K.jpg" className='imgDestacados'/>
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
@@ -38,7 +38,7 @@ function CarruselDestacados(){
                         
                     </Card>
                     <Card style={{ width: '14rem' }}>
-                        <Card.Img variant="top" src="/public/prodi9-13900KF.jpg" />
+                        <Card.Img variant="top" src="/public/prodi9-13900KF.jpg" className='imgDestacados'/>
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
@@ -50,7 +50,7 @@ function CarruselDestacados(){
                         
                     </Card>
                     <Card style={{ width: '14rem' }}>
-                        <Card.Img variant="top" src="/public/prodi9-13900KF.jpg" />
+                        <Card.Img variant="top" src="/public/prodi9-13900KF.jpg" className='imgDestacados'/>
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
