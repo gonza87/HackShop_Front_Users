@@ -1,0 +1,23 @@
+
+
+.bannerTarjeta {
+    background-image: url("/public/bannerTarjeta.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    height: 200PX;
+ 
+    background-position: center;
+
+}
+.ivaText {
+    color: #09072c;
+}
+
+@media (max-width: 768px) {
+    .bannerTarjeta {
+        background-image: url("/public/bannerTarjeta768.jpg");
+        height: 500px;
+    
+    }
+ 
+}

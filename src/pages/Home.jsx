@@ -6,7 +6,7 @@ import CategoriasDestacadas from "../components/CategoriasDestacadas";
 import NavbarComponent from "../components/Navbar";
 import Footer from "../components/Footer";
 import Whatsapp from "../components/Whatsapp";
-
+import './Home.css';
 
 
 function Home() {
