@@ -1,0 +1,10 @@
+/* description.css */
+
+.imgListCat {
+  transition: transform 0.3s; /* Agrega una transición suave al efecto de zoom */
+}
+
+.imgListCat:hover {
+  transform: scale(1.8); /* Modifica el valor según el nivel de zoom que desees */
+  opacity: 30%;
+}
