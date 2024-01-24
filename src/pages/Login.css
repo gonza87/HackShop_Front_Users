@@ -17,4 +17,21 @@
     font-size: xx-large;
     text-align: center;
     margin-top: 50px;
+    
+}
+.formLogin{
+    width: 400px;
+}
+
+.textCampoLogin{
+    font-weight: bold;
+    font-size: x-large;
+}
+.btnLogin{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.testRegistro{
+    margin-left: 15px;
 }
