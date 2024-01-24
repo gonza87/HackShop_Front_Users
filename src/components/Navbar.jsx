@@ -18,7 +18,7 @@ function NavbarComponent() {
   return (
     <Navbar collapseOnSelect expand="lg" className='mianav' fixed="top">
     <Container>
-      <Navbar.Brand><Link to="/" ><img className='logo animate__animated animate__flip' src="/public/logo.png" alt="logo" /></Link></Navbar.Brand>
+      <Navbar.Brand><Link to="/" ><img className='logo animate__animated animate__flip animate__slow' src="/public/logo.png" alt="logo" /></Link></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <div className='row container'>
