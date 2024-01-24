@@ -60,7 +60,7 @@ function NavbarComponent() {
         
       
       </Navbar.Collapse>
-      <Button variant="outline-light" className="ms-2">Login</Button>
+      <Link to="/login"><Button variant="outline-light" className="ms-2">Ingresá</Button></Link>
       
       <Carrito/>
     </Container>
