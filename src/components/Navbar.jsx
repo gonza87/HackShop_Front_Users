@@ -8,6 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Carrito from './Carrito';
+import 'animate.css';
 import './nav.css';
 
 
@@ -17,7 +18,7 @@ function NavbarComponent() {
   return (
     <Navbar collapseOnSelect expand="lg" className='mianav' fixed="top">
     <Container>
-      <Navbar.Brand href="#home"><img className='logo' src="/public/logo.png" alt="logo" /></Navbar.Brand>
+      <Navbar.Brand><Link to="/" ><img className='logo animate__animated animate__flip' src="/public/logo.png" alt="logo" /></Link></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <div className='row container'>
