@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import { Routes, Route, Link } from 'react-router-dom';
 import Abouts from "./pages/Abouts";
 import CategoryList from "./pages/CategoryList";
+import Description from "./pages/Description";
 
 import Login from "./pages/Login";
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -19,6 +20,7 @@ function App() {
         <Route path="/about" element={<Abouts />} />
         <Route path="/category" element={<CategoryList />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/description" element={<Description />} />
       </Routes>
       
     </>
