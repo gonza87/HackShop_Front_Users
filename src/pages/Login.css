@@ -24,14 +24,45 @@
 }
 
 .textCampoLogin{
-    font-weight: bold;
+    font-weight: 500;
     font-size: x-large;
+    color: #09072c;
 }
 .btnLogin{
     width: 100%;
     margin-top: 10px;
+    background-color: #09072c;
 }
 
 .testRegistro{
     margin-left: 15px;
+    color: #707070;
+        font-weight: 400;
+    }
+    
+    
+    
+    .formLogin ::placeholder {
+        color: #707070;
+        font-weight: 500;
+        /* Reemplaza 'TuTipoDeFuente' con la fuente que desees utilizar */
+    }
+    
+    @media (max-width: 768px) {
+    
+        .loginDerecha {
+            height: 200px;
+            position: relative;
+        }
+    
+        .textHackshop {
+            display: none;
+        }
+    
+        .logoLogin {
+            height: 100px;
+            border-radius: 30%;
+            position: absolute;
+            top: 150px;
+        }
 }
