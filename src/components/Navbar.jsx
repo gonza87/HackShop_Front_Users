@@ -11,6 +11,7 @@ import Carrito from './Carrito';
 import 'animate.css';
 import './nav.css';
 
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -19,7 +20,7 @@ function NavbarComponent() {
     <Navbar collapseOnSelect expand="lg" className='mianav' fixed="top">
     <Container>
       <Navbar.Brand><Link to="/" ><img className='logo animate__animated animate__flip animate__slow' src="/public/logo.png" alt="logo" /></Link></Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ borderColor: 'white' }}><FontAwesomeIcon icon={faBars} style={{ color: 'white' }} /> </Navbar.Toggle>
       <Navbar.Collapse id="responsive-navbar-nav">
         <div className='row container'>
           <div className='col-12'>
