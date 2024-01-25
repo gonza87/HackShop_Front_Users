@@ -1,7 +1,18 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 .catDestacadas {
     font-weight: bold;
     font-size: 3rem;
     color: #09072c;
     padding-top: 40px;
     text-align: center;
+}
+.cardCatDestacadas {
+    height: 190px;
+
+
+}
+
+.cardCatDestacadas:hover {
+    cursor: pointer;
+    animation: fadeIn 1s;
 }

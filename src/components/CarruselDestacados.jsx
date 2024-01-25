@@ -12,7 +12,7 @@ function CarruselDestacados(){
         <div>
             <Carousel >
                 <Carousel.Item interval={5000} className='d-flex justify-content-between flex-wrap'>
-                    <Card style={{ width: '14rem' }}>
+                    <Card className='cardCarruselDestacados' style={{ width: '14rem' }}>
                         <Card.Img variant="top" src="/public/prodGeForceRTX 4080.jpg"className='imgDestacados' />
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
@@ -25,7 +25,7 @@ function CarruselDestacados(){
                         
                     </Card>
                   
-                    <Card style={{ width: '14rem' }}>
+                    <Card className='cardCarruselDestacados' style={{ width: '14rem' }}>
                         <Card.Img variant="top" src="/public/prodi5-12600K.jpg" className='imgDestacados'/>
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
@@ -37,7 +37,7 @@ function CarruselDestacados(){
                         </Card.Body>
                         
                     </Card>
-                    <Card style={{ width: '14rem' }}>
+                    <Card className='cardCarruselDestacados' style={{ width: '14rem' }}>
                         <Card.Img variant="top" src="/public/prodi9-13900KF.jpg" className='imgDestacados'/>
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
@@ -49,7 +49,7 @@ function CarruselDestacados(){
                         </Card.Body>
                         
                     </Card>
-                    <Card style={{ width: '14rem' }}>
+                    <Card className='cardCarruselDestacados' style={{ width: '14rem' }}>
                         <Card.Img variant="top" src="/public/prodi9-13900KF.jpg" className='imgDestacados'/>
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>

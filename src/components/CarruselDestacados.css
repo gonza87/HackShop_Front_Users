@@ -6,4 +6,8 @@
 }
 .imgDestacados {
     height: 190px;
+    }
+    
+    .cardCarruselDestacados:hover {
+        cursor: pointer;
 }

@@ -11,19 +11,19 @@ function CategoriasDestacadas()  {
         <p>CATEGORIAS DESTACADAS</p>
     </div>
     <div className="d-flex justify-content-between flex-wrap">
-        <Card style={{ width: '13rem' }}>
+        <Card className="cardCatDestacadas" style={{ width: '13rem' }}>
             <Card.Img variant="top" src="catMonitores.jpg" />    
         </Card>
-        <Card style={{ width: '13rem' }}>
+        <Card className="cardCatDestacadas" style={{ width: '13rem' }}>
             <Card.Img variant="top" src="catGpu.jpg" />    
         </Card>
-        <Card style={{ width: '13rem' }}>
+        <Card className="cardCatDestacadas" style={{ width: '13rem' }}>
             <Card.Img variant="top" src="catNotebooks.jpg" />    
         </Card>
-        <Card style={{ width: '13rem' }}>
+        <Card className="cardCatDestacadas" style={{ width: '13rem' }}>
             <Card.Img variant="top" src="catPc.jpg" />    
         </Card>
-        <Card style={{ width: '13rem' }}>
+        <Card className="cardCatDestacadas" style={{ width: '13rem' }}>
             <Card.Img variant="top" src="catSillas.jpg" />    
         </Card>
     </div>
