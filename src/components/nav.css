@@ -6,8 +6,8 @@
     width: 120px;
     height: 120px;
     margin-top: 0px;
+    border-radius: 20px;
 }
 .mianav {
     position: fixed;
-    
 }
