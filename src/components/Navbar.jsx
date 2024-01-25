@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import {  Link } from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Carrito from './Carrito';
 import 'animate.css';
@@ -62,7 +63,10 @@ function NavbarComponent() {
         
       
       </Navbar.Collapse>
-      <Link to="/login"><Button variant="outline-light" className="ms-2">Ingresá</Button></Link>
+      <div className='d-flex align-items-center'>
+        <Link to="/login" className='d-flex align-items-center' style={{ textDecoration: 'none' }}><FontAwesomeIcon icon={faUser} size='xl'  style={{color: "#ffffff",}}  /><Button variant="outline-light" className="ms-2" id='btnIngresa'>Ingresá</Button></Link>
+      </div>
+      
       
       <Carrito/>
     </Container>

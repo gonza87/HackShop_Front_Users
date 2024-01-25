@@ -11,3 +11,9 @@
 .mianav {
     position: fixed;
 }
+@media (max-width: 992px) {
+    #btnIngresa {
+        display: none;
+    }
+
+}

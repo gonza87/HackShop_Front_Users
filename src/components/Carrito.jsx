@@ -16,6 +16,7 @@ function Carrito() {
       <FontAwesomeIcon
         className="ms-2"
         icon={faShoppingCart}
+        size='xl'
         style={{ cursor: "pointer" }}
         onClick={handleShow}
       />
