@@ -18,6 +18,7 @@ function NavbarAside() {
       
 
       <Offcanvas
+        style={{ backgroundColor: '#09072c'}}
         className="customAsideVar"
         show={show}
         onHide={handleClose}
