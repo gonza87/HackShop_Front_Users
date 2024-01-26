@@ -5,7 +5,7 @@ function Carrusel(){
     return ( 
             
         <>
-        <div className='msjCarrusel'><p>EL LUGAR PREFERIDO DE STREAMERS Y GAMERS</p></div>
+        <div className='msjCarrusel'><p>ELEVA TU JUEGO, POTENCIA TU EXPERIENCIA</p></div>
        <div>
         <Carousel>
       <Carousel.Item interval={5000}>

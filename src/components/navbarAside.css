@@ -1,8 +1,42 @@
 .customAsideVar {
   
-  height: 50vh;
+  height: 100vh;
 
 }
-.lineaCategory {
-  padding: 0;
+.espacioTabla {
+    margin-bottom: -10px; /* Puedes ajustar este valor según tus necesidades */
+  }
+
+/* Puedes ajustar estos estilos según tus preferencias */
+.logos {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: #f0f0f0; */
+  padding: 9px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
 }
+
+.logos img {
+  margin: 0 5px; /* Ajusta el espacio entre las imágenes */
+   width:90px;
+   height:50px;
+   transition: transform 0.5s;
+   
+}
+.logos img:hover {
+  transform: scale(1.4); /* Modifica el valor según el nivel de zoom que desees */
+  opacity: 50%;
+}
+
+.logos-tarjeta img{
+  background-color: gray;
+  margin: 0 5px; /* Ajusta el espacio entre las imágenes */
+   width:350px;
+   height:60px;
+   transition: transform 0.5s;
+}
+ 

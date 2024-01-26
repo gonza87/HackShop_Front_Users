@@ -1,6 +1,7 @@
 import "./Footer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import {
   faSquareFacebook,
   faInstagram,  
@@ -19,9 +20,9 @@ function Footer () {
               <div className="col-md-3">
                 <div className="footer-empresa">
                   <h3>EMPRESA</h3>
-                  <a className="a" href="#">
+                  <Link to="/about" className="a">
                     Sobre nosotros
-                  </a>
+                  </Link>
                   <a className="a" href="#">
                     Contacto
                   </a>
