@@ -19,43 +19,44 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 function NavbarComponent() {
   return (
-    <Navbar collapseOnSelect expand="lg" className='mianav' fixed="top">
+    <Navbar collapseOnSelect expand="md" className='mianav' fixed="top">
     <Container>
       <Navbar.Brand><Link to="/" ><img className='logo animate__animated animate__flip animate__slow' src="/public/logo.png" alt="logo" /></Link></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ borderColor: 'white' }}><FontAwesomeIcon icon={faBars} style={{ color: 'white' }} /> </Navbar.Toggle>
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <div className='row container'>
-          <div className='col-12'>
-            <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="light">Search</Button>{' '}
-          </Form>
-          
-          </div>
-          <div className='col-12'>
-             <Nav className="me-auto d-flex justify-content-between">
-             
-             <div className='contenedorbtncategorias'><NavbarAside/></div>
-            </Nav> 
+      <Navbar.Collapse  id="responsive-navbar-nav">
+            <div className='row container'>
+              <div className='col-md-10 '>
+                <Form className="d-flex">
+                <Form.Control
+                  type="search"
+                  placeholder="Search"
+                  className="me-2"
+                  aria-label="Search"
+                />
+                <Button variant="light">Search</Button>{' '}
+              </Form>
+              
+              </div>
             
+              <div className='col-md-2  d-flex'>
+                  <div className='d-flex align-items-end contenedorbtnlogin'>
+            <Link to="/login" className='d-flex align-items-center' style={{ textDecoration: 'none' }}><FontAwesomeIcon icon={faUser} size='xl'  style={{color: "#ffffff",}}/>
+            <span className="ms-2" id='btnIngresa'>Ingresá</span></Link>
           </div>
-          
-        </div>
+          <div className='contenedorcarro'><Carrito/></div>
+              </div>
+              <div className='col-lg-12'>
+                <Nav className="me-auto d-flex justify-content-between">
+                
+                <div className='contenedorbtncategorias'><NavbarAside/></div>
+                </Nav> 
+                
+              </div>
+            </div>
+            
         
-      
       </Navbar.Collapse>
-      <div className='d-flex align-items-center contenedorbtnlogin'>
-        <Link to="/login" className='d-flex align-items-center' style={{ textDecoration: 'none' }}><FontAwesomeIcon icon={faUser} size='xl'  style={{color: "#ffffff",}}/>
-        <span className="ms-2" id='btnIngresa'>Ingresá</span></Link>
-      </div>
       
-      
-      <div className='contenedorcarro'><Carrito/></div>
     </Container>
   </Navbar>
   );
