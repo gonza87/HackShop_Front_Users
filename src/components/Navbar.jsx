@@ -37,13 +37,13 @@ function NavbarComponent() {
           
           </div>
           <div className='col-12'>
-            <Nav className="me-auto d-flex justify-content-between">
-             <h3 className='mt-1'>Categorias</h3>
+             <Nav className="me-auto d-flex justify-content-between">
+             <Button variant="outline-light" className="mt-2 mb-2">Categorias</Button>
              
-            </Nav>
+            </Nav> 
             
           </div>
-          <div className='col-12'>
+          {/* <div className='col-12'>
   <Nav>
           <Nav.Link href="#deets">GPU</Nav.Link>
           <Nav.Link href="#deets">CPU</Nav.Link>
@@ -58,7 +58,7 @@ function NavbarComponent() {
           
         </Nav>
         
-          </div>
+          </div> */}
         </div>
         
       
