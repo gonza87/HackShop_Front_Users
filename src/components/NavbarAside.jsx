@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Table from "react-bootstrap/Table";
-
+import Button from 'react-bootstrap/Button';
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 import './navbarAside.css';
@@ -14,13 +14,8 @@ function NavbarAside() {
 
   return (
     <>
-      {/* <FontAwesomeIcon
-        className="ms-2"
-        icon={faShoppingCart}
-        style={{ cursor: "pointer" }}
-        onClick={handleShow}
-      /> */}
-      <button onClick={handleShow}>Categoria</button>
+      <Button  variant="outline-light" className="mt-2 mb-2" onClick={handleShow}>Categorias</Button>
+      
 
       <Offcanvas
         className="background custom-offcanvas"

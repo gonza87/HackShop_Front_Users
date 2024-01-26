@@ -3,7 +3,7 @@ import Whatsapp from "../components/Whatsapp";
 import NavbarComponent from "../components/Navbar";
 import AddToCart from "../components/AddToCart";
 import Card from "react-bootstrap/Card";
-import NavbarAside from "../components/NavbarAside";
+//import NavbarAside from "../components/NavbarAside";
 
 
 import "./description.css";
@@ -13,10 +13,11 @@ function Description() {
     <>
       <NavbarComponent/>
       <div className="container containerCategory">
-        <NavbarAside />
+        
         <div className="row">
           <div className="col-12">
             <h2>Procesadores</h2>
+            {/* <NavbarAside /> */}
           </div>
           <div className="col-8">
             <Card style={{ width: "20rem", height: "18rem" }} className="m-1">

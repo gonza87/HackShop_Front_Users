@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Carrito from './Carrito';
+import NavbarAside from './NavbarAside';
 import 'animate.css';
 import './nav.css';
 
@@ -38,27 +39,12 @@ function NavbarComponent() {
           </div>
           <div className='col-12'>
              <Nav className="me-auto d-flex justify-content-between">
-             <Button  variant="outline-light" className="mt-2 mb-2">Categorias</Button>
              
+             <NavbarAside/>
             </Nav> 
             
           </div>
-          {/* <div className='col-12'>
-  <Nav>
-          <Nav.Link href="#deets">GPU</Nav.Link>
-          <Nav.Link href="#deets">CPU</Nav.Link>
-          <Nav.Link href="#deets">MONITORES</Nav.Link>
-          <Nav.Link href="#deets">PC ARMADAS</Nav.Link>
-          <Nav.Link href="#deets">NOTEBOOKS</Nav.Link>
-          <Nav.Link href="#deets">SILLAS GAMER</Nav.Link>
-          <Nav.Link> <Link to="/about" className='search'>About</Link></Nav.Link>
           
-          
-
-          
-        </Nav>
-        
-          </div> */}
         </div>
         
       
