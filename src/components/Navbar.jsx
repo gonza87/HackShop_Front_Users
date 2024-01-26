@@ -46,9 +46,10 @@ function NavbarComponent() {
           <div className='contenedorcarro'><Carrito/></div>
               </div>
               <div className='col-lg-12 columna-a'>
-                <Nav className="me-auto d-flex justify-content-between">
+                <Nav className="me-auto d-flex ">
                 
                 <div className='contenedorbtncategorias'><NavbarAside/></div>
+                <div className='contenedorbtnTodos'><span>TODOS</span></div>
                 </Nav> 
                 
               </div>
