@@ -18,7 +18,7 @@ function NavbarAside() {
       
 
       <Offcanvas
-        className="background custom-offcanvas"
+        className="customAsideVar"
         show={show}
         onHide={handleClose}
         placement="start"
