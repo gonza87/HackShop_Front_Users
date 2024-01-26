@@ -38,14 +38,14 @@ function NavbarComponent() {
               
               </div>
             
-              <div className='col-md-2  d-flex'>
+              <div className='col-md-2 columna-b d-flex'>
                   <div className='d-flex align-items-end contenedorbtnlogin'>
             <Link to="/login" className='d-flex align-items-center' style={{ textDecoration: 'none' }}><FontAwesomeIcon icon={faUser} size='xl'  style={{color: "#ffffff",}}/>
             <span className="ms-2" id='btnIngresa'>Ingresá</span></Link>
           </div>
           <div className='contenedorcarro'><Carrito/></div>
               </div>
-              <div className='col-lg-12'>
+              <div className='col-lg-12 columna-a'>
                 <Nav className="me-auto d-flex justify-content-between">
                 
                 <div className='contenedorbtncategorias'><NavbarAside/></div>
