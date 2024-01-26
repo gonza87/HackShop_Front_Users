@@ -38,7 +38,7 @@ function NavbarComponent() {
           </div>
           <div className='col-12'>
              <Nav className="me-auto d-flex justify-content-between">
-             <Button variant="outline-light" className="mt-2 mb-2">Categorias</Button>
+             <Button  variant="outline-light" className="mt-2 mb-2">Categorias</Button>
              
             </Nav> 
             
