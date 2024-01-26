@@ -1,17 +1,9 @@
-/* .background {
+.customAsideVar {
   background-color: #09072c;
+  color: #ffffff;
   height: 50vh;
+
 }
-
-
-
-/* Estilo específico para el Offcanvas con la clase 'custom-offcanvas' */
-
-/* .category{
+.lineaCategory {
   padding: 0;
-}
-*/ .customAsideVar {
-  background-color: #09072c;
-  height: 50vh;
-
 }

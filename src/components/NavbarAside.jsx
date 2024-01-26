@@ -32,7 +32,7 @@ function NavbarAside() {
         <hr />
         <Offcanvas.Body>
           <div className="row">
-            <div className="col-12 category">
+            <div className="col-12 lineaCategory">
               
               <Table  responsive="sm">
                 <thead>
