@@ -14,7 +14,7 @@ function NavbarAside() {
 
   return (
     <>
-      <Button  variant="outline-light" className="mt-2 mb-2" onClick={handleShow}>Categorias</Button>
+      <span onClick={handleShow}>CATEGORIAS</span>
       
 
       <Offcanvas

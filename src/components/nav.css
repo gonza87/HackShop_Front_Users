@@ -11,6 +11,45 @@
 .mianav {
     position: fixed;
 }
+.contenedorcarro {
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.contenedorcarro:hover {
+    border: 1px;
+    border-color: #ffffff;
+    border-style: solid;
+
+}
+
+.contenedorbtnlogin {
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.contenedorbtnlogin:hover {
+    border: 1px;
+    border-color: #ffffff;
+    border-style: solid;
+}
+
+#btnIngresa {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.contenedorbtncategorias {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.contenedorbtncategorias:hover {
+    border: 1px;
+    border-color: #ffffff;
+    border-style: solid;
+    cursor: pointer;
+}
 @media (max-width: 992px) {
     #btnIngresa {
         display: none;

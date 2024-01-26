@@ -40,7 +40,7 @@ function NavbarComponent() {
           <div className='col-12'>
              <Nav className="me-auto d-flex justify-content-between">
              
-             <NavbarAside/>
+             <div className='contenedorbtncategorias'><NavbarAside/></div>
             </Nav> 
             
           </div>
@@ -49,12 +49,13 @@ function NavbarComponent() {
         
       
       </Navbar.Collapse>
-      <div className='d-flex align-items-center'>
-        <Link to="/login" className='d-flex align-items-center' style={{ textDecoration: 'none' }}><FontAwesomeIcon icon={faUser} size='xl'  style={{color: "#ffffff",}}  /><Button variant="outline-light" className="ms-2" id='btnIngresa'>Ingresá</Button></Link>
+      <div className='d-flex align-items-center contenedorbtnlogin'>
+        <Link to="/login" className='d-flex align-items-center' style={{ textDecoration: 'none' }}><FontAwesomeIcon icon={faUser} size='xl'  style={{color: "#ffffff",}}/>
+        <span className="ms-2" id='btnIngresa'>Ingresá</span></Link>
       </div>
       
       
-      <Carrito/>
+      <div className='contenedorcarro'><Carrito/></div>
     </Container>
   </Navbar>
   );
