@@ -3,6 +3,8 @@ import { ListGroup, Button  } from "react-bootstrap";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import AddToCart from "../components/AddToCart";
+import './carrito.css';
 
 import Card from "react-bootstrap/Card";
 function Carrito() {
@@ -16,7 +18,6 @@ function Carrito() {
       <FontAwesomeIcon
         className="ms-2"
         icon={faShoppingCart}
-        size='xl'
         style={{ cursor: "pointer" }}
         onClick={handleShow}
       />
@@ -24,7 +25,10 @@ function Carrito() {
       <Offcanvas show={show} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Mi Carrito</Offcanvas.Title>
+<Card.Link href="#"><h5 className="verCarrito">Ver carrito</h5></Card.Link>
+
         </Offcanvas.Header>
+        <hr />
         <Offcanvas.Body>
           <div>
             <Card style={{ width: "18rem" }}>
@@ -38,10 +42,10 @@ function Carrito() {
                 <ListGroup.Item>Intel Core i5 10400f 2.9GHz 12MB LGA1200 10th Gen</ListGroup.Item>
                 <ListGroup.Item>2 × US$147.50</ListGroup.Item>
                 <ListGroup.Item>SUBTOTAL: US$295.00</ListGroup.Item>
-                <Card.Link href="#"><h4 className="verCarrito">Ver carrito</h4></Card.Link>
+                
               </ListGroup>
               <Card.Body>
-                <Button variant="primary">FINALIZAR COMPRA</Button>
+                <AddToCart />
                 
               </Card.Body>
             </Card>
