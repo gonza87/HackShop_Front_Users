@@ -34,6 +34,24 @@ function Login(){
                         </Form>
                         
                     </div>
+                    <div className='d-flex align-items-center justify-content-center'>
+                        <div className='contUserPrueba'>
+                            <p>Usuarios de Prueba</p>
+                            <p id='usertTextoPrueba'>Para simplificar el acceso a la aplicación, se proporcionan los siguientes usuarios de prueba:</p>
+                            <p>Iniciar sesión como comprador</p>
+                            <ul>
+                                <li>E-mail: maria.perez@gmail.com.</li>
+                                <li>Password: 123456.</li>
+                            </ul>
+                            <p>Iniciar sesión como administrador</p>
+                            <ul>
+                                <li>E-mail: maria.perez@gmail.com.</li>
+                                <li>Password: 123456.</li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                    
                     
                 </div>
                 <div className="col-md-6 loginDerecha">

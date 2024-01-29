@@ -47,6 +47,32 @@
         font-weight: 500;
         /* Reemplaza 'TuTipoDeFuente' con la fuente que desees utilizar */
     }
+
+    .contUserPrueba{
+        width: 400px;
+        border: solid #ccc; /* Establece un borde delgado de 1 píxel y color gris claro */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        border-width: 1px;
+        border-radius: 5px;
+        margin-top: 50px;
+        padding: 10px;
+    }
+    .contUserPrueba p {
+        font-size:medium;
+        margin-top: 0px;
+        text-align:start;
+        
+    }
+    #usertTextoPrueba{
+        font-size:small;
+        color: #707070;
+        font-weight: 500;
+    }
+    .contUserPrueba ul{
+        font-size:small;
+        color: #707070;
+        padding-left:20px;
+    }
     
     @media (max-width: 768px) {
     
