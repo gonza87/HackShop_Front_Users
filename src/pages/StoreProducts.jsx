@@ -13,7 +13,7 @@ import axios from "axios";
 import "./storeProducts.css";
 
 function StoreProducts() {
-  
+  const imgUrl = "http://localhost:3000/img/";
   const apiUrl = "http://localhost:3000/products";
   const [products, setProducts] = useState([]);
 
@@ -75,71 +75,18 @@ function StoreProducts() {
                   <Card style={{ width: "15rem" }} className="m-1">
                     <Card.Img
                       variant="top"
-                      // src={product.photo}
-                      src = {`http://localhost:3000/img/${product.photo}`}
+                      src = {`${imgUrl}${product.photo}`}
                       className="imgListCat"
                     />
                     <Card.Body>
-                      <Card.Title>{product.name}</Card.Title>
-                      <Card.Text>PROCESADOR INTEL I7 12700 1700</Card.Text>
+                      <Card.Title className="productDescription">{product.name}</Card.Title>
+                      <Card.Text className="productDescription">{product.description}</Card.Text>
                       <Card.Title>${product.price}</Card.Title>
-                      <Button variant="primary">Go somewhere</Button>
+                      <Button variant="primary">Comprar</Button>
                     </Card.Body>
                   </Card>
                   ))}
-                  {/* <Card style={{ width: "15rem" }} className="m-1">
-                    <Card.Img
-                      variant="top"
-                      src="/public/procesadores/PROCESADOR-INTEL-I7-12700-1700.jpg"
-                      className="imgListCat"
-                    />
-                    <Card.Body>
-                      <Card.Title>Card Title</Card.Title>
-                      <Card.Text>PROCESADOR INTEL I7 12700 1700</Card.Text>
-                      <Card.Title>$600</Card.Title>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                  <Card style={{ width: "15rem" }} className="m-1">
-                    <Card.Img
-                      variant="top"
-                      src="/public/procesadores/PROCESADOR-INTEL-I7-12700-1700.jpg"
-                      className="imgListCat"
-                    />
-                    <Card.Body>
-                      <Card.Title>Card Title</Card.Title>
-                      <Card.Text>PROCESADOR INTEL I7 12700 1700</Card.Text>
-                      <Card.Title>$600</Card.Title>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                  <Card style={{ width: "15rem" }} className="m-1">
-                    <Card.Img
-                      variant="top"
-                      src="/public/procesadores/PROCESADOR-INTEL-I7-12700-1700.jpg"
-                      className="imgListCat"
-                    />
-                    <Card.Body>
-                      <Card.Title>Card Title</Card.Title>
-                      <Card.Text>PROCESADOR INTEL I7 12700 1700</Card.Text>
-                      <Card.Title>$600</Card.Title>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                  <Card style={{ width: "15rem" }} className="m-1">
-                    <Card.Img
-                      variant="top"
-                      src="/public/procesadores/PROCESADOR-INTEL-I7-12700-1700.jpg"
-                      className="imgListCat"
-                    />
-                    <Card.Body>
-                      <Card.Title>Card Title</Card.Title>
-                      <Card.Text>PROCESADOR INTEL I7 12700 1700</Card.Text>
-                      <Card.Title>$600</Card.Title>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card> */}
-                  {/* Agrega más tarjetas según sea necesario */}
+              
                 </div>
               </div>
             </div>

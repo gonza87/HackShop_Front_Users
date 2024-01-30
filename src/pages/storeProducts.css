@@ -7,3 +7,10 @@
 .imgListCat{
     height: 250px;
 } 
+
+
+.productDescription{
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
