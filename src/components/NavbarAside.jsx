@@ -140,10 +140,7 @@ function NavbarAside() {
                 <img src="/public/logosNavAside/pngwing.com (3).png" alt="" />
                 <img src="/public/logosNavAside/pngwing.com.png" alt="" />
               </div>
-              <div className="col-12 logos-tarjeta">
-                <img src="/public/logosNavAside/Metodos_Tarjetas.png" alt="" />
-                
-              </div>
+            
             </div>
           </div>
         </Offcanvas.Body>
