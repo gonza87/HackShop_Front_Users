@@ -16,7 +16,7 @@ function StoreProducts() {
   const imgUrl = "http://localhost:3000/img/";
   const apiUrl = "http://localhost:3000/products";
   const [products, setProducts] = useState([]);
-  //const [selectedFilter, setSelectedFilter] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const handleDropdownSelect = async (eventKey) => {
     
@@ -62,7 +62,7 @@ function StoreProducts() {
             <div className="container containerCategory">
               <div className="row">
                 <div className="col-8">
-                  <h2>Todos nuestros productos</h2>
+                  <h2 className="textTodosProductos">Todos nuestros productos</h2>
                 </div>
                 <div className="col-4 d-flex justify-content-end">
                   <DropdownButton
@@ -96,8 +96,8 @@ function StoreProducts() {
                     <Card.Body>
                       <Card.Title className="productDescription">{product.name}</Card.Title>
                       <Card.Text className="productDescription">{product.description}</Card.Text>
-                      <Card.Title>${product.price}</Card.Title>
-                      <Button variant="primary">Comprar</Button>
+                      <Card.Title className="productDescription">${product.price}</Card.Title>
+                      <Button variant="" style={{background: "#09072c", color: "#ffffff"}}>Comprar</Button>
                     </Card.Body>
                   </Card>
                   ))}
