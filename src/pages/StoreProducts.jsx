@@ -7,13 +7,37 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ProductCountSelector from "../components/ProductCountSelector";
-
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 import "./storeProducts.css";
 
 function StoreProducts() {
+  
+  const apiUrl = "http://localhost:3000/products";
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        // Manejar la respuesta exitosa
+        //console.log(response.data);
+        setProducts(response.data)
+        //setProducts(response.data);
+        //console.log(list)
+        //console.log(products)
+      })
+      .catch((error) => {
+        // Manejar errores
+        console.error("Error en la solicitud:", error.message);
+      });
+  }, []);
+  console.log(products)
+  
   return (
     <>
+    
       <NavbarComponent />
 
       <div className="container-fluid">
@@ -42,12 +66,28 @@ function StoreProducts() {
                     <Dropdown.Item eventKey="3">Precio: Mayor a menor</Dropdown.Item>
                   </DropdownButton>
                   <div className="col-4 d-flex justify-content-end mt-2">
-                    <ProductCountSelector />
+                    {/* <ProductCountSelector /> */}
                   </div>
                 </div>
 
                 <div className="col-12 d-flex flex-wrap">
+                {products.map((product, index) => (
                   <Card style={{ width: "15rem" }} className="m-1">
+                    <Card.Img
+                      variant="top"
+                      // src={product.photo}
+                      src = {`http://localhost:3000/img/${product.photo}`}
+                      className="imgListCat"
+                    />
+                    <Card.Body>
+                      <Card.Title>{product.name}</Card.Title>
+                      <Card.Text>PROCESADOR INTEL I7 12700 1700</Card.Text>
+                      <Card.Title>${product.price}</Card.Title>
+                      <Button variant="primary">Go somewhere</Button>
+                    </Card.Body>
+                  </Card>
+                  ))}
+                  {/* <Card style={{ width: "15rem" }} className="m-1">
                     <Card.Img
                       variant="top"
                       src="/public/procesadores/PROCESADOR-INTEL-I7-12700-1700.jpg"
@@ -98,20 +138,7 @@ function StoreProducts() {
                       <Card.Title>$600</Card.Title>
                       <Button variant="primary">Go somewhere</Button>
                     </Card.Body>
-                  </Card>
-                  <Card style={{ width: "15rem" }} className="m-1">
-                    <Card.Img
-                      variant="top"
-                      src="/public/procesadores/PROCESADOR-INTEL-I7-12700-1700.jpg"
-                      className="imgListCat"
-                    />
-                    <Card.Body>
-                      <Card.Title>Card Title</Card.Title>
-                      <Card.Text>PROCESADOR INTEL I7 12700 1700</Card.Text>
-                      <Card.Title>$600</Card.Title>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
+                  </Card> */}
                   {/* Agrega más tarjetas según sea necesario */}
                 </div>
               </div>
