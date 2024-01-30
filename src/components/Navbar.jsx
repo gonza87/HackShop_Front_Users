@@ -49,7 +49,7 @@ function NavbarComponent() {
                 <Nav className="me-auto d-flex ">
                 
                 <div className='contenedorbtncategorias'><NavbarAside/></div>
-                <div className='contenedorbtnTodos'><span>TODOS</span></div>
+                <div className='contenedorbtnTodos'><Link to="/store" style={{ textDecoration: 'none' }}><span style={{color: "#ffffff",}}>TODOS</span></Link></div>
                 </Nav> 
                 
               </div>

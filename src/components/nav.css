@@ -53,7 +53,12 @@
 .contenedorbtnTodos {
     margin-top: 10px;
     padding: 10px;
+    
 }
+.contenedorbtnTodos link{
+    text-decoration: none;
+}
+
 
 .contenedorbtnTodos:hover {
     border: 1px;
