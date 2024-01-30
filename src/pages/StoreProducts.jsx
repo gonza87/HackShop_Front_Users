@@ -16,24 +16,36 @@ function StoreProducts() {
   const imgUrl = "http://localhost:3000/img/";
   const apiUrl = "http://localhost:3000/products";
   const [products, setProducts] = useState([]);
+  //const [selectedFilter, setSelectedFilter] = useState(null);
+
+  const handleDropdownSelect = async (eventKey) => {
+    
+    // Realizar la solicitud con Axios y actualizar el estado con la respuesta
+    try {
+      const response = await axios.get(`${apiUrl}/${eventKey}`);
+     
+      setProducts(response.data)
+      
+    } catch (error) {
+      console.error('Error al realizar la solicitud:', error.message);
+    }
+  };
 
   useEffect(() => {
     axios
       .get(apiUrl)
       .then((response) => {
         // Manejar la respuesta exitosa
-        //console.log(response.data);
+        
         setProducts(response.data)
-        //setProducts(response.data);
-        //console.log(list)
-        //console.log(products)
+        
       })
       .catch((error) => {
         // Manejar errores
         console.error("Error en la solicitud:", error.message);
       });
   }, []);
-  console.log(products)
+  
   
   return (
     <>
@@ -58,8 +70,9 @@ function StoreProducts() {
                     title="Ordenar Por"
                     id="dropdown-menu-align-end"
                     variant="light"
+                    onSelect={handleDropdownSelect}
                   >
-                    <Dropdown.Item eventKey="1">Destacado</Dropdown.Item>
+                    <Dropdown.Item eventKey="destacado">Destacado</Dropdown.Item>
                     <Dropdown.Divider />
                     <Dropdown.Item eventKey="2">Precio: Menor a mayor</Dropdown.Item>
                     <Dropdown.Divider />
@@ -72,7 +85,7 @@ function StoreProducts() {
 
                 <div className="col-12 d-flex flex-wrap">
                 {products.map((product, index) => (
-                  <Card style={{ width: "15rem" }} className="m-1">
+                  <Card key={index} style={{ width: "15rem" }} className="m-1 cardTodosMia">
                     <Card.Img
                       variant="top"
                       src = {`${imgUrl}${product.photo}`}
