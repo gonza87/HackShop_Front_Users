@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<Abouts />} />
-        <Route path="/category" element={<CategoryList />} />
+        <Route path="/category/:categoryName" element={<CategoryList />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/description" element={<Description />} />

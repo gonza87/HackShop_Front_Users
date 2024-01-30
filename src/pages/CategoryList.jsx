@@ -6,6 +6,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
 import axios from "axios";
 import './CategoryList.css';
 
@@ -15,27 +16,32 @@ import './CategoryList.css';
 
  function CategoryList() {
     {
+      const { categoryName } = useParams();
+      console.log(categoryName)
         const imgUrl = "http://localhost:3000/img/";
-        const apiUrl = "http://localhost:3000/products";
+        const apiUrl = "http://localhost:3000/category";
         const [products, setProducts] = useState([]);
-        const [hoveredIndex, setHoveredIndex] = useState(null);
+         const [hoveredIndex, setHoveredIndex] = useState(null);
       
-        const handleDropdownSelect = async (eventKey) => {
+         const handleDropdownSelect = async (eventKey) => {
           
-          // Realizar la solicitud con Axios y actualizar el estado con la respuesta
-          try {
-            const response = await axios.get(`${apiUrl}/${eventKey}`);
+           // Realizar la solicitud con Axios y actualizar el estado con la respuesta
+           try {
+             const response = await axios.get(`${apiUrl}/${eventKey}/a`);
            
-            setProducts(response.data)
+             setProducts(response.data)
             
-          } catch (error) {
-            console.error('Error al realizar la solicitud:', error.message);
-          }
-        };
+           } catch (error) {
+             console.error('Error al realizar la solicitud:', error.message);
+           }
+         };
       
         useEffect(() => {
+          
+          //console.log(categoria)
+         
           axios
-            .get(apiUrl)
+            .get(`${apiUrl}/${categoryName}`)
             .then((response) => {
               // Manejar la respuesta exitosa
               
@@ -72,7 +78,7 @@ import './CategoryList.css';
                           title="Ordenar Por"
                           id="dropdown-menu-align-end"
                           variant="light"
-                          onSelect={handleDropdownSelect}
+                           onSelect={handleDropdownSelect}
                         >
                           <Dropdown.Item eventKey="destacado">Destacado</Dropdown.Item>
                           <Dropdown.Divider />
