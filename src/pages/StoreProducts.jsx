@@ -74,9 +74,11 @@ function StoreProducts() {
                   >
                     <Dropdown.Item eventKey="destacado">Destacado</Dropdown.Item>
                     <Dropdown.Divider />
-                    <Dropdown.Item eventKey="2">Precio: Menor a mayor</Dropdown.Item>
+                    <Dropdown.Item eventKey="menor">Precio: Menor a mayor</Dropdown.Item>
                     <Dropdown.Divider />
-                    <Dropdown.Item eventKey="3">Precio: Mayor a menor</Dropdown.Item>
+                    <Dropdown.Item eventKey="mayor">Precio: Mayor a menor</Dropdown.Item>
+                    <Dropdown.Divider />
+                    <Dropdown.Item eventKey="todos">Todos</Dropdown.Item>
                   </DropdownButton>
                   <div className="col-4 d-flex justify-content-end mt-2">
                     {/* <ProductCountSelector /> */}
