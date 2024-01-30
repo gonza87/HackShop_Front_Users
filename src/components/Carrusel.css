@@ -5,17 +5,33 @@
     width: 100vw;
     object-fit:cover;
   }
-                                .msjCarrusel {
-                                  height: 30px;
-                                  align-items: center;
-                                  text-align: center;
-                                  background-color: #35ffd2;
-                                  margin-top: 145px;
-                
-                                }
-                
-                                .msjCarrusel p {
-                                  padding-top: 3px;
-                                  font-weight: bold;
-                                  color: #09072c;
-                                }
+.msjCarrusel {
+    height: 30px;
+    align-items: center;
+    text-align: center;
+    background-color: #35ffd2;
+    margin-top: 145px;
+ }
+
+.msjCarrusel p {
+    padding-top: 3px;
+    font-weight: bold;
+    color: #09072c;
+}
+
+
+/* @keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.msjCarrusel p {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: scroll 15s linear infinite;
+
+} */
