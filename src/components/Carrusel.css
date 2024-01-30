@@ -20,7 +20,20 @@
 }
 
 
-/* @keyframes scroll {
+.msjCarrusel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.msjCarrusel p {
+  white-space: nowrap;
+  overflow: hidden;
+  margin:0; /* Ajusta según sea necesario */
+  animation: scroll 12s linear infinite;
+}
+
+
+ @keyframes scroll {
   0% {
     transform: translateX(100%);
   }
@@ -28,10 +41,3 @@
     transform: translateX(-100%);
   }
 }
-
-.msjCarrusel p {
-  white-space: nowrap;
-  overflow: hidden;
-  animation: scroll 15s linear infinite;
-
-} */
