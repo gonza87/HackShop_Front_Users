@@ -14,6 +14,7 @@ function Footer () {
   return (
     <>
       <div className="padding-footer">
+         <img src="/public/logosNavAside/Metodos_Tarjetas.png" alt="" className="metodos" />
         <footer className="footer-color py-4">
           <div className="container footer">
             <div className="row">
