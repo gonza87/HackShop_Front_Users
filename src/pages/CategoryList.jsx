@@ -27,7 +27,7 @@ import './CategoryList.css';
           
            // Realizar la solicitud con Axios y actualizar el estado con la respuesta
            try {
-             const response = await axios.get(`${apiUrl}/${eventKey}/a`);
+             const response = await axios.get(`http://localhost:3000/category/search/${eventKey}/${categoryName}`);
            
              setProducts(response.data)
             
@@ -70,7 +70,7 @@ import './CategoryList.css';
                   <div className="container containerCategory">
                     <div className="row">
                       <div className="col-8">
-                        <h2 className="textTodosProductos">Todos nuestros productos</h2>
+                        <h2 className="textTodosProductos">{categoryName}</h2>
                       </div>
                       <div className="col-4 d-flex justify-content-end">
                         <DropdownButton
