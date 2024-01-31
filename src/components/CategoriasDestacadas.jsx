@@ -12,7 +12,7 @@ function CategoriasDestacadas()  {
     <div className='catDestacadas'>
         <p>CATEGORIAS DESTACADAS</p>
     </div>
-    <div className="d-flex justify-content-between flex-wrap">
+  <div className="d-flex justify-content-between flex-wrap">
         <Link to="/category/MONITORES">
             <Card className="cardCatDestacadas" style={{ width: '13rem' }}>
                 <Card.Img variant="top" src="catMonitores.jpg" />    
@@ -23,15 +23,21 @@ function CategoriasDestacadas()  {
                 <Card.Img variant="top" src="catGpu.jpg" />    
             </Card>
         </Link>
-        <Card className="cardCatDestacadas" style={{ width: '13rem' }}>
+         <Link to="/category/NOTEBOOKS">
+            <Card className="cardCatDestacadas" style={{ width: '13rem' }}>
             <Card.Img variant="top" src="catNotebooks.jpg" />    
         </Card>
+         </Link>
+         <Link to="/category/PCS ARMADAS">
         <Card className="cardCatDestacadas" style={{ width: '13rem' }}>
             <Card.Img variant="top" src="catPc.jpg" />    
         </Card>
+        </Link>
+        <Link to="/category/SILLAS GAMER">
         <Card className="cardCatDestacadas" style={{ width: '13rem' }}>
             <Card.Img variant="top" src="catSillas.jpg" />    
         </Card>
+        </Link>
     </div>
     
 </>
