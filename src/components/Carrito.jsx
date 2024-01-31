@@ -4,6 +4,9 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import AddToCart from "../components/AddToCart";
+import { BsXCircle } from "react-icons/bs";
+import { IoMdAdd } from "react-icons/io";
+import { RiSubtractLine } from "react-icons/ri";
 import './carrito.css';
 
 import Card from "react-bootstrap/Card";
@@ -22,33 +25,36 @@ function Carrito() {
         onClick={handleShow}
       />
 
-      <Offcanvas show={show} onHide={handleClose} placement="end">
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Mi Carrito</Offcanvas.Title>
-<Card.Link href="#"><h5 className="verCarrito">Ver carrito</h5></Card.Link>
+      <Offcanvas className="contenedorCarrito" show={show} onHide={handleClose} placement="end">
+        <Offcanvas.Header  className="cabeceraCarrito">
+           <Offcanvas.Title>Mi Carrito</Offcanvas.Title> 
+           <BsXCircle style={{ fontSize: '1.5rem', cursor: 'pointer', color:"#ffffff"}} onClick={handleClose} />
 
         </Offcanvas.Header>
-        <hr />
+        
         <Offcanvas.Body>
-          <div>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="/public/procesadores/PROCESADOR-INTEL-I5-12400F-SVIDEO-12VA-1700.jpg" />
-              <Card.Body>
-                
-                
-              </Card.Body>
-              <ListGroup className="list-group-flush">
-                <ListGroup.Item>1 ITEM</ListGroup.Item>
-                <ListGroup.Item>Intel Core i5 10400f 2.9GHz 12MB LGA1200 10th Gen</ListGroup.Item>
-                <ListGroup.Item>2 × US$147.50</ListGroup.Item>
-                <ListGroup.Item>SUBTOTAL: US$295.00</ListGroup.Item>
-                
-              </ListGroup>
-              <Card.Body>
-                <AddToCart />
-                
-              </Card.Body>
-            </Card>
+          <div className="d-flex align-items-center">
+            <img className="imgCarrito" src="public/procesadores/PROCESADOR-INTEL-I5-12400F-SVIDEO-12VA-1700.jpg" 
+            alt="" />
+            <p className="testTituloItem">Procesador core I5</p>
+            <IoMdAdd style={{ fontSize: '1.5rem', cursor: 'pointer', color:"#09072c", marginLeft:"50px"}} />
+            <span className="cantporItem">5</span>
+            <RiSubtractLine style={{ fontSize: '1.5rem', cursor: 'pointer', color:"#09072c"}} />
+            <span className="precioItem">USD 150</span>
+          </div>
+          <div className="d-flex align-items-center">
+            <img className="imgCarrito" src="public/procesadores/PROCESADOR-INTEL-I5-12400F-SVIDEO-12VA-1700.jpg" 
+            alt="" />
+            <p className="testTituloItem">Procesador core I5</p>
+            <IoMdAdd style={{ fontSize: '1.5rem', cursor: 'pointer', color:"#09072c", marginLeft:"50px"}} />
+            <span className="cantporItem">5</span>
+            <RiSubtractLine style={{ fontSize: '1.5rem', cursor: 'pointer', color:"#09072c"}} />
+            <span className="precioItem">USD 150</span>
+          </div>
+
+          <div className="d-flex align-items-center mt-2">
+            <p className="textresumencarro">Total <span>USD 235</span></p>
+            <Button className="btnCompraCarrito" style={{background: "#09072c", color: "#ffffff"}}>Comprar</Button>
           </div>
         </Offcanvas.Body>
       </Offcanvas>
