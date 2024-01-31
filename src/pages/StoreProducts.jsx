@@ -6,6 +6,8 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import ProductCountSelector from "../components/ProductCountSelector";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -97,7 +99,10 @@ function StoreProducts() {
                       <Card.Title className="productDescription">{product.name}</Card.Title>
                       <Card.Text className="productDescription">{product.description}</Card.Text>
                       <Card.Title className="productDescription">${product.price}</Card.Title>
-                      <Button variant="" style={{background: "#09072c", color: "#ffffff"}}>Comprar</Button>
+                      <Button variant="" style={{background: "#09072c", color: "#ffffff"}}>
+                        <FontAwesomeIcon icon={faShoppingCart} style={{ cursor: "pointer", marginRight:"5px" }}
+                        />Comprar
+                      </Button>
                     </Card.Body>
                   </Card>
                   ))}

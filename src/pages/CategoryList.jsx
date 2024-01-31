@@ -8,6 +8,8 @@ import Card from 'react-bootstrap/Card';
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import './CategoryList.css';
 
 
@@ -105,7 +107,10 @@ import './CategoryList.css';
                             <Card.Title className="productDescription">{product.name}</Card.Title>
                             <Card.Text className="productDescription">{product.description}</Card.Text>
                             <Card.Title className="productDescription">${product.price}</Card.Title>
-                            <Button variant="" style={{background: "#09072c", color: "#ffffff"}}>Comprar</Button>
+                            <Button variant="" style={{background: "#09072c", color: "#ffffff"}}>
+                              <FontAwesomeIcon icon={faShoppingCart} style={{ cursor: "pointer", marginRight:"5px" }}
+                              />Comprar
+                            </Button>
                           </Card.Body>
                         </Card>
                         ))}
