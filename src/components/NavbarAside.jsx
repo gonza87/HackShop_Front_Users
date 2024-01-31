@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
+
 /* import { BsX } from 'react-icons/bs'; */
 import { BsXCircle } from "react-icons/bs";
 
@@ -15,6 +16,11 @@ function NavbarAside() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  useEffect(() => {
+    // Cerrar el Offcanvas cuando cambia la ubicación
+    handleClose();
+  }, []);
+
   return (
     <>
       <span onClick={handleShow}>CATEGORIAS</span>
@@ -26,8 +32,12 @@ function NavbarAside() {
         onHide={handleClose}
         placement="start"
       >
-        <Offcanvas.Header ><BsXCircle style={{ fontSize: '1.5rem', cursor: 'pointer', color:"#ffffff"}} onClick={handleClose} /></Offcanvas.Header>
-        
+        <Offcanvas.Header>
+          <BsXCircle
+            style={{ fontSize: "1.5rem", cursor: "pointer", color: "#ffffff" }}
+            onClick={handleClose}
+          />
+        </Offcanvas.Header>
 
         <Offcanvas.Body>
           <div className="row">
@@ -38,37 +48,64 @@ function NavbarAside() {
                     <td
                       style={{ backgroundColor: "#09072c", color: "#ffffff" }}
                     >
-                      <Link to="" className="espacioTabla">
+                      <NavLink
+                        to="/category/CPU"
+                        className="espacioTabla"
+                        onClick={() => {
+                          handleClose();
+                          navigate("/category/CPU");
+                        }}
+                      >
                         CPU
-                      </Link>
+                      </NavLink>
                     </td>
                   </tr>
                   <tr>
                     <td
                       style={{ backgroundColor: "#09072c", color: "#ffffff" }}
                     >
-                      <Link to="" className="espacioTabla">
+                      <NavLink
+                        to="/category/GPU"
+                        className="espacioTabla"
+                        onClick={() => {
+                          handleClose();
+                          navigate("/category/GPU");
+                        }}
+                      >
                         GPU
-                      </Link>
+                      </NavLink>
                     </td>
                   </tr>
                   <tr>
                     <td
                       style={{ backgroundColor: "#09072c", color: "#ffffff" }}
                     >
-                      <Link to="" className="espacioTabla">
-                        {" "}
-                        PC ARMADAS
-                      </Link>
+                      <NavLink
+                        to="/category/PCS ARMADAS"
+                        className="espacioTabla"
+                        onClick={() => {
+                          handleClose();
+                          navigate("/category/PCS ARMADAS");
+                        }}
+                      >
+                        PCS ARMADAS
+                      </NavLink>
                     </td>
                   </tr>
                   <tr>
                     <td
                       style={{ backgroundColor: "#09072c", color: "#ffffff" }}
                     >
-                      <Link to="" className="espacioTabla">
+                      <NavLink
+                        to="/category/SILLAS GAMER"
+                        className="espacioTabla"
+                        onClick={() => {
+                          handleClose();
+                          navigate("/category/SILLAS GAMER");
+                        }}
+                      >
                         SILLAS GAMER
-                      </Link>
+                      </NavLink>
                     </td>
                   </tr>
                 </thead>
@@ -77,10 +114,16 @@ function NavbarAside() {
                     <td
                       style={{ backgroundColor: "#09072c", color: "#ffffff" }}
                     >
-                      <Link to="" className="espacioTabla">
-                        {" "}
+                      <NavLink
+                        to="/category/MONITORES"
+                        className="espacioTabla"
+                        onClick={() => {
+                          handleClose();
+                          navigate("/category/MONITORES");
+                        }}
+                      >
                         MONITORES
-                      </Link>
+                      </NavLink>
                     </td>
                   </tr>
                 </tbody>
@@ -89,9 +132,16 @@ function NavbarAside() {
                     <td
                       style={{ backgroundColor: "#09072c", color: "#ffffff" }}
                     >
-                      <Link to="" className="espacioTabla">
+                      <NavLink
+                        to="/category/NOTEBOOKS"
+                        className="espacioTabla"
+                        onClick={() => {
+                          handleClose();
+                          navigate("/category/NOTEBOOKS");
+                        }}
+                      >
                         NOTEBOOKS
-                      </Link>
+                      </NavLink>
                     </td>
                   </tr>
                 </tbody>
@@ -100,9 +150,16 @@ function NavbarAside() {
                     <td
                       style={{ backgroundColor: "#09072c", color: "#ffffff" }}
                     >
-                      <Link to="" className="espacioTabla">
+                      <NavLink
+                        to="/category/PERIFERICOS"
+                        className="espacioTabla"
+                        onClick={() => {
+                          handleClose();
+                          navigate("/category/PERIFERICOS");
+                        }}
+                      >
                         PERIFERICOS
-                      </Link>
+                      </NavLink>
                     </td>
                   </tr>
                 </tbody>
@@ -140,7 +197,6 @@ function NavbarAside() {
                 <img src="/public/logosNavAside/pngwing.com (3).png" alt="" />
                 <img src="/public/logosNavAside/pngwing.com.png" alt="" />
               </div>
-            
             </div>
           </div>
         </Offcanvas.Body>
@@ -150,3 +206,4 @@ function NavbarAside() {
 }
 
 export default NavbarAside;
+
