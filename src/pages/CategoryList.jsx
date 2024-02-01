@@ -64,9 +64,23 @@ import './CategoryList.css';
       
             <div className="container-fluid">
               <div className="row">
-                <div className="col-lg-3">
-                  
-                </div>
+                 <div className="col-lg-3 banner d-flex flex-column align-items-center"
+            style={{
+              paddingTop: "100px", // Ajusta el padding superior según tus necesidades
+              paddingBottom: "20px", // Ajusta el padding inferior según tus necesidades
+              maxHeight: "calc(100vh - 56px)", // Ajusta la altura máxima restando el tamaño de la barra de navegación (56px en este caso)
+              position: "sticky",
+              top: "56px", // Altura de la barra de navegación
+            }}
+          >
+            {/* Contenido fijo de la columna */}
+            <img
+              src="/public/gifBannerStoreProducts/logo4.gif"
+              alt="Tu GIF"
+              width="80%"
+              height="100%"
+            />
+          </div>
       
                 <div className="col-lg-9">
                   <div className="container containerCategory">
