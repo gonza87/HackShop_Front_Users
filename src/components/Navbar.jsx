@@ -21,7 +21,7 @@ function NavbarComponent() {
   return (
     <Navbar collapseOnSelect expand="md" className='mianav' fixed="top">
     <Container>
-      <Navbar.Brand><Link to="/" ><img className='logo animate__animated animate__flip animate__slow' src="/public/logo.png" alt="logo" /></Link></Navbar.Brand>
+      <Navbar.Brand><Link to="/" ><img className='logo animate__animated animate__flip animate__slow' src="/logo3.png" alt="logo" /></Link></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ borderColor: 'white' }}><FontAwesomeIcon icon={faBars} style={{ color: 'white' }} /> </Navbar.Toggle>
       <Navbar.Collapse  id="responsive-navbar-nav">
             <div className='row container'>
