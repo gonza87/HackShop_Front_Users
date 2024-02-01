@@ -9,6 +9,8 @@ import Card from "react-bootstrap/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import ProductCountSelector from "../components/ProductCountSelector";
+import { useParams } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -19,6 +21,7 @@ function StoreProducts() {
   const apiUrl = "http://localhost:3000/products";
   const [products, setProducts] = useState([]);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const { slug } = useParams();
 
   const handleDropdownSelect = async (eventKey) => {
     
@@ -103,12 +106,15 @@ function StoreProducts() {
 
                 <div className="col-12 d-flex flex-wrap">
                 {products.map((product, index) => (
+
                   <Card key={index} style={{ width: "15rem" }} className="m-1 cardTodosMia">
+                     <Link to={`/products/detail/${product.slug}`}>
                     <Card.Img
                       variant="top"
                       src = {`${imgUrl}${product.photo}`}
                       className="imgListCat"
                     />
+                    </Link>
                     <Card.Body>
                       <Card.Title className="productDescription">{product.name}</Card.Title>
                       <Card.Text className="productDescription">{product.description}</Card.Text>
