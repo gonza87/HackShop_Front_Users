@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
@@ -65,20 +66,20 @@ import './CategoryList.css';
             <div className="container-fluid">
               <div className="row">
                  <div className="col-lg-3 banner d-flex flex-column align-items-center"
-            style={{
+           /*  style={{
               paddingTop: "100px", // Ajusta el padding superior según tus necesidades
               paddingBottom: "20px", // Ajusta el padding inferior según tus necesidades
               maxHeight: "calc(100vh - 56px)", // Ajusta la altura máxima restando el tamaño de la barra de navegación (56px en este caso)
               position: "sticky",
               top: "56px", // Altura de la barra de navegación
-            }}
+            }} */
           >
             {/* Contenido fijo de la columna */}
-            <img
-              src="/public/gifBannerStoreProducts/logo4.gif"
+            <img className="imgBanner"
+              src="/public/gifBannerStoreProducts/Black Grey Aqua Grunge Gaming Mobile Video (1).gif"
               alt="Tu GIF"
-              width="80%"
-              height="100%"
+              /* width="80%"
+              height="100%" */
             />
           </div>
       
@@ -110,13 +111,19 @@ import './CategoryList.css';
                       </div>
       
                       <div className="col-12 d-flex flex-wrap">
+                  
                       {products.map((product, index) => (
+
+
+
                         <Card key={index} style={{ width: "15rem" }} className="m-1 cardTodosMia">
+                                <Link to={`/products/detail/${product.slug}`}>
                           <Card.Img
                             variant="top"
                             src = {`${imgUrl}${product.photo}`}
                             className="imgListCat"
                           />
+                          </Link>
                           <Card.Body>
                             <Card.Title className="productDescription">{product.name}</Card.Title>
                             <Card.Text className="productDescription">{product.description}</Card.Text>
