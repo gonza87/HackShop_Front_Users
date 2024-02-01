@@ -51,7 +51,7 @@ function StoreProducts() {
       });
   }, []);
   
-  
+  console.log(products)
   return (
     <>
     

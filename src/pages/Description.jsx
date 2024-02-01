@@ -29,7 +29,7 @@ function Description() {
         console.error(error);
       });
   }, []);
-
+console.log(product)
   return (
     <>
       <NavbarComponent />
@@ -37,7 +37,7 @@ function Description() {
         <div className="container containerCategory">
           <div className="row">
             <div className="col-12">
-              <h2>Procesadores</h2>
+              <h2>{product.category.categoryName}</h2>
               {/* <NavbarAside /> */}
             </div>
             <div className="col-8">
