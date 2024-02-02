@@ -91,7 +91,7 @@ function CarruselDestacados(){
                                 key={index}
                                 active={index + 1 === activePage}
                                 onClick={() => handlePageSelect(index + 1)}
-                                
+                                id='btnPaginacion'
                             >
                                 {index + 1}
                             </Pagination.Item>

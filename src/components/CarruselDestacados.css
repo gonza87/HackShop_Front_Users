@@ -7,6 +7,10 @@
 .imgDestacados {
     height: 190px;
     }
+    #btnPaginacion{
+        background-color: #09072c;
+        color: #ffffff;
+    }
     
     /* .cardCarruselDestacados:hover {
         cursor: pointer;

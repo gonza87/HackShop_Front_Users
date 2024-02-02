@@ -13,6 +13,7 @@
     color: #09072c;
 }
 
+
 @media (max-width: 768px) {
     .bannerTarjeta {
         background-image: url("/public/bannerTarjeta768.jpg");
