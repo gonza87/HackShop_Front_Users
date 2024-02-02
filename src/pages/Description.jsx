@@ -56,7 +56,7 @@ console.log(product)
                   </h5>
                 </span>
                 <br />
-                <span>DISPONIBILIDAD: 2 DISPONIBLES</span>
+                <span>DISPONIBILIDAD: {product.stock} DISPONIBLES</span>
                 <br />
                 <span>SKU: BX8071512400</span>
                 <br />
