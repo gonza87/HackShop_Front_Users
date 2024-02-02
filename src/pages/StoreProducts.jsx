@@ -59,7 +59,7 @@ function StoreProducts() {
 
       <div className="container-fluid">
         <div className="row">
-          <div className="col-lg-3 banner d-flex flex-column align-items-center"
+          <div className="col-lg-3 banner d-flex flex-column align-items-center ban"
             /* style={{
               paddingTop: "100px", // Ajusta el padding superior según tus necesidades
               paddingBottom: "20px", // Ajusta el padding inferior según tus necesidades

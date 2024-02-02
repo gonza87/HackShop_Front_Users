@@ -30,4 +30,11 @@ color: #09072c;
     color: #09072c;
 }
 
+@media (max-width: 992px) {
+   
+    .imgBanner{
+        display: none;
+    }
+}
+
 
