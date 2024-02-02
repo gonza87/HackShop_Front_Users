@@ -66,25 +66,15 @@ import './CategoryList.css';
       
             <div className="container-fluid">
               <div className="row">
-                 <div className="col-lg-3 banner d-flex flex-column align-items-center"
-           /*  style={{
-              paddingTop: "100px", // Ajusta el padding superior según tus necesidades
-              paddingBottom: "20px", // Ajusta el padding inferior según tus necesidades
-              maxHeight: "calc(100vh - 56px)", // Ajusta la altura máxima restando el tamaño de la barra de navegación (56px en este caso)
-              position: "sticky",
-              top: "56px", // Altura de la barra de navegación
-            }} */
-          >
-            {/* Contenido fijo de la columna */}
-            <img className="imgBanner"
-              src="/public/gifBannerStoreProducts/Black Grey Aqua Grunge Gaming Mobile Video (1).gif"
-              alt="Tu GIF"
-              /* width="80%"
-              height="100%" */
-            />
-          </div>
+               <div className="col-lg-2 banner d-none d-lg-block d-flex flex-column align-items-center">
+              <img
+                className="imgBanner w-100"
+                src="/public/gifBannerStoreProducts/Black Grey Aqua Grunge Gaming Mobile Video (1).gif"
+                alt="Tu GIF"
+              />
+            </div>
       
-                <div className="col-lg-9">
+                <div className="col-lg-10">
                   <div className="container containerCategory">
                     <div className="row">
                       <div className="col-8">
