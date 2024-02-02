@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import {addToCart} from "../redux/carritoReducer"
 import NavbarComponent from "../components/Navbar";
 import Footer from "../components/Footer";
 import Whatsapp from "../components/Whatsapp";
@@ -17,6 +19,7 @@ import 'animate.css';
 import "./storeProducts.css";
 
 function StoreProducts() {
+  const dispatch = useDispatch();
   const imgUrl = "http://localhost:3000/img/";
   const apiUrl = "http://localhost:3000/products";
   const [products, setProducts] = useState([]);
@@ -36,6 +39,10 @@ function StoreProducts() {
     }
   };
 
+  const handleBuyClick = (product) => {
+    // Aquí puedes realizar cualquier lógica adicional antes de agregar al carrito
+    dispatch(addToCart(product));
+  };
   useEffect(() => {
     axios
       .get(apiUrl)
@@ -120,7 +127,7 @@ function StoreProducts() {
                       <Card.Title className="productDescription">{product.name}</Card.Title>
                       <Card.Text className="productDescription">{product.description}</Card.Text>
                       <Card.Title className="productDescription">${product.price}</Card.Title>
-                      <Button variant="" style={{background: "#09072c", color: "#ffffff"}}>
+                      <Button onClick={() => handleBuyClick(product)} variant="" style={{background: "#09072c", color: "#ffffff"}}>
                         <FontAwesomeIcon icon={faShoppingCart} style={{ cursor: "pointer", marginRight:"5px" }}
                         />Comprar
                       </Button>
