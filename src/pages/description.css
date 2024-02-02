@@ -8,3 +8,53 @@
   transform: scale(1.2); /* Modifica el valor según el nivel de zoom que desees */
   opacity: 30%;
 }
+
+
+.contenido {
+  max-height: 485px; /* Puedes ajustar este valor según tus necesidades */
+  overflow: hidden;
+}
+
+
+.caracteristicas {
+  color: slategray;
+  font-family: Arial, sans-serif;
+  line-height: 2;
+  padding: 15px;
+  /* border: 1px solid #ccc;
+  border-radius: 8px; */
+  margin-bottom: 20px;
+  height: 100%;
+  overflow: auto;
+}
+
+.caracteristicas p {
+  margin-bottom: 12px;
+}
+
+.caracteristicas ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.caracteristicas li {
+  margin-bottom: 8px;
+}
+
+.caracteristicas strong {
+  color: black;
+}
+
+.caracteristicas::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+.caracteristicas::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color del "pulgón" de la barra de desplazamiento */
+  border-radius: 6px; /* Borde redondeado del "pulgón" */
+}
+
+.caracteristicas::-webkit-scrollbar-track {
+  background-color: #170101; /* Color de fondo de la barra de desplazamiento */
+}

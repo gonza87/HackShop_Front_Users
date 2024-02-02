@@ -67,9 +67,9 @@ console.log(product)
               </div>
             </div>
 
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-md-4 contenido">
               <div className="caracteristicas">
-                <p>{product.description}</p>
+                {product.description}
 
                 
               </div>
