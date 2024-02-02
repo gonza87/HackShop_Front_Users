@@ -54,12 +54,11 @@ function Login(){
                     
                     
                 </div>
-                <div className="col-md-6 loginDerecha">
-                   
-                        <img src="/public/logo2.png" alt="" className='logoLogin'/>
-                    
-                    
-                </div>
+               <div className="col-md-6 loginDerecha">
+            <Link to="/">
+              <img src="/public/logo2.png" alt="" className="logoLogin" />
+            </Link>
+          </div>
             </div>
             </div> 
         </>

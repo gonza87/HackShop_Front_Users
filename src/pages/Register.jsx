@@ -54,11 +54,10 @@ function Register(){
                     
                 </div>
                 <div className="col-md-6 loginDerecha">
-                   
-                        <img src="/public/logo2.png" alt="" className='logoLogin'/>
-                    
-                    
-                </div>
+            <Link to="/">
+              <img src="/public/logo2.png" alt="" className="logoLogin" />
+            </Link>
+          </div>
             </div>
             </div> 
         </>
