@@ -10,10 +10,13 @@
 
 
 
-.banners{
+.banner{
  padding-top: 100px;   
  padding-bottom: 20px;
  max-height:calc(100vh - 56px) ;
  position: sticky;
  top: 56px;
+}
+.d-lg-block {
+    position: relative;
 }
