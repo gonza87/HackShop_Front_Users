@@ -81,8 +81,8 @@ function Footer () {
                     <p>Suscribete para recibir novedades en tu e-mail</p>
                 </div>                
                 <div>
-                    <input type="email" placeholder="Ingresa tu e-mail" />
-                    <button type="button">Suscribirme</button>
+                    <input className= "input" type="email" placeholder="Ingresa tu e-mail" />
+                    <button className= "button" type="button">Suscribirme</button>
                 </div>
               </div>
             </div>
