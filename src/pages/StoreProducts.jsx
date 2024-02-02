@@ -13,7 +13,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import 'animate.css';
 import "./storeProducts.css";
 
 function StoreProducts() {
@@ -109,6 +109,7 @@ function StoreProducts() {
 
                   <Card key={index} style={{ width: "15rem" }} className="m-1 cardTodosMia">
                      <Link to={`/products/detail/${product.slug}`}>
+                     {(product.featured)&&(<button type="button" className="btn btn-warning m-auto animate__animated animate__infinite infinite animate__swing fw-bold" style={{ position: 'absolute', top: '0', left: '30%' }}>En Oferta</button>)}
                     <Card.Img
                       variant="top"
                       src = {`${imgUrl}${product.photo}`}

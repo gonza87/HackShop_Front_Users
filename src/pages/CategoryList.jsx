@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import 'animate.css';
 import './CategoryList.css';
 
 
@@ -118,6 +119,7 @@ import './CategoryList.css';
 
                         <Card key={index} style={{ width: "15rem" }} className="m-1 cardTodosMia">
                                 <Link to={`/products/detail/${product.slug}`}>
+                            {(product.featured)&&(<button type="button" className="btn btn-warning m-auto animate__animated animate__infinite infinite animate__swing fw-bold" style={{ position: 'absolute', top: '0', left: '30%' }}>En Oferta</button>)}
                           <Card.Img
                             variant="top"
                             src = {`${imgUrl}${product.photo}`}

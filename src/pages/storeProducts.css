@@ -21,6 +21,7 @@ color: #09072c;
     border: solid #ccc; /* Establece un borde delgado de 1 píxel y color gris claro */
     box-shadow:  3px 3px 6px rgba(0, 0, 0, 0.1);
     border-width: 1px;
+    text-align: center;
     
    
    

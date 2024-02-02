@@ -7,9 +7,11 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import 'animate.css';
 import "./carrusel.css";
 import './CarruselDestacados.css';
-import 'animate.css';
+
+
 function CarruselDestacados(){
     const imgUrl = "http://localhost:3000/img/";
     const apiUrl = "http://localhost:3000/products/destacado";
