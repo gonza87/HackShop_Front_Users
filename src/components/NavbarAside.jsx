@@ -46,7 +46,7 @@ function NavbarAside() {
                 <thead>
                   <tr>
                     <td
-                      style={{ backgroundColor: "#09072c", color: "#ffffff" }}
+                      style={{ backgroundColor: "#09072c",opacity:"50%", color: "#ffffff" }}
                     >
                       <NavLink
                         to="/category/CPU"
@@ -62,7 +62,7 @@ function NavbarAside() {
                   </tr>
                   <tr>
                     <td
-                      style={{ backgroundColor: "#09072c", color: "#ffffff" }}
+                      style={{ backgroundColor: "#09072c",opacity:"50%", color: "#ffffff" }}
                     >
                       <NavLink
                         to="/category/GPU"
@@ -78,7 +78,7 @@ function NavbarAside() {
                   </tr>
                   <tr>
                     <td
-                      style={{ backgroundColor: "#09072c", color: "#ffffff" }}
+                      style={{ backgroundColor: "#09072c",opacity:"50%", color: "#ffffff" }}
                     >
                       <NavLink
                         to="/category/PCS ARMADAS"
@@ -94,7 +94,7 @@ function NavbarAside() {
                   </tr>
                   <tr>
                     <td
-                      style={{ backgroundColor: "#09072c", color: "#ffffff" }}
+                      style={{ backgroundColor: "#09072c",opacity:"50%", color: "#ffffff" }}
                     >
                       <NavLink
                         to="/category/SILLAS GAMER"
@@ -112,7 +112,7 @@ function NavbarAside() {
                 <tbody>
                   <tr>
                     <td
-                      style={{ backgroundColor: "#09072c", color: "#ffffff" }}
+                      style={{ backgroundColor: "#09072c",opacity:"50%", color: "#ffffff" }}
                     >
                       <NavLink
                         to="/category/MONITORES"
@@ -130,7 +130,7 @@ function NavbarAside() {
                 <tbody>
                   <tr>
                     <td
-                      style={{ backgroundColor: "#09072c", color: "#ffffff" }}
+                    style={{ backgroundColor: "#09072c",opacity:"50%", color: "#ffffff" }}
                     >
                       <NavLink
                         to="/category/NOTEBOOKS"
@@ -148,7 +148,7 @@ function NavbarAside() {
                 <tbody>
                   <tr>
                     <td
-                      style={{ backgroundColor: "#09072c", color: "#ffffff" }}
+                      style={{ backgroundColor: "#09072c",opacity:"50%", color: "#ffffff" }}
                     >
                       <NavLink
                         to="/category/PERIFERICOS"
@@ -165,37 +165,38 @@ function NavbarAside() {
                 </tbody>
               </Table>
             </div>
-            <div className="row ">
+            
+            <div className="row" style={{ marginTop: '30px' }}>
               <div className="col-12 logos">
                 <img src="/public/logosNavAside/klipartz.com.png" alt="" />
-                <img src="/public/logosNavAside/pngegg (1).png" alt="" />
-                <img src="/public/logosNavAside/pngegg (11).png" alt="" />
+                <img src="/public/logosNavAside/pngegg (5).png" alt="" />
+                <img src="/public/logosNavAside/pngegg (4).png" alt="" />
               </div>
               <div className="col-12 logos">
                 <img src="/public/logosNavAside/pngegg (12).png" alt="" />
                 <img src="/public/logosNavAside/pngegg (13).png" alt="" />
                 <img src="/public/logosNavAside/pngegg (14).png" alt="" />
               </div>
-              <div className="col-12 logos">
-                <img src="/public/logosNavAside/pngegg (2).png" alt="" />
-                <img src="/public/logosNavAside/pngegg (3).png" alt="" />
-                <img src="/public/logosNavAside/pngegg (4).png" alt="" />
-              </div>
-              <div className="col-12 logos">
-                <img src="/public/logosNavAside/pngegg (5).png" alt="" />
-                <img src="/public/logosNavAside/pngegg (6).png" alt="" />
-                <img src="/public/logosNavAside/pngegg (7).png" alt="" />
-              </div>
+              {/* <div className="col-12 logos">
+                <img src="" alt="" />
+                <img src="" alt="" />
+                <img src="" alt="" />
+              </div> */}
+             {/*  <div className="col-12 logos">
+                <img src="" alt="" />
+                <img src="" alt="" />
+                <img src="" alt="" />
+              </div> */}
               <div className="col-12 logos">
                 <img src="/public/logosNavAside/pngegg (8).png" alt="" />
-                <img src="/public/logosNavAside/pngegg (9).png" alt="" />
+                <img src="/public/logosNavAside/Asrock_logo_PNG1.png" alt="" />
                 <img src="/public/logosNavAside/pngegg.png" alt="" />
               </div>
 
               <div className="col-12 logos">
                 <img src="/public/logosNavAside/pngwing.com (1).png" alt="" />
                 <img src="/public/logosNavAside/pngwing.com (3).png" alt="" />
-                <img src="/public/logosNavAside/pngwing.com.png" alt="" />
+                <img src="/public/logosNavAside/nuevomsi.png" alt="msi" />
               </div>
             </div>
           </div>
