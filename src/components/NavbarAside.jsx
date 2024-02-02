@@ -46,7 +46,11 @@ function NavbarAside() {
                 <thead>
                   <tr>
                     <td
-                      style={{ backgroundColor: "#09072c",opacity:"50%", color: "#ffffff" }}
+                      style={{
+                        backgroundColor: "#09072c",
+                        opacity: "50%",
+                        color: "#ffffff",
+                      }}
                     >
                       <NavLink
                         to="/category/CPU"
@@ -62,7 +66,11 @@ function NavbarAside() {
                   </tr>
                   <tr>
                     <td
-                      style={{ backgroundColor: "#09072c",opacity:"50%", color: "#ffffff" }}
+                      style={{
+                        backgroundColor: "#09072c",
+                        opacity: "50%",
+                        color: "#ffffff",
+                      }}
                     >
                       <NavLink
                         to="/category/GPU"
@@ -78,7 +86,11 @@ function NavbarAside() {
                   </tr>
                   <tr>
                     <td
-                      style={{ backgroundColor: "#09072c",opacity:"50%", color: "#ffffff" }}
+                      style={{
+                        backgroundColor: "#09072c",
+                        opacity: "50%",
+                        color: "#ffffff",
+                      }}
                     >
                       <NavLink
                         to="/category/PCS ARMADAS"
@@ -94,7 +106,11 @@ function NavbarAside() {
                   </tr>
                   <tr>
                     <td
-                      style={{ backgroundColor: "#09072c",opacity:"50%", color: "#ffffff" }}
+                      style={{
+                        backgroundColor: "#09072c",
+                        opacity: "50%",
+                        color: "#ffffff",
+                      }}
                     >
                       <NavLink
                         to="/category/SILLAS GAMER"
@@ -112,7 +128,11 @@ function NavbarAside() {
                 <tbody>
                   <tr>
                     <td
-                      style={{ backgroundColor: "#09072c",opacity:"50%", color: "#ffffff" }}
+                      style={{
+                        backgroundColor: "#09072c",
+                        opacity: "50%",
+                        color: "#ffffff",
+                      }}
                     >
                       <NavLink
                         to="/category/MONITORES"
@@ -130,7 +150,11 @@ function NavbarAside() {
                 <tbody>
                   <tr>
                     <td
-                    style={{ backgroundColor: "#09072c",opacity:"50%", color: "#ffffff" }}
+                      style={{
+                        backgroundColor: "#09072c",
+                        opacity: "50%",
+                        color: "#ffffff",
+                      }}
                     >
                       <NavLink
                         to="/category/NOTEBOOKS"
@@ -148,7 +172,11 @@ function NavbarAside() {
                 <tbody>
                   <tr>
                     <td
-                      style={{ backgroundColor: "#09072c",opacity:"50%", color: "#ffffff" }}
+                      style={{
+                        backgroundColor: "#09072c",
+                        opacity: "50%",
+                        color: "#ffffff",
+                      }}
                     >
                       <NavLink
                         to="/category/PERIFERICOS"
@@ -165,38 +193,128 @@ function NavbarAside() {
                 </tbody>
               </Table>
             </div>
-            
-            <div className="row" style={{ marginTop: '30px' }}>
+
+            <div className="row" style={{ marginTop: "30px" }}>
               <div className="col-12 logos">
-                <img src="/public/logosNavAside/klipartz.com.png" alt="" />
-                <img src="/public/logosNavAside/pngegg (5).png" alt="" />
-                <img src="/public/logosNavAside/pngegg (4).png" alt="" />
+                <a
+                  href="https://www.amd.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/public/logosNavAside/klipartz.com.png"
+                    alt="ryzen"
+                  />
+                </a>
+                <a
+                  href="https://www.coolermaster.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/public/logosNavAside/pngegg (5).png"
+                    alt="cooler master"
+                  />
+                </a>
+                <a
+                  href="https://www.gigabyte.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/public/logosNavAside/pngegg (4).png"
+                    alt="gigabyte"
+                  />
+                </a>
               </div>
               <div className="col-12 logos">
-                <img src="/public/logosNavAside/pngegg (12).png" alt="" />
-                <img src="/public/logosNavAside/pngegg (13).png" alt="" />
-                <img src="/public/logosNavAside/pngegg (14).png" alt="" />
-              </div>
-              {/* <div className="col-12 logos">
-                <img src="" alt="" />
-                <img src="" alt="" />
-                <img src="" alt="" />
-              </div> */}
-             {/*  <div className="col-12 logos">
-                <img src="" alt="" />
-                <img src="" alt="" />
-                <img src="" alt="" />
-              </div> */}
-              <div className="col-12 logos">
-                <img src="/public/logosNavAside/pngegg (8).png" alt="" />
-                <img src="/public/logosNavAside/Asrock_logo_PNG1.png" alt="" />
-                <img src="/public/logosNavAside/pngegg.png" alt="" />
+                <a
+                  href="https://www.lg.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/public/logosNavAside/pngegg (12).png" alt="lg" />
+                </a>
+                <a
+                  href="https://www.razer.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/public/logosNavAside/pngegg (13).png"
+                    alt="razer"
+                  />
+                </a>
+                <a
+                  href="https://www.hyperxgaming.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/public/logosNavAside/pngegg (14).png"
+                    alt="hyper"
+                  />
+                </a>
               </div>
 
               <div className="col-12 logos">
-                <img src="/public/logosNavAside/pngwing.com (1).png" alt="" />
-                <img src="/public/logosNavAside/pngwing.com (3).png" alt="" />
-                <img src="/public/logosNavAside/nuevomsi.png" alt="msi" />
+                <a
+                  href="https://www.logitech.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/public/logosNavAside/pngegg (8).png"
+                    alt="logitech"
+                  />
+                </a>
+                <a
+                  href="https://www.asrock.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/public/logosNavAside/Asrock_logo_PNG1.png"
+                    alt="asrock"
+                  />
+                </a>
+                <a
+                  href="https://www.nvidia.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/public/logosNavAside/pngegg.png" alt="nvidia" />
+                </a>
+              </div>
+
+              <div className="col-12 logos">
+                <a
+                  href="https://www.intel.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/public/logosNavAside/pngwing.com (1).png"
+                    alt="intel"
+                  />
+                </a>
+                <a
+                  href="https://www.amd.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/public/logosNavAside/pngwing.com (3).png"
+                    alt="amd"
+                  />
+                </a>
+                <a
+                  href="https://www.msi.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/public/logosNavAside/nuevomsi.png" alt="msi" />
+                </a>
               </div>
             </div>
           </div>
@@ -207,4 +325,3 @@ function NavbarAside() {
 }
 
 export default NavbarAside;
-
