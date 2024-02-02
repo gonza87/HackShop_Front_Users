@@ -89,8 +89,8 @@ function Footer () {
           </div>
           <div className="container">
           <hr />
-          <div className="HackCommerce2024">
-            <p>HackCommerce 2024</p>
+          <div className="HackShop2024">
+            <p>HackShop 2024</p>
           </div>
           </div>
         </footer>
