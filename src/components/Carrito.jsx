@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ListGroup, Button  } from "react-bootstrap";
+import { ListGroup, Button } from "react-bootstrap";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
@@ -9,7 +9,7 @@ import { IoMdAdd } from "react-icons/io";
 import { RiSubtractLine } from "react-icons/ri";
 import React from "react";
 import { useSelector } from "react-redux";
-import './carrito.css';
+import "./carrito.css";
 
 import Card from "react-bootstrap/Card";
 function Carrito() {
@@ -29,15 +29,22 @@ function Carrito() {
         onClick={handleShow}
       />
 
-      <Offcanvas className="contenedorCarrito" show={show} onHide={handleClose} placement="end">
-        <Offcanvas.Header  className="cabeceraCarrito">
-           <Offcanvas.Title>Mi Carrito</Offcanvas.Title> 
-           <BsXCircle style={{ fontSize: '1.5rem', cursor: 'pointer', color:"#ffffff"}} onClick={handleClose} />
-
+      <Offcanvas
+        className="contenedorCarrito"
+        show={show}
+        onHide={handleClose}
+        placement="end"
+      >
+        <Offcanvas.Header className="cabeceraCarrito">
+          <Offcanvas.Title>Mi Carrito</Offcanvas.Title>
+          <BsXCircle
+            style={{ fontSize: "1.5rem", cursor: "pointer", color: "#ffffff" }}
+            onClick={handleClose}
+          />
         </Offcanvas.Header>
-        
+
         <Offcanvas.Body>
-        {carrito.map((product, index) => (
+          {/*  {carrito.map((product, index) => (
           <div className="d-flex align-items-center">
             <img className="imgCarrito" src={`${imgUrl}${product.photo}`} 
             alt="" />
@@ -47,20 +54,66 @@ function Carrito() {
             <RiSubtractLine style={{ fontSize: '1.5rem', cursor: 'pointer', color:"#09072c"}} />
             <span className="precioItem">USD {product.price}</span>
           </div>
-           ))}
-          {/* <div className="d-flex align-items-center">
-            <img className="imgCarrito" src="public/procesadores/PROCESADOR-INTEL-I5-12400F-SVIDEO-12VA-1700.jpg" 
-            alt="" />
-            <p className="testTituloItem">Procesador core I5</p>
-            <IoMdAdd style={{ fontSize: '1.5rem', cursor: 'pointer', color:"#09072c", marginLeft:"50px"}} />
-            <span className="cantporItem">5</span>
-            <RiSubtractLine style={{ fontSize: '1.5rem', cursor: 'pointer', color:"#09072c"}} />
-            <span className="precioItem">USD 150</span>
-          </div> */}
+           ))} */}
 
-          <div className="d-flex align-items-center mt-2">
-            <p className="textresumencarro">Total <span>USD 235</span></p>
-            <Button className="btnCompraCarrito" style={{background: "#09072c", color: "#ffffff"}}>Comprar</Button>
+          <div className="row">
+            {carrito.map((product, index) => (
+            <div className="col-12">
+              <div className="row">
+                <div className="col-6 d-flex align-items-center">
+                  <img
+                    className="imgCarrito"
+                    src={`${imgUrl}${product.photo}`}
+                    alt="img producto"
+                  />
+                  <p className="testTituloItem">{product.name} </p>
+                </div>
+                <div className="col-3 d-flex align-items-center">
+                  <IoMdAdd
+                    style={{
+                      fontSize: "1.5rem",
+                      cursor: "pointer",
+                      color: "#09072c",
+                      marginLeft: "50px",
+                    }}
+                  />
+                  <span className="cantporItem">5</span>
+                  <RiSubtractLine
+                    style={{
+                      fontSize: "1.5rem",
+                      cursor: "pointer",
+                      color: "#09072c",
+                    }}
+                  />
+                </div>
+                <div className="col-3 d-flex align-items-center">
+                  <span className="precioItem">US${product.price}</span>
+                </div>
+              </div>
+            </div>
+            ))} 
+          </div>
+
+          <div className="d-flex">
+            <div className="row">
+              <div className="col-12 d-flex-g">
+                <div className="d-flex-g">
+                 <p className="textresumencarro">
+              Total <span>USD 235</span>
+            </p>
+            <Button
+              className="btnCompraCarrito"
+              style={{ background: "#09072c", color: "#ffffff" }}
+            >
+              Comprar
+            </Button>
+            </div>
+            </div>
+            
+              
+            </div>
+            
+            
           </div>
         </Offcanvas.Body>
       </Offcanvas>

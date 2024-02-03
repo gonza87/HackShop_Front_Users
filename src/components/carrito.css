@@ -4,7 +4,7 @@
 
 .contenedorCarrito{
     margin-right: 20px;
-    width: auto !important;
+    width: 800px !important;
     height: 300px;
     
     
@@ -46,5 +46,9 @@
 
 .btnCompraCarrito{
     margin-left: auto;
+}
+.d-flex-g{
+ 
+    display: flex;
 }
 
