@@ -44,20 +44,12 @@ function Carrito() {
         </Offcanvas.Header>
 
         <Offcanvas.Body>
-          {/*  {carrito.map((product, index) => (
-          <div className="d-flex align-items-center">
-            <img className="imgCarrito" src={`${imgUrl}${product.photo}`} 
-            alt="" />
-            <p className="testTituloItem">{product.name}</p>
-            <IoMdAdd style={{ fontSize: '1.5rem', cursor: 'pointer', color:"#09072c", marginLeft:"50px"}} />
-            <span className="cantporItem">5</span>
-            <RiSubtractLine style={{ fontSize: '1.5rem', cursor: 'pointer', color:"#09072c"}} />
-            <span className="precioItem">USD {product.price}</span>
-          </div>
-           ))} */}
+         
 
           <div className="row">
+           {(carrito.length===0)&&(<p> Carrito Vacio</p>)}
             {carrito.map((product, index) => (
+             
             <div className="col-12">
               <div className="row">
                 <div className="col-6 d-flex align-items-center">
@@ -93,6 +85,7 @@ function Carrito() {
             </div>
             ))} 
           </div>
+          {(carrito.length !== 0)&&(
           <div className="row">
             <div className="col-9 d-flex align-items-center pt-3">  <p className="textresumencarro">
               Total <span>USD 235</span>
@@ -105,7 +98,7 @@ function Carrito() {
               Comprar
             </Button></div>
           </div>
-
+)}
           {/* <div className="d-flex">
             <div className="row">
               <div className="col-12 d-flex-g">
