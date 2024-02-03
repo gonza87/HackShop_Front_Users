@@ -93,20 +93,27 @@ function Carrito() {
             </div>
             ))} 
           </div>
+          <div className="row">
+            <div className="col-9 d-flex align-items-center pt-3">  <p className="textresumencarro">
+              Total <span>USD 235</span>
+            </p></div>
+            <div className="col-3 d-flex align-items-center">
+              <Button
+              className="btnCompraCarrito"
+              style={{ background: "#09072c", color: "#ffffff" }}
+            >
+              Comprar
+            </Button></div>
+          </div>
 
-          <div className="d-flex">
+          {/* <div className="d-flex">
             <div className="row">
               <div className="col-12 d-flex-g">
                 <div className="d-flex-g">
                  <p className="textresumencarro">
               Total <span>USD 235</span>
             </p>
-            <Button
-              className="btnCompraCarrito"
-              style={{ background: "#09072c", color: "#ffffff" }}
-            >
-              Comprar
-            </Button>
+            
             </div>
             </div>
             
@@ -114,7 +121,7 @@ function Carrito() {
             </div>
             
             
-          </div>
+          </div> */}
         </Offcanvas.Body>
       </Offcanvas>
     </>
