@@ -9,6 +9,7 @@ const carritoSlice = createSlice({
     },
     addToCart(state, action) {
         return [...state, action.payload];
+        console.log("payloa " + action.payload)
       },
   },
 });

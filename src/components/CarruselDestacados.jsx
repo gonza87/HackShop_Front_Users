@@ -50,7 +50,7 @@ function CarruselDestacados(){
                 <Carousel.Item interval={5000} className='d-flex justify-content-between flex-wrap'>
                 {productsDestacados.slice((activePage - 1) * itemsPerPage, activePage * itemsPerPage).map((product, index) => (
                     <Card key={index} className='cardCarruselDestacados cardTodosMia' style={{ width: '14rem' }}>
-                              <button type="button" class="btn btn-warning m-auto animate__animated 
+                              <button type="button" className="btn btn-warning m-auto animate__animated 
                 animate__infinite	infinite animate__swing fw-bold">En Oferta</button>
                         <Link to={`/products/detail/${product.slug}`}>
                     <Card.Img

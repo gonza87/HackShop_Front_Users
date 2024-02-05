@@ -50,7 +50,7 @@ function Carrito() {
            {(carrito.length===0)&&(<p> Carrito Vacio</p>)}
             {carrito.map((product, index) => (
              
-            <div className="col-12">
+            <div className="col-12" key={index}>
               <div className="row">
                 <div className="col-6 d-flex align-items-center">
                   <img
@@ -98,7 +98,7 @@ function Carrito() {
               Comprar
             </Button></div>
           </div>
-)}
+          )}
           {/* <div className="d-flex">
             <div className="row">
               <div className="col-12 d-flex-g">
