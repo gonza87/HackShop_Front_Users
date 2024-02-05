@@ -79,7 +79,7 @@ function Carrito() {
                   />
                 </div>
                 <div className="col-3 d-flex align-items-center">
-                  <span className="precioItem">US${product.price}</span>
+                  <span className="precioItem">US${product.price * product.cantidad}</span>
                 </div>
               </div>
             </div>
