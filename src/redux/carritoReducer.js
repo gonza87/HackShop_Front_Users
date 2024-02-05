@@ -16,7 +16,7 @@ const carritoSlice = createSlice({
       if (existeEnElCarrito && action.payload.stock >= 1 ) {
         // Si existe, actualiza la cantidad del producto en el carrito
         return nuevoCarrito.map(itemCarrito =>
-          itemCarrito.name === action.payload.name
+          (itemCarrito.name === action.payload.name) && (itemCarrito.cantidad <= action.payload.stock) 
             ? { ...itemCarrito, cantidad: itemCarrito.cantidad + 1 }
             : itemCarrito
         );
