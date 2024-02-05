@@ -69,7 +69,7 @@ function Carrito() {
                       marginLeft: "50px",
                     }}
                   />
-                  <span className="cantporItem">5</span>
+                  <span className="cantporItem">{product.cantidad}</span>
                   <RiSubtractLine
                     style={{
                       fontSize: "1.5rem",
