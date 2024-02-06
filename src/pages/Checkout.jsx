@@ -49,8 +49,8 @@ function Checkout() {
                 className="form-control"
                 id="email"
                 name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                /* value={email} */
+                /* onChange={(e) => setEmail(e.target.value)} */
                 placeholder="Ingresa tu correo electrónico"
               />
             </div>
@@ -62,8 +62,8 @@ function Checkout() {
                 className="form-control"
                 id="firstName"
                 name="firstName"
-                value={shippingInfo.firstName}
-                onChange={handleInputChange}
+                /* value={shippingInfo.firstName}
+                onChange={handleInputChange} */
                 placeholder="Ingresa tu nombre"
               />
             </div>
@@ -74,8 +74,8 @@ function Checkout() {
                 className="form-control"
                 id="lastName"
                 name="lastName"
-                value={shippingInfo.lastName}
-                onChange={handleInputChange}
+                /* value={shippingInfo.lastName}
+                onChange={handleInputChange} */
                 placeholder="Ingresa tu apellido"
               />
             </div>
@@ -86,8 +86,8 @@ function Checkout() {
                 className="form-control"
                 id="address"
                 name="address"
-                value={shippingInfo.address}
-                onChange={handleInputChange}
+                /* value={shippingInfo.address}
+                onChange={handleInputChange} */
                 placeholder="Ingresa tu dirección"
               />
             </div>
@@ -98,8 +98,8 @@ function Checkout() {
                 className="form-control"
                 id="city"
                 name="city"
-                value={shippingInfo.city}
-                onChange={handleInputChange}
+                /* value={shippingInfo.city}
+                onChange={handleInputChange} */
                 placeholder="Ingresa tu ciudad"
               />
             </div>
@@ -110,8 +110,8 @@ function Checkout() {
                 className="form-control"
                 id="country"
                 name="country"
-                value={shippingInfo.country}
-                onChange={handleInputChange}
+                /* value={shippingInfo.country}
+                onChange={handleInputChange} */
                 placeholder="Ingresa tu país"
               />
             </div>
@@ -122,8 +122,8 @@ function Checkout() {
                 className="form-control"
                 id="stateProvince"
                 name="stateProvince"
-                value={shippingInfo.stateProvince}
-                onChange={handleInputChange}
+                /* value={shippingInfo.stateProvince}
+                onChange={handleInputChange} */
                 placeholder="Ingresa tu estado/provincia"
               />
             </div>
@@ -134,8 +134,8 @@ function Checkout() {
                 className="form-control"
                 id="postalCode"
                 name="postalCode"
-                value={shippingInfo.postalCode}
-                onChange={handleInputChange}
+                /* value={shippingInfo.postalCode}
+                onChange={handleInputChange} */
                 placeholder="Ingresa tu código postal"
               />
             </div>
@@ -146,8 +146,8 @@ function Checkout() {
                 className="form-control"
                 id="phone"
                 name="phone"
-                value={shippingInfo.phone}
-                onChange={handleInputChange}
+               /*  value={shippingInfo.phone}
+                onChange={handleInputChange} */
                 placeholder="Ingresa tu número de teléfono"
               />
             </div>
@@ -178,8 +178,8 @@ function Checkout() {
                         type="text"
                         className="form-control"
                         id="cardNumber"
-                        value={cardNumber}
-                        onChange={(e) => setCardNumber(e.target.value)}
+                       /*  value={cardNumber}
+                        onChange={(e) => setCardNumber(e.target.value)} */
                         placeholder="Ingresa el número de tarjeta"
                       />
                     </div>
@@ -189,8 +189,8 @@ function Checkout() {
                         type="text"
                         className="form-control"
                         id="nameOnCard"
-                        value={nameOnCard}
-                        onChange={(e) => setNameOnCard(e.target.value)}
+                       /*  value={nameOnCard}
+                        onChange={(e) => setNameOnCard(e.target.value)} */
                         placeholder="Ingresa el nombre en la tarjeta"
                       />
                     </div>
@@ -200,8 +200,8 @@ function Checkout() {
                         type="text"
                         className="form-control"
                         id="expirationDate"
-                        value={expirationDate}
-                        onChange={(e) => setExpirationDate(e.target.value)}
+                        /* value={expirationDate}
+                        onChange={(e) => setExpirationDate(e.target.value)} */
                         placeholder="Ingresa la fecha de expiración"
                       />
                     </div>
@@ -211,8 +211,8 @@ function Checkout() {
                         type="text"
                         className="form-control"
                         id="cvc"
-                        value={cvc}
-                        onChange={(e) => setCvc(e.target.value)}
+                       /*  value={cvc}
+                        onChange={(e) => setCvc(e.target.value)} */
                         placeholder="Ingresa el CVC"
                       />
                     </div>
@@ -246,7 +246,7 @@ function Checkout() {
                 <button
                   type="button"
                   className="btn btn-primary"
-                  onClick={handleConfirmOrder}
+                  /* onClick={handleConfirmOrder} */
                 >
                   Confirmar Orden
                 </button>
