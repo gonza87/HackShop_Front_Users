@@ -6,6 +6,7 @@ import Description from "./pages/Description";
 import StoreProducts from "./pages/StoreProducts";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Checkout from "./pages/Checkout";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import "./App.css";
@@ -14,6 +15,7 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<Abouts />} />
         <Route path="/category/:categoryName" element={<CategoryList />} />
