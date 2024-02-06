@@ -7,6 +7,8 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import carritoReducer from "./redux/carritoReducer";
 import  userReducer from "./redux/userReducer.js";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
@@ -15,10 +17,18 @@ const rootReducer = combineReducers({
   user: userReducer, // Agrega el nuevo slice aquí
   // Otros slices si los tienes
 });
+const persistConfig = {
+  key: "root",
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
-  reducer: rootReducer,
+  reducer: persistedReducer,
 });
+
+const persistor = persistStore(store);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
