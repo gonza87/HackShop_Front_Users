@@ -4,9 +4,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ajusta la imagen para cubrir todo el contenedor sin distorsionarse */
-  opacity: 0.7; /* Opacidad del 70% */
-  z-index: -1; /* Asegura que la imagen esté detrás de otros elementos */
+  object-fit: cover; 
+  opacity: 0.6; 
+  z-index: -1; 
 }
 
 .image-container {
@@ -18,13 +18,12 @@
   height: auto;
 }
 
-
 .overlay-text {
   position: absolute;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color:#09072c;
+  color: #09072c;
   text-align: center;
   font-size: 24px;
   padding: 20px;
@@ -32,18 +31,37 @@
   box-sizing: border-box;
 }
 
-
-
 .custom-card {
- /*  background-color:#09072c; */
+  padding-top: 80px;
   color: #09072c;
   border: none;
   background-color: gray;
   opacity: 80%;
 }
 
-
-
 .icons {
-  margin-right: 40px; /* Ajusta el valor del margen según tus necesidades */
+  margin-right: 40px;
+}
+
+.desarrolladores {
+  background-color: gray;
+  opacity: 80%;
+  color: #09072c;
+}
+
+.item{
+    background-color: gray; 
+     color: #09072c;
+}
+
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .proyecto {
+    margin-top: 250px; /* Espacio adicional en la parte superior para separar la sección de "Sobre este proyecto" de los otros elementos */
+  }
+
+  .proyecto .overlay-text {
+    padding-top: 300px; /* Agrega espacio adicional en la parte superior del texto */
+  }
 }

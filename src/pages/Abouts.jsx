@@ -31,16 +31,20 @@ function Abouts() {
               alt=""
               className="about-image"
             />
-            <div className="overlay-text">
+            <div className="col-12 proyecto">
+              <div className="overlay-text">
+              <h1> Sobre este proyecto</h1>
               <h3>
-                Sobre este proyecto El presente sitio de e-commerce es un
-                proyecto desarrollado por estudiantes del Coding Bootcamp de
-                Hack Academy. El Bootcamp es un programa educativo
-                extremadamente práctico de 3 meses y full-time, donde los
+                El presente sitio de e-commerce es un
+                proyecto desarrollado por estudiantes del Curso Avanzado de Desarrollo Web Full Stack de
+                Hack Academy. El Curso Avanzado de Desarrollo Web Full Stack es un programa educativo
+                extremadamente práctico de 8 meses y part-time, donde los
                 estudiantes invierten más de 600 horas a aprender sobre Node.js,
                 Express, React.js, SQL, MongoDB y Git.
               </h3>
             </div>
+            </div>
+            
           </div>
         </div>
         <div className="container" style={{ paddingTop: "350px" }}>
@@ -58,9 +62,9 @@ function Abouts() {
 
                   <Card.Title>Duración </Card.Title>
                   <Card.Text>
-                    El proyecto fue desarrollado en tan sólo 3 semanas, durante
-                    noviembre de 2022. El mismo se dividió en sprints (Scrum) de
-                    una semana de duración.
+                    El proyecto fue desarrollado en 6 semanas, durante
+                    enero y febrero del 2023. El mismo se dividió en 3 sprints (Scrum) de
+                    dos semanas de duración.
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -78,9 +82,7 @@ function Abouts() {
                   <FontAwesomeIcon icon={faCode} />
                   <Card.Title>Tecnologías</Card.Title>
                   <Card.Text>
-                    El proyecto fue desarrollado en tan sólo 3 semanas, durante
-                    noviembre de 2022. El mismo se dividió en sprints (Scrum) de
-                    una semana de duración.
+                   Para el Front-End del sitio se desarrolló una aplicación en React (usando Create-React-App) mientras que para el Back-End se desarrolló una REST API hecha con Node.js, Express, SQL y Git/GitHub.
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -98,9 +100,7 @@ function Abouts() {
                   <FontAwesomeIcon icon={faBarsStaggered} />
                   <Card.Title>División de tareas</Card.Title>
                   <Card.Text>
-                    El proyecto fue desarrollado en tan sólo 3 semanas, durante
-                    noviembre de 2022. El mismo se dividió en sprints (Scrum) de
-                    una semana de duración.
+                  Para la organización de tareas durante el proyecto se utilizó Trello. Esto permitió que cada integrante del equipo estuviese permanentemente al tanto del estado del proyecto así como de las tareas que debía realizar.
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -110,14 +110,14 @@ function Abouts() {
 
         <div className="row mt-4">
           <div className="col-md-4 mb-4">
-            <Card style={{ width: "100%" }}>
+            <Card className="desarrolladores" style={{ width: "100%" }}>
               <Card.Img src="/public/Oficina.jpg" style={{ height: "250px" }} />
-              <Card.Body>
+              <Card.Body >
                 <Card.Title>Santiago Ourthe Cabalé</Card.Title>
               </Card.Body>
               <ListGroup className="list-group-flush">
-                <ListGroup.Item>Junior Full Stack Developer</ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item className="item">Junior Full Stack Developer</ListGroup.Item>
+                <ListGroup.Item className="item">
                   Ultricies massa malesuada viverra cras lobortis. Tempor orci
                   hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas
                   cras. Nisl dictum.
@@ -156,7 +156,7 @@ function Abouts() {
             </Card>
           </div>
           <div className="col-md-4 mb-4">
-            <Card style={{ width: "100%" }}>
+            <Card className="desarrolladores" style={{ width: "100%" }}>
               <Card.Img
                 src="/public/601906fb4153a.jpeg"
                 style={{ height: "250px" }}
@@ -165,8 +165,8 @@ function Abouts() {
                 <Card.Title>Gonzalo Viglioni</Card.Title>
               </Card.Body>
               <ListGroup className="list-group-flush">
-                <ListGroup.Item>Junior Full Stack Developer</ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item className="item">Junior Full Stack Developer</ListGroup.Item>
+                <ListGroup.Item className="item">
                   Ultricies massa malesuada viverra cras lobortis. Tempor orci
                   hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas
                   cras. Nisl dictum.
@@ -206,7 +206,7 @@ function Abouts() {
           </div>
 
           <div className="col-md-4 mb-4">
-            <Card style={{ width: "100%" }}>
+            <Card className="desarrolladores" style={{ width: "100%" }}>
               <Card.Img
                 src="/public/oficina.webp"
                 style={{ height: "250px" }}
@@ -215,8 +215,8 @@ function Abouts() {
                 <Card.Title>Mario Silveira</Card.Title>
               </Card.Body>
               <ListGroup className="list-group-flush">
-                <ListGroup.Item>Junior Full Stack Developer</ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item className="item">Junior Full Stack Developer</ListGroup.Item>
+                <ListGroup.Item className="item">
                   Ultricies massa malesuada viverra cras lobortis. Tempor orci
                   hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas
                   cras. Nisl dictum.
