@@ -1,11 +1,77 @@
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setUser } from "../redux/userReducer"; 
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import axios from "axios";
+import Swal from "sweetalert2";
 import './Login.css';
 
 function Login(){
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const apiUrl = "http://localhost:3000/token";
+
+    const [loginData, setLoginData] = useState({
+        email: "",
+        password: "",
+      });
+
+      const [loading, setLoading] = useState(false);
+
+      const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setLoginData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+      };
+
+      const handleSubmit = (event) => {
+        event.preventDefault();
+    
+        // Validación básica en el cliente
+        if (!loginData.email || !loginData.password) {
+          Swal.fire({
+            text: "Complete all fields please",
+            icon: "warning",
+          });
+          return;
+        }
+    
+        setLoading(true);
+    
+        axios
+          .post(apiUrl, loginData)
+          .then((response) => {
+            dispatch(setUser(response.data));
+            navigate("/");
+          })
+          .catch((error) => {
+            console.error("Error al enviar datos:", error);
+    
+            if (error.response) {
+              // Manejar errores específicos de la respuesta del servidor
+              Swal.fire({
+                text: error.response.data.error || "Error en la solicitud",
+                icon: "error",
+              });
+            } else {
+              // Manejar otros errores
+              Swal.fire({
+                text: "Error en la solicitud",
+                icon: "error",
+              });
+            }
+          })
+          .finally(() => {
+            setLoading(false);
+          });
+      };
+
     return(
         <>  
            <div className="container-fluid">
@@ -14,19 +80,31 @@ function Login(){
                     <p className='textHackshop'>Hack Shop</p>
                     <p>Bienvenido</p>
                     <div className='d-flex align-items-center justify-content-center'>
-                        <Form className='formLogin mt-4'>
+                        <Form onSubmit={handleSubmit} className='formLogin mt-4'>
                             <Row>
                                 <Col>
                                 <Form.Label className='textCampoLogin'>Email Addres</Form.Label><span className='testRegistro'>No tenés cuenta? <Link to="/register">Registraté acá</Link></span>
                                 
-                                <Form.Control type="email" placeholder="Escribí tu email acá"/>
+                                <Form.Control 
+                                type="email"
+                                name="email" 
+                                placeholder="Escribí tu email acá"
+                                value={loginData.email}
+                                onChange={handleInputChange}
+                                />
                                 </Col>
                                 
                             </Row>
                             <Row>
                                 <Col>
                                 <Form.Label className='textCampoLogin mt-3'>Password</Form.Label>
-                                <Form.Control type='password' placeholder="Contraseña"/>
+                                <Form.Control 
+                                type='password'
+                                name="password" 
+                                placeholder="Contraseña"
+                                value={loginData.password}
+                                onChange={handleInputChange}
+                                />
                                 </Col>
                                 
                             </Row>
