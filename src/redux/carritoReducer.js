@@ -29,9 +29,21 @@ const carritoSlice = createSlice({
         return nuevoCarrito;
       }
     },
+    decrementarCantidad(state, action) {
+      return state.map(itemCarrito =>
+        (itemCarrito.name === action.payload.name) && (itemCarrito.cantidad > 1)
+          ? { ...itemCarrito, cantidad: itemCarrito.cantidad - 1 }
+          : itemCarrito
+      );
+    },
+    eliminarProducto(state, action) {
+      return state.filter(itemCarrito =>
+        itemCarrito.name !== action.payload.name
+      );
+    },
   },
 });
 
 const { actions, reducer } = carritoSlice;
-export const { addToCart } = actions;
+export const { addToCart, decrementarCantidad, eliminarProducto } = actions;
 export default reducer;

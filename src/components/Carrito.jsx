@@ -8,7 +8,10 @@ import { BsXCircle } from "react-icons/bs";
 import { IoMdAdd } from "react-icons/io";
 import { RiSubtractLine } from "react-icons/ri";
 import React from "react";
+import { addToCart, decrementarCantidad, eliminarProducto } from "../redux/carritoReducer";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+
 import "./carrito.css";
 
 import Card from "react-bootstrap/Card";
@@ -16,10 +19,19 @@ function Carrito() {
   const imgUrl = "http://localhost:3000/img/";
   const carrito = useSelector((state) => state.carrito);
   const [show, setShow] = useState(false);
-
+  const dispatch = useDispatch();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const decrementarCantidadHandler = (product) => {
+    if (product.cantidad > 1) {
+      dispatch(decrementarCantidad(product));
+    } else {
+      dispatch(eliminarProducto(product));
+    }
+  };
+  const incrementarCantidadHandler = (product) => {
+    dispatch(addToCart(product));  // Utiliza la acción addToCart para aumentar la cantidad
+  };
   return (
     <>
       <FontAwesomeIcon
@@ -68,6 +80,7 @@ function Carrito() {
                       color: "#09072c",
                       marginLeft: "50px",
                     }}
+                    onClick={() => incrementarCantidadHandler(product)}
                   />
                   <span className="cantporItem">{product.cantidad}</span>
                   <RiSubtractLine
@@ -76,6 +89,7 @@ function Carrito() {
                       cursor: "pointer",
                       color: "#09072c",
                     }}
+                    onClick={() => decrementarCantidadHandler(product)}
                   />
                 </div>
                 <div className="col-3 d-flex align-items-center">
