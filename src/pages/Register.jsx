@@ -40,13 +40,13 @@ function Register(){
                             <p id='usertTextoPrueba'>Para simplificar el acceso a la aplicación, se proporcionan los siguientes usuarios de prueba:</p>
                             <p>Iniciar sesión como comprador</p>
                             <ul>
-                                <li>E-mail: maria.perez@gmail.com.</li>
-                                <li>Password: 123456.</li>
+                                <li>E-mail: mrodriguez@gmail.com.</li>
+                                <li>Password: 1234</li>
                             </ul>
                             <p>Iniciar sesión como administrador</p>
                             <ul>
-                                <li>E-mail: maria.perez@gmail.com.</li>
-                                <li>Password: 123456.</li>
+                                <li>E-mail: admin@gmail.com</li>
+                                <li>Password: 1234</li>
                             </ul>
                             
                         </div>
