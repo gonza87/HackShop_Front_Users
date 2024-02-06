@@ -11,10 +11,10 @@ import React from "react";
 import { addToCart, decrementarCantidad, eliminarProducto } from "../redux/carritoReducer";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-
+import Card from "react-bootstrap/Card";
 import "./carrito.css";
 
-import Card from "react-bootstrap/Card";
+
 function Carrito() {
   const imgUrl = "http://localhost:3000/img/";
   const carrito = useSelector((state) => state.carrito);
@@ -31,6 +31,11 @@ function Carrito() {
   };
   const incrementarCantidadHandler = (product) => {
     dispatch(addToCart(product));  // Utiliza la acción addToCart para aumentar la cantidad
+  };
+
+  // Calcula el total sumando los precios de todos los productos en el carrito
+  const calcularTotal = () => {
+    return carrito.reduce((total, product) => total + product.price * product.cantidad, 0);
   };
   return (
     <>
@@ -102,7 +107,7 @@ function Carrito() {
           {(carrito.length !== 0)&&(
           <div className="row">
             <div className="col-9 d-flex align-items-center pt-3">  <p className="textresumencarro">
-              Total <span>USD 235</span>
+              Total <span>{calcularTotal()}</span>
             </p></div>
             <div className="col-3 d-flex align-items-center">
               <Button
