@@ -9,15 +9,19 @@ import { IoMdAdd } from "react-icons/io";
 import { RiSubtractLine } from "react-icons/ri";
 import React from "react";
 import { addToCart, decrementarCantidad, eliminarProducto } from "../redux/carritoReducer";
+import { setUser } from "../redux/userReducer"; 
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { useNavigate, Link } from 'react-router-dom';
 import Card from "react-bootstrap/Card";
 import "./carrito.css";
 
 
 function Carrito() {
+  const navigate = useNavigate();
   const imgUrl = "http://localhost:3000/img/";
   const carrito = useSelector((state) => state.carrito);
+  const token = useSelector((state) => state.user);
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
   const handleClose = () => setShow(false);
@@ -37,6 +41,17 @@ function Carrito() {
   const calcularTotal = () => {
     return carrito.reduce((total, product) => total + product.price * product.cantidad, 0);
   };
+
+  const handleCompra = () => {
+    if (token !== null){
+      navigate("/checkout");
+    }
+    else{
+      navigate("/login");
+    }
+
+  };
+
   return (
     <>
       <FontAwesomeIcon
@@ -111,29 +126,16 @@ function Carrito() {
             </p></div>
             <div className="col-3 d-flex align-items-center">
               <Button
+              onClick={handleCompra}
               className="btnCompraCarrito"
               style={{ background: "#09072c", color: "#ffffff" }}
+              
             >
               Comprar
             </Button></div>
           </div>
           )}
-          {/* <div className="d-flex">
-            <div className="row">
-              <div className="col-12 d-flex-g">
-                <div className="d-flex-g">
-                 <p className="textresumencarro">
-              Total <span>USD 235</span>
-            </p>
-            
-            </div>
-            </div>
-            
-              
-            </div>
-            
-            
-          </div> */}
+         
         </Offcanvas.Body>
       </Offcanvas>
     </>
