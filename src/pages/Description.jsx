@@ -18,7 +18,6 @@ function Description() {
   const imgUrl = "http://localhost:3000/img/";
   const apiUrl = `http://localhost:3000/products/detail/${slug}`;
 
-
   useEffect(() => {
     axios
       .get(apiUrl)
@@ -29,7 +28,7 @@ function Description() {
         console.error(error);
       });
   }, []);
-console.log(product)
+  console.log(product);
   return (
     <>
       <NavbarComponent />
@@ -41,21 +40,25 @@ console.log(product)
               {/* <NavbarAside /> */}
             </div>
             <div className="col-8">
-              <Card style={{ width: "20rem", height: "18rem" }} className="m-1">
+              <Card style={{ width: "50rem", height: "40rem", border:"none" }} className="m-1">
                 <Card.Img
                   variant="top"
-                  src = {`${imgUrl}${product.photo}`}
+                  src={`${imgUrl}${product.photo}`}
                   className="imgListCat img-fluid"
+                  style={{ width: "70%", height: "100%", objectFit: "cover" }}
                 />
               </Card>
+            </div>
+
+            <div className="col-12 col-md-4 contenido">
               <div className="description">
                 <h2>{product.name}</h2>
                 <span className="price">
                   <h5 style={{ color: "#ff6200", fontSize: "1.2rem" }}>
-                    ${product. price}
+                    ${product.price}
                   </h5>
                 </span>
-                <br />
+
                 <span>DISPONIBILIDAD: {product.stock} DISPONIBLES</span>
                 <br />
                 <span>SKU: BX8071512400</span>
@@ -63,15 +66,13 @@ console.log(product)
                 <span>CATEGORÍAS: PROCESADORES, PROCESADORES INTEL</span>
                 <br />
                 <hr />
-                <AddToCart />
               </div>
-            </div>
-
-            <div className="col-12 col-md-4 contenido">
               <div className="caracteristicas">
                 {product.description}
-
-                
+                <div>
+                  <hr />
+                  <AddToCart />
+                </div>
               </div>
             </div>
           </div>
