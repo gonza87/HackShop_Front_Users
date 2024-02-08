@@ -3,12 +3,18 @@ import NavbarComponent from "../components/Navbar";
 import Whatsapp from "../components/Whatsapp";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import {resetearCarrito} from "../redux/carritoReducer"
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+import Swal from "sweetalert2";
 
 
 import "./checkout.css";
 
 function Checkout() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const carrito = useSelector((state) => state.carrito);
   const token = useSelector((state) => state.user);
   console.log(carrito)
@@ -67,7 +73,42 @@ function Checkout() {
     })
       .then((response) => {
         console.log("Respuesta exitosa:", response.data);
-        //navigate("/login");
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              title: "Deleted!",
+              text: "Tu pedido será entregado en las próximas 48 hrs",
+              icon: "success"
+            });
+            dispatch(resetearCarrito());
+            navigate("/");
+          }
+        });
+        // Swal.fire({
+        //   title: "Estas seguro de realizar la compra?",
+        //   showDenyButton: true,
+        //   showCancelButton: true,
+        //   confirmButtonText: "Si",
+        //   denyButtonText: `No`
+        // }).then((result) => {
+        //   /* Read more about isConfirmed, isDenied below */
+        //   if (result.isConfirmed) {
+        //     Swal.fire("Saved!", "", "success");
+        //     dispatch(resetearCarrito());
+        //     navigate("/");
+        //   } else if (result.isDenied) {
+        //     Swal.fire("Changes are not saved", "", "info");
+        //   }
+        // });
+        
       })
       .catch((error) => {
         console.error("Error al enviar datos:", error);

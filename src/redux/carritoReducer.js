@@ -39,9 +39,12 @@ const carritoSlice = createSlice({
         itemCarrito.name !== action.payload.name
       );
     },
+    resetearCarrito(state, action) {
+      return [];
+    },
   },
 });
 
 const { actions, reducer } = carritoSlice;
-export const { addToCart, decrementarCantidad, eliminarProducto } = actions;
+export const { addToCart, decrementarCantidad, eliminarProducto, resetearCarrito } = actions;
 export default reducer;

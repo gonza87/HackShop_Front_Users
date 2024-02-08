@@ -15,6 +15,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 import 'animate.css';
 import "./storeProducts.css";
 
@@ -57,8 +58,38 @@ function StoreProducts() {
       // Verificar si la cantidad seleccionada no supera el stock disponible
       dispatch(addToCart({ ...product, quantity: currentQuantity + 1 }));
       console.log("Producto agregado al carrito");
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Producto agregado exitosamente"
+      });
     } else {
       console.log("No hay suficiente stock para la cantidad seleccionada");
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "error",
+        title: "Stock no disponible"
+      });
     }
   };
   useEffect(() => {
