@@ -6,11 +6,13 @@ import { Link } from 'react-router-dom';
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 //import Swal from "sweetalert2";
 
 import './Login.css';
 
 function Register(){
+    const navigate = useNavigate();
     const apiUrl = "http://localhost:3000/users";
    
   
@@ -70,6 +72,7 @@ function Register(){
         .then((response) => {
           console.log("Respuesta exitosa:", response.data);
           //history.push("/login");
+          navigate("/login");
         })
         .catch((error) => {
           console.error("Error al enviar datos:", error);
