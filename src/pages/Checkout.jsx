@@ -71,7 +71,11 @@ function Checkout() {
       })
       .catch((error) => {
         console.error("Error al enviar datos:", error);
- 
+        if (error.response && error.response.data && error.response.data.error) {
+          console.log(error.response.data.error);
+        } else {
+          console.log("Hubo un error al procesar la orden.");
+        }
       });
 
 
