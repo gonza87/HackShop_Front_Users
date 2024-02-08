@@ -19,6 +19,7 @@ function Checkout() {
   const token = useSelector((state) => state.user);
   console.log(carrito)
   console.log(token.userid)
+  console.log(token.token)
 
 
   const [email, setEmail] = useState("");
@@ -58,6 +59,12 @@ function Checkout() {
   const handleConfirmOrder = () => {
     console.log("va axios")
     const apiUrl = "http://localhost:3000/orders";
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token.token}`,
+        "Content-Type": "application/json", // Puedes ajustar el tipo de contenido según las necesidades de tu API
+      },
+    };
   
     const checkoutData = {
       userid: token.userid,
@@ -66,11 +73,7 @@ function Checkout() {
     };
   
     axios
-    .post(apiUrl, checkoutData, {
-      headers: {
-        "Content-Type": "application/json", // Establece el tipo de contenido correcto
-      },
-    })
+    .post(apiUrl, checkoutData, config )
       .then((response) => {
         console.log("Respuesta exitosa:", response.data);
         Swal.fire({
