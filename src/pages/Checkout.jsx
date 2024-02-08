@@ -2,9 +2,19 @@ import React, { useState } from "react";
 import NavbarComponent from "../components/Navbar";
 import Whatsapp from "../components/Whatsapp";
 import Footer from "../components/Footer";
+import { useSelector } from "react-redux";
+import axios from "axios";
+
+
 import "./checkout.css";
 
 function Checkout() {
+  const carrito = useSelector((state) => state.carrito);
+  const token = useSelector((state) => state.user);
+  console.log(carrito)
+  console.log(token.userid)
+
+
   const [email, setEmail] = useState("");
   const [shippingInfo, setShippingInfo] = useState({
     firstName: "",
@@ -32,6 +42,31 @@ function Checkout() {
   };
 
   const handleConfirmOrder = () => {
+    console.log("va axios")
+    const apiUrl = "http://localhost:3000/orders";
+  
+    const checkoutData = {
+      userid: token.userid,
+      carrito: {carrito}
+  
+    };
+  
+    axios
+    .post(apiUrl, checkoutData, {
+      headers: {
+        "Content-Type": "application/json", // Establece el tipo de contenido correcto
+      },
+    })
+      .then((response) => {
+        console.log("Respuesta exitosa:", response.data);
+        //navigate("/login");
+      })
+      .catch((error) => {
+        console.error("Error al enviar datos:", error);
+ 
+      });
+
+
     // Lógica para confirmar la orden
   };
 
@@ -244,9 +279,9 @@ function Checkout() {
               <dd className="col-sm-6">USD 242.90</dd>
             </dl>
                 <button
-                  type="button"
+                  
                   className="btn btn-primary"
-                  /* onClick={handleConfirmOrder} */
+                   onClick={handleConfirmOrder} 
                 >
                   Confirmar Orden
                 </button>
