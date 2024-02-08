@@ -32,6 +32,14 @@ function Checkout() {
   const [expirationDate, setExpirationDate] = useState("");
   const [cvc, setCvc] = useState("");
 
+   // Función para calcular el total de los precios en el carrito, considerando la cantidad
+   const calcularTotal = () => {
+    return carrito.reduce((total, producto) => {
+      // Asumiendo que cada producto tiene propiedades 'precio' y 'cantidad'
+      return total + producto.price * producto.cantidad;
+    }, 0);
+  };
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setShippingInfo({ ...shippingInfo, [name]: value });
@@ -276,7 +284,7 @@ function Checkout() {
               <dt className="col-sm-6">Impuestos</dt>
               <dd className="col-sm-6">USD 42.90</dd>
               <dt className="col-sm-6">Total</dt>
-              <dd className="col-sm-6">USD 242.90</dd>
+              <dd className="col-sm-6">USD {calcularTotal().toFixed(2)}</dd>
             </dl>
                 <button
                   
