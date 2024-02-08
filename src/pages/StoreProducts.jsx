@@ -25,7 +25,7 @@ function StoreProducts() {
   const [products, setProducts] = useState([]);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const { slug } = useParams();
-
+  const [selectedQuantities, setSelectedQuantities] = useState({}); // Estado para manejar las cantidades seleccionadas
   const handleDropdownSelect = async (eventKey) => {
     
     // Realizar la solicitud con Axios y actualizar el estado con la respuesta
@@ -40,8 +40,26 @@ function StoreProducts() {
   };
 
   const handleBuyClick = (product) => {
-    // Aquí puedes realizar cualquier lógica adicional antes de agregar al carrito
-    dispatch(addToCart(product));
+    const maxStock = product.stock;
+    const productId = product.id; // Asumiendo que tu producto tiene un campo 'id'
+
+    const currentQuantity = selectedQuantities[productId] || 0;
+
+    if (currentQuantity < maxStock) {
+      const updatedQuantities = {
+        ...selectedQuantities,
+        [productId]: currentQuantity + 1,
+      };
+
+      // Actualizar el estado de las cantidades seleccionadas
+      setSelectedQuantities(updatedQuantities);
+
+      // Verificar si la cantidad seleccionada no supera el stock disponible
+      dispatch(addToCart({ ...product, quantity: currentQuantity + 1 }));
+      console.log("Producto agregado al carrito");
+    } else {
+      console.log("No hay suficiente stock para la cantidad seleccionada");
+    }
   };
   useEffect(() => {
     axios
