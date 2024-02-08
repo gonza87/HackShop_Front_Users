@@ -3,9 +3,93 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import Swal from "sweetalert2";
+import axios from "axios";
+//import Swal from "sweetalert2";
+
 import './Login.css';
 
 function Register(){
+    const apiUrl = "http://localhost:3000/users";
+   
+  
+    const [formData, setFormData] = useState({
+      firstName: "",
+      lastName: "",
+      email: "",
+      adress: "",
+      telephone: "",
+      password: "",
+    });
+  
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    };
+  
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      if (formData.password.length < 8 || formData.password.length > 20) {
+        Swal.fire({
+          text: "La contraseña debe tener entre 8 y 20 caracteres",
+          icon: "warning",
+        });
+        return;
+      }
+  
+      const userData = {
+        firstname: formData.firstName,
+        lastname: formData.lastName,
+        email: formData.email,
+        password: formData.password,
+        adress: formData.adress,
+        telephone: formData.telephone,
+      };
+  
+      if (
+        !formData.firstName ||
+        !formData.lastName ||
+        !formData.adress ||
+        !formData.email ||
+        !formData.password ||
+        !formData.telephone
+      ) {
+        Swal.fire({
+          text: "Complete all fields please",
+          icon: "warning",
+        });
+        return;
+      }
+  
+      axios
+        .post(apiUrl, userData)
+        .then((response) => {
+          console.log("Respuesta exitosa:", response.data);
+          //history.push("/login");
+        })
+        .catch((error) => {
+          console.error("Error al enviar datos:", error);
+          if (error.response && error.response.status === 409) {
+            Swal.fire({
+              text: "The username is already in use. Please choose another.",
+              icon: "error",
+            });
+          } else {
+            Swal.fire({
+              text: "There was an error creating the account. Please try again.",
+              icon: "error",
+            });
+          }
+        });
+    
+    
+};
+  
+
     return(
         <>  
            <div className="container-fluid">
@@ -14,19 +98,86 @@ function Register(){
                     <p className='textHackshop'>Hack Shop</p>
                     <p>Bienvenido</p>
                     <div className='d-flex align-items-center justify-content-center'>
-                        <Form className='formLogin mt-4'>
+                        <Form onSubmit={handleSubmit} className='formLogin mt-4'>
                             <Row>
                                 <Col>
-                                <Form.Label className='textCampoLogin'>Email Addres</Form.Label><span className='testRegistro'>Ya tenés cuenta? <Link to="/login">Inicia sesión</Link></span>
-                                
-                                <Form.Control type="email" placeholder="Escribí tu email acá"/>
+                                    <Form.Label className='textCampoLogin'>Email Addres</Form.Label><span className='testRegistro'>Ya tenés cuenta? <Link to="/login">Inicia sesión</Link></span>
+                                    <Form.Control 
+                                        type="email" 
+                                        name='email'
+                                        value={FormData.email}
+                                        placeholder="Escribí tu email acá"
+                                        onChange={handleChange}
+                                    />
                                 </Col>
                                 
                             </Row>
                             <Row>
                                 <Col>
                                 <Form.Label className='textCampoLogin mt-3'>Password</Form.Label>
-                                <Form.Control type='password' placeholder="Contraseña"/>
+                                <Form.Control 
+                                type='password' 
+                                name='password'
+                                value={FormData.password}
+                                placeholder="Escribí tu contraseña acá"
+                                 onChange={handleChange}
+                                />
+                               
+                                
+                                </Col>
+                                
+                            </Row>
+                            <Row>
+                                <Col>
+                                <Form.Label className='textCampoLogin mt-3'>Nombre</Form.Label>
+                                <Form.Control 
+                                type='text'
+                                name="firstName" 
+                                value={formData.firstName}
+                                placeholder="Escribí tu nombre acá"
+                                onChange={handleChange}
+
+                                />
+                                </Col>
+                                
+                            </Row>
+                            <Row>
+                                <Col>
+                                <Form.Label className='textCampoLogin mt-3'>Apellido</Form.Label>
+                                <Form.Control 
+                                type='text'
+                                name="lastName"
+                                value={formData.lastName} 
+                                placeholder="Escribí tu apellido acá"
+                                onChange={handleChange}
+
+                                />
+                                </Col>
+                                
+                            </Row>
+                            <Row>
+                                <Col>
+                                <Form.Label className='textCampoLogin mt-3'>Dirección</Form.Label>
+                                <Form.Control 
+                                type='text' 
+                                name="adress"
+                                value={formData.adress}
+                                placeholder="Escribí tu dirección acá"
+                                onChange={handleChange}
+                                />
+                                </Col>
+                                
+                            </Row>
+                            <Row>
+                                <Col>
+                                <Form.Label className='textCampoLogin mt-3'>Teléfono</Form.Label>
+                                <Form.Control 
+                                type='telephone'
+                                name="telephone"
+                                value={formData.telephone} 
+                                placeholder="Escribí tu teléfono acá"
+                                onChange={handleChange}
+                                />
                                 </Col>
                                 
                             </Row>
