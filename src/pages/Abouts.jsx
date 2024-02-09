@@ -16,7 +16,7 @@ import {
 import "@fortawesome/fontawesome-free/css/all.css";
 import NavbarComponent from "../components/Navbar";
 import Whatsapp from "../components/Whatsapp";
-import Footer from "../components/Footer";
+import FooterAbouts from "../components/FooterAbouts";
 import "./about.css";
 
 function Abouts() {
@@ -257,7 +257,7 @@ function Abouts() {
         </div>
       </div>
       <Whatsapp />
-      <Footer />
+      <FooterAbouts />
     </>
   );
 }
