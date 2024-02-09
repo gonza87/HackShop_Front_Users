@@ -1,10 +1,15 @@
 import Footer from "../components/Footer";
 import Whatsapp from "../components/Whatsapp";
+import {addToCart} from "../redux/carritoReducer"
 import NavbarComponent from "../components/Navbar";
-import AddToCart from "../components/AddToCart";
+import Button from 'react-bootstrap/Button';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import Swal from "sweetalert2";
+//import AddToCart from "../components/AddToCart";
 import Card from "react-bootstrap/Card";
 import { useState, useEffect } from "react";
-
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 //import NavbarAside from "../components/NavbarAside";
@@ -12,11 +17,70 @@ import axios from "axios";
 import "./description.css";
 
 function Description() {
+  
+  const [selectedQuantitiesDestacados, setSelectedQuantitiesDestacados] = useState({});
+  const dispatch = useDispatch();
   const { slug } = useParams();
   const [product, setProduct] = useState(null);
 
   const imgUrl = "http://localhost:3000/img/";
   const apiUrl = `http://localhost:3000/products/detail/${slug}`;
+
+
+  const handleBuyClickDescription = (product) => {
+    const maxStock = product.stock;
+    const productId = product.id; // Asumiendo que tu producto tiene un campo 'id'
+  
+    const currentQuantity = selectedQuantitiesDestacados[productId] || 0;
+  
+    if (currentQuantity < maxStock) {
+      const updatedQuantities = {
+        ...selectedQuantitiesDestacados,
+        [productId]: currentQuantity + 1,
+      };
+  
+      // Actualizar el estado de las cantidades seleccionadas
+      setSelectedQuantitiesDestacados(updatedQuantities);
+  
+      // Verificar si la cantidad seleccionada no supera el stock disponible
+      dispatch(addToCart({ ...product, quantity: currentQuantity + 1 }));
+      console.log("Producto agregado al carrito");
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Producto agregado exitosamente"
+      });
+    } else {
+      console.log("No hay suficiente stock para la cantidad seleccionada");
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "error",
+        title: "Stock no disponible"
+      });
+    }
+  };
+
+
 
   useEffect(() => {
     axios
@@ -71,7 +135,11 @@ function Description() {
                 {product.description}
                 <div>
                   <hr />
-                  <AddToCart />
+                  <Button onClick={() => handleBuyClickDescription(product)} variant="" style={{background: "#09072c", color: "#ffffff"}}>
+                        <FontAwesomeIcon icon={faShoppingCart} style={{ cursor: "pointer", marginRight:"5px" }}
+                        />Comprar
+                      </Button>
+                  {/* <AddToCart /> */}
                 </div>
               </div>
             </div>
