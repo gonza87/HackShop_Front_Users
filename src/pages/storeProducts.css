@@ -29,6 +29,10 @@ color: #09072c;
 .textTodosProductos{
     color: #09072c;
 }
+.my-custom-class {
+  margin-top: 50px; /* Aquí puedes ajustar el valor del margen superior según sea necesario */
+}
+
 
 @media (max-width: 992px) {
    

@@ -58,7 +58,10 @@ function Description() {
       });
       Toast.fire({
         icon: "success",
-        title: "Producto agregado exitosamente"
+        title: "Producto agregado exitosamente",
+         customClass: {
+          container: "my-custom-class", 
+        }
       });
     } else {
       console.log("No hay suficiente stock para la cantidad seleccionada");
@@ -75,7 +78,10 @@ function Description() {
       });
       Toast.fire({
         icon: "error",
-        title: "Stock no disponible"
+        title: "Stock no disponible",
+         customClass: {
+          container: "my-custom-class", 
+        }
       });
     }
   };
