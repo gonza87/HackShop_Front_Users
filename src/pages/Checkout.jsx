@@ -68,7 +68,8 @@ function Checkout() {
   
     const checkoutData = {
       userid: token.userid,
-      carrito: {carrito}
+      carrito: {carrito},
+      totalPrice: calcularTotal().toFixed(2),
   
     };
   
