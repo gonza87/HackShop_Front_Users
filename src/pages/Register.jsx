@@ -38,7 +38,7 @@ function Register(){
       if (formData.password.length < 8 || formData.password.length > 20) {
         Swal.fire({
           text: "La contraseña debe tener entre 8 y 20 caracteres",
-          icon: "warning",
+          icon: "advertencia",
         });
         return;
       }
@@ -61,8 +61,8 @@ function Register(){
         !formData.telephone
       ) {
         Swal.fire({
-          text: "Complete all fields please",
-          icon: "warning",
+          text: "Complete todos los campos por favor",
+          icon: "advertencia",
         });
         return;
       }
@@ -78,12 +78,12 @@ function Register(){
           console.error("Error al enviar datos:", error);
           if (error.response && error.response.status === 409) {
             Swal.fire({
-              text: "The username is already in use. Please choose another.",
+              text: "El nombre de usuario ya está en uso. Por favor, elija otro.",
               icon: "error",
             });
           } else {
             Swal.fire({
-              text: "There was an error creating the account. Please try again.",
+              text: "Hubo un error al crear la cuenta. Inténtalo de nuevo.",
               icon: "error",
             });
           }

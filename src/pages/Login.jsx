@@ -36,8 +36,8 @@ function Login(){
         // Validación básica en el cliente
         if (!loginData.email || !loginData.password) {
           Swal.fire({
-            text: "Complete all fields please",
-            icon: "warning",
+            text: "Complete todos los campos por favor",
+            icon: "advertencia",
           });
           return;
         }

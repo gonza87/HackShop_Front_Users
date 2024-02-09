@@ -10,7 +10,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import ProductCountSelector from "../components/ProductCountSelector";
+
 import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -62,7 +62,7 @@ function StoreProducts() {
         toast: true,
         position: "top-end",
         showConfirmButton: false,
-        timer: 3000,
+        timer: 1500,
         timerProgressBar: true,
         didOpen: (toast) => {
           toast.onmouseenter = Swal.stopTimer;
@@ -79,7 +79,7 @@ function StoreProducts() {
         toast: true,
         position: "top-end",
         showConfirmButton: false,
-        timer: 3000,
+        timer: 1500,
         timerProgressBar: true,
         didOpen: (toast) => {
           toast.onmouseenter = Swal.stopTimer;
@@ -156,7 +156,7 @@ function StoreProducts() {
                     <Dropdown.Item eventKey="todos">Todos</Dropdown.Item>
                   </DropdownButton>
                   <div className="col-4 d-flex justify-content-end mt-2">
-                    {/* <ProductCountSelector /> */}
+                    
                   </div>
                 </div>
 

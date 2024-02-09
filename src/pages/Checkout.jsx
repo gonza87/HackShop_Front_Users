@@ -78,17 +78,17 @@ function Checkout() {
       .then((response) => {
         console.log("Respuesta exitosa:", response.data);
         Swal.fire({
-          title: "Are you sure?",
-          text: "You won't be able to revert this!",
+          title: "Estas seguro",
+          text: "¡Acción irreversible!",
           icon: "warning",
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, delete it!"
+          confirmButtonText: "Si, confirmo la orden!"
         }).then((result) => {
           if (result.isConfirmed) {
             Swal.fire({
-              title: "Deleted!",
+              title: "Finalizado",
               text: "Tu pedido será entregado en las próximas 48 hrs",
               icon: "success"
             });
