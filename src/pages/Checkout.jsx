@@ -88,10 +88,13 @@ function Checkout() {
         }).then((result) => {
           if (result.isConfirmed) {
             Swal.fire({
-              title: "Finalizado",
-              text: "Tu pedido será entregado en las próximas 48 hrs",
-              icon: "success"
-            });
+    title: "Finalizado",
+    text: "Tu pedido será entregado en las próximas 48 hrs",
+    iconHtml: '<img src="/public/gifCarrito/icons8-enviado.gif">',
+    showConfirmButton: false, // Si no deseas mostrar el botón de confirmación
+    timer: 2000 // Puedes configurar el temporizador para cerrar automáticamente el diálogo
+});
+
             dispatch(resetearCarrito());
             navigate("/");
           }

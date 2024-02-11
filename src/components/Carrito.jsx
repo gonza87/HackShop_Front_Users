@@ -8,14 +8,17 @@ import { BsXCircle } from "react-icons/bs";
 import { IoMdAdd } from "react-icons/io";
 import { RiSubtractLine } from "react-icons/ri";
 import React from "react";
-import { addToCart, decrementarCantidad, eliminarProducto } from "../redux/carritoReducer";
-import { setUser } from "../redux/userReducer"; 
+import {
+  addToCart,
+  decrementarCantidad,
+  eliminarProducto,
+} from "../redux/carritoReducer";
+import { setUser } from "../redux/userReducer";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import "./carrito.css";
-
 
 function Carrito() {
   const navigate = useNavigate();
@@ -34,22 +37,23 @@ function Carrito() {
     }
   };
   const incrementarCantidadHandler = (product) => {
-    dispatch(addToCart(product));  // Utiliza la acción addToCart para aumentar la cantidad
+    dispatch(addToCart(product)); // Utiliza la acción addToCart para aumentar la cantidad
   };
 
   // Calcula el total sumando los precios de todos los productos en el carrito
   const calcularTotal = () => {
-    return carrito.reduce((total, product) => total + product.price * product.cantidad, 0);
+    return carrito.reduce(
+      (total, product) => total + product.price * product.cantidad,
+      0
+    );
   };
 
   const handleCompra = () => {
-    if (token !== null){
+    if (token !== null) {
       navigate("/checkout");
-    }
-    else{
+    } else {
       navigate("/login");
     }
-
   };
 
   return (
@@ -76,66 +80,82 @@ function Carrito() {
         </Offcanvas.Header>
 
         <Offcanvas.Body>
-         
-
           <div className="row">
-           {(carrito.length===0)&&(<p> Carrito Vacio</p>)}
+            <div
+              style={{
+                display: carrito.length === 0 ? "block" : "none",
+                textAlign: "center",
+              }}
+            >
+              <img
+                className="gifCarrito"
+                src="/public/gifCarrito/icons8-comprar.gif"
+                alt="Carrito Vacío GIF"
+              />
+              {carrito.length === 0 && (
+                <h4 className="carritoVAcio">Carrito Vacío</h4>
+              )}
+            </div>
+
             {carrito.map((product, index) => (
-             
-            <div className="col-12" key={index}>
-              <div className="row">
-                <div className="col-6 d-flex align-items-center">
-                  <img
-                    className="imgCarrito"
-                    src={`${imgUrl}${product.photo}`}
-                    alt="img producto"
-                  />
-                  <p className="testTituloItem">{product.name} </p>
-                </div>
-                <div className="col-3 d-flex align-items-center">
-                  <IoMdAdd
-                    style={{
-                      fontSize: "1.5rem",
-                      cursor: "pointer",
-                      color: "#09072c",
-                      marginLeft: "50px",
-                    }}
-                    onClick={() => incrementarCantidadHandler(product)}
-                  />
-                  <span className="cantporItem">{product.cantidad}</span>
-                  <RiSubtractLine
-                    style={{
-                      fontSize: "1.5rem",
-                      cursor: "pointer",
-                      color: "#09072c",
-                    }}
-                    onClick={() => decrementarCantidadHandler(product)}
-                  />
-                </div>
-                <div className="col-3 d-flex align-items-center">
-                  <span className="precioItem">US${product.price * product.cantidad}</span>
+              <div className="col-12" key={index}>
+                <div className="row">
+                  <div className="col-6 d-flex align-items-center">
+                    <img
+                      className="imgCarrito"
+                      src={`${imgUrl}${product.photo}`}
+                      alt="img producto"
+                    />
+                    <p className="testTituloItem">{product.name} </p>
+                  </div>
+                  <div className="col-3 d-flex align-items-center">
+                    <IoMdAdd
+                      style={{
+                        fontSize: "1.5rem",
+                        cursor: "pointer",
+                        color: "#09072c",
+                        marginLeft: "50px",
+                      }}
+                      onClick={() => incrementarCantidadHandler(product)}
+                    />
+                    <span className="cantporItem">{product.cantidad}</span>
+                    <RiSubtractLine
+                      style={{
+                        fontSize: "1.5rem",
+                        cursor: "pointer",
+                        color: "#09072c",
+                      }}
+                      onClick={() => decrementarCantidadHandler(product)}
+                    />
+                  </div>
+                  <div className="col-3 d-flex align-items-center">
+                    <span className="precioItem">
+                      US${product.price * product.cantidad}
+                    </span>
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+          {carrito.length !== 0 && (
+            <div className="row">
+              <div className="col-9 d-flex align-items-center pt-3">
+                {" "}
+                <p className="textresumencarro">
+                  Total <span>{calcularTotal()}</span>
+                </p>
+              </div>
+              <div className="col-3 d-flex align-items-center">
+                <Button
+                  onClick={handleCompra}
+                  className="btnCompraCarrito"
+                  style={{ background: "#09072c", color: "#ffffff" }}
+                >
+                  Comprar
+                </Button>
+              </div>
             </div>
-            ))} 
-          </div>
-          {(carrito.length !== 0)&&(
-          <div className="row">
-            <div className="col-9 d-flex align-items-center pt-3">  <p className="textresumencarro">
-              Total <span>{calcularTotal()}</span>
-            </p></div>
-            <div className="col-3 d-flex align-items-center">
-              <Button
-              onClick={handleCompra}
-              className="btnCompraCarrito"
-              style={{ background: "#09072c", color: "#ffffff" }}
-              
-            >
-              Comprar
-            </Button></div>
-          </div>
           )}
-         
         </Offcanvas.Body>
       </Offcanvas>
     </>
