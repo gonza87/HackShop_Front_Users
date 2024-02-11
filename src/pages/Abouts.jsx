@@ -37,9 +37,9 @@ function Abouts() {
               <h3>
                 El presente sitio de e-commerce es un
                 proyecto desarrollado por estudiantes del Curso Avanzado de Desarrollo Web Full Stack de
-                Hack Academy. El Curso Avanzado de Desarrollo Web Full Stack es un programa educativo
+                Hack Academy. El Curso Avanzado Full Stack es un programa educativo
                 extremadamente práctico de 8 meses y part-time, donde los
-                estudiantes invierten más de 600 horas a aprender sobre Node.js,
+                estudiantes invierten más de 350 horas a aprender sobre Node.js,
                 Express, React.js, SQL, MongoDB y Git.
               </h3>
             </div>
@@ -63,7 +63,7 @@ function Abouts() {
                   <Card.Title>Duración </Card.Title>
                   <Card.Text>
                     El proyecto fue desarrollado en 6 semanas, durante
-                    enero y febrero del 2023. El mismo se dividió en 3 sprints (Scrum) de
+                    enero y febrero del 2024. El mismo se dividió en 3 sprints (Scrum) de
                     dos semanas de duración.
                   </Card.Text>
                 </Card.Body>
@@ -82,7 +82,7 @@ function Abouts() {
                   <FontAwesomeIcon icon={faCode} />
                   <Card.Title>Tecnologías</Card.Title>
                   <Card.Text>
-                   Para el Front-End del sitio se desarrolló una aplicación en React (usando Create-React-App) mientras que para el Back-End se desarrolló una REST API hecha con Node.js, Express, SQL y Git/GitHub.
+                   Para el Front-End del sitio se desarrolló una aplicación en React tanto para front de usuarios como para administradores (usando Create-React-App) mientras que para el Back-End se desarrolló una REST API hecha con Node.js, Express, SQL y Git/GitHub.
                   </Card.Text>
                 </Card.Body>
               </Card>
