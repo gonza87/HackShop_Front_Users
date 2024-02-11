@@ -9,7 +9,7 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 //import Swal from "sweetalert2";
 
-import './Login.css';
+import './register.css';
 
 function Register(){
     const navigate = useNavigate();
@@ -98,8 +98,8 @@ function Register(){
            <div className="container-fluid">
             <div className="row flex-column-reverse flex-md-row">
                 <div className="col-md-6 loginIzquierda">
-                    <p className='textHackshop'>Hack Shop</p>
-                    <p>Bienvenido</p>
+                    <p className='textHackshop'> Bienvenidos a Hack Shop</p>
+                    {/* <p>Bienvenidos</p> */}
                     <div className='d-flex align-items-center justify-content-center'>
                         <Form onSubmit={handleSubmit} className='formLogin mt-4'>
                             <Row>
@@ -207,9 +207,9 @@ function Register(){
                     </div>
                     
                 </div>
-                <div className="col-md-6 loginDerecha">
+                <div className="col-md-6 loginDerecha " >
             <Link to="/">
-              <img src="/public/logo2.png" alt="" className="logoLogin" />
+              <img src="/public/logo2.png"  alt="" className="logoLogin" />
             </Link>
           </div>
             </div>

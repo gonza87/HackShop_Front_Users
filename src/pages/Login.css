@@ -74,7 +74,7 @@
         padding-left:20px;
     }
     
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
     
         .loginDerecha {
             height: 200px;
@@ -90,4 +90,4 @@
             position: absolute;
             top: 120px;
         }
-}
+} */
