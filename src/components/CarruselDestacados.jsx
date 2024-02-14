@@ -18,6 +18,8 @@ import "./CarruselDestacados.css";
 
 function CarruselDestacados() {
   const [isLoading, setIsLoading] = useState(true);
+  const [loadingDuration, setLoadingDuration] = useState(3000); // Duración predeterminada de la carga del esqueleto
+
   const [selectedQuantitiesDestacados, setSelectedQuantitiesDestacados] =
     useState({});
   const dispatch = useDispatch();
@@ -32,7 +34,9 @@ function CarruselDestacados() {
       .get(apiUrl)
       .then((response) => {
         setProductsDestacados(response.data);
-        setIsLoading(false); // Establecer isLoading en false cuando los datos se cargan
+        setTimeout(() => {
+          setIsLoading(false);
+        }, loadingDuration); // Establecer isLoading en false después de la duración especificada
       })
       .catch((error) => {
         console.error("Error en la solicitud:", error.message);
@@ -115,7 +119,7 @@ function CarruselDestacados() {
                       <Card style={{ width: "14rem" }}>
                         <Skeleton variant="rect" height={300} />
                         <Card.Title className="productDescription">
-                          <Skeleton count={2} />
+                          <Skeleton count={2}/>
                         </Card.Title>
                         <Card.Text className="productDescription"></Card.Text>
                         <Card.Title className="productDescription"></Card.Title>
@@ -201,6 +205,7 @@ function CarruselDestacados() {
 }
 
 export default CarruselDestacados;
+
 
 ///original antes de skeleton///
 
