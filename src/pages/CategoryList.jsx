@@ -13,7 +13,8 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2"; // Importa SweetAlert2 para mostrar notificaciones
+import Swal from "sweetalert2";
+import Skeleton from "react-loading-skeleton";
 import "animate.css";
 import "./CategoryList.css";
 
@@ -22,6 +23,7 @@ function CategoryList() {
   const imgUrl = "http://localhost:3000/img/";
   const apiUrl = "http://localhost:3000/category";
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true); // Estado para controlar la carga de datos
   const dispatch = useDispatch();
   const [selectedQuantities, setSelectedQuantities] = useState({});
 
@@ -41,16 +43,19 @@ function CategoryList() {
       .get(`${apiUrl}/${categoryName}`)
       .then((response) => {
         setProducts(response.data);
+
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 3000); // Una vez que se obtienen los datos, se marca como no cargando
       })
       .catch((error) => {
         console.error("Error en la solicitud:", error.message);
       });
   }, []);
-  console.log(products);
 
   const handleAddToCart = (product) => {
     const maxStock = product.stock;
-    const productId = product.id; // Asumiendo que tu producto tiene un campo 'id'
+    const productId = product.id;
 
     const currentQuantity = selectedQuantities[productId] || 0;
 
@@ -60,10 +65,8 @@ function CategoryList() {
         [productId]: currentQuantity + 1,
       };
 
-      // Actualizar el estado de las cantidades seleccionadas
       setSelectedQuantities(updatedQuantities);
 
-      // Verificar si la cantidad seleccionada no supera el stock disponible
       dispatch(addToCart({ ...product, quantity: currentQuantity + 1 }));
       console.log("Producto agregado al carrito");
       const Toast = Swal.mixin({
@@ -147,61 +150,77 @@ function CategoryList() {
                     <Dropdown.Divider />
                     <Dropdown.Item eventKey="todos">Todos</Dropdown.Item>
                   </DropdownButton>
-                  <div className="col-4 d-flex justify-content-end mt-2">
-                    {/* <ProductCountSelector /> */}
-                  </div>
+                  <div className="col-4 d-flex justify-content-end mt-2"></div>
                 </div>
                 <div className="col-12 d-flex flex-wrap">
-                  {products.map((product, index) => (
-                    <Card
-                      key={index}
-                      style={{ width: "15rem" }}
-                      className="m-1 cardTodosMia"
-                    >
-                      <Link to={`/products/detail/${product.slug}`}>
-                        {product.featured && (
-                          <button
-                            type="button"
-                            className="btn btn-warning m-auto animate__animated animate__infinite infinite animate__swing fw-bold"
-                            style={{
-                              position: "absolute",
-                              top: "0",
-                              left: "30%",
-                            }}
-                          >
-                            En Oferta
-                          </button>
-                        )}
-                        <Card.Img
-                          variant="top"
-                          src={`${imgUrl}${product.photo}`}
-                          className="imgListCat"
-                        />
-                      </Link>
-                      <Card.Body>
-                        <Card.Title className="productDescription">
-                          {product.name}
-                        </Card.Title>
-                        <Card.Text className="productDescription">
-                          {product.description}
-                        </Card.Text>
-                        <Card.Title className="productDescription">
-                          ${product.price}
-                        </Card.Title>
-                        <Button
-                          onClick={() => handleAddToCart(product)}
-                          variant=""
-                          style={{ background: "#09072c", color: "#ffffff" }}
+                  {isLoading // Renderizar Skeletons mientras se cargan los datos
+                    ? Array.from({ length: 5 }).map((_, index) => (
+                        <Card
+                          key={index}
+                          style={{ width: "15rem" }}
+                          className="m-1 cardTodosMia"
                         >
-                          <FontAwesomeIcon
-                            icon={faShoppingCart}
-                            style={{ cursor: "pointer", marginRight: "5px" }}
-                          />
-                          Comprar
-                        </Button>
-                      </Card.Body>
-                    </Card>
-                  ))}
+                          <Skeleton height={238} width={220} />
+                          <Skeleton count={2} width={120} />
+                          <Skeleton count={2} width={80} />
+                        </Card>
+                      ))
+                    : products.map((product, index) => (
+                        <Card
+                          key={index}
+                          style={{ width: "15rem" }}
+                          className="m-1 cardTodosMia"
+                        >
+                          <Link to={`/products/detail/${product.slug}`}>
+                            {product.featured && (
+                              <button
+                                type="button"
+                                className="btn btn-warning m-auto animate__animated animate__infinite infinite animate__swing fw-bold"
+                                style={{
+                                  position: "absolute",
+                                  top: "0",
+                                  left: "30%",
+                                }}
+                              >
+                                En Oferta
+                              </button>
+                            )}
+                            <Card.Img
+                              variant="top"
+                              src={`${imgUrl}${product.photo}`}
+                              className="imgListCat"
+                            />
+                          </Link>
+                          <Card.Body>
+                            <Card.Title className="productDescription">
+                              {product.name}
+                            </Card.Title>
+                            <Card.Text className="productDescription">
+                              {product.description}
+                            </Card.Text>
+                            <Card.Title className="productDescription">
+                              ${product.price}
+                            </Card.Title>
+                            <Button
+                              onClick={() => handleAddToCart(product)}
+                              variant=""
+                              style={{
+                                background: "#09072c",
+                                color: "#ffffff",
+                              }}
+                            >
+                              <FontAwesomeIcon
+                                icon={faShoppingCart}
+                                style={{
+                                  cursor: "pointer",
+                                  marginRight: "5px",
+                                }}
+                              />
+                              Comprar
+                            </Button>
+                          </Card.Body>
+                        </Card>
+                      ))}
                 </div>
               </div>
             </div>

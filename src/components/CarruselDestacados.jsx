@@ -117,9 +117,25 @@ function CarruselDestacados() {
                   <div className="col-3 " key={index}>
                     <Card.Body>
                       <Card style={{ width: "14rem" }}>
-                        <Skeleton variant="rect" height={300} />
+                        <Skeleton variant="rect" height={260} />
                         <Card.Title className="productDescription">
-                          <Skeleton count={2} />
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <Skeleton count={2} width={120} />
+                          </div>
+
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <Skeleton count={2} width={80} />
+                          </div>
                         </Card.Title>
                         <Card.Text className="productDescription"></Card.Text>
                         <Card.Title className="productDescription"></Card.Title>

@@ -102,28 +102,43 @@ function StoreProducts() {
                   </h2>
                 </div>
                 {isLoading ? (
-                <div className="col-12 d-flex flex-wrap">
-                   <>
-                    {Array(27)
-                      .fill(undefined)
-                      .map((_, index) => (
-                        <div className="col-2.4" key={index}>   {/* ver este skeleton */}
-                          <Card.Body>
-                            <Card style={{ width: "15rem" }}>
-                              <Skeleton variant="rect" height={300} />
-                              <Card.Title className="productDescription">
-                                <Skeleton count={2} />
-                              </Card.Title>
-                              <Card.Text className="productDescription" />
-                              <Card.Title className="productDescription" />
-                            </Card>
-                          </Card.Body>
-                        </div>
-                      ))}
-                  </>
-                </div>
-                
-                 
+                  <div className="col-12 d-flex flex-wrap">
+                    <>
+                      {Array(27)
+                        .fill(undefined)
+                        .map((_, index) => (
+                          <div className="col-2.4" key={index}>
+                            {" "}
+                            {/* ver este skeleton */}
+                            <Card.Body>
+                              <Card style={{ width: "15rem" }}>
+                                <Skeleton variant="rect" height={260} />
+                                <Card.Title className="productDescription">
+                                  <div
+                                    style={{
+                                      display: "flex",
+                                      justifyContent: "center",
+                                    }}
+                                  >
+                                    <Skeleton count={2} width={120} />
+                                  </div>
+                                  <div
+                                    style={{
+                                      display: "flex",
+                                      justifyContent: "center",
+                                    }}
+                                  >
+                                    <Skeleton count={2} width={80} />
+                                  </div>
+                                </Card.Title>
+                                <Card.Text className="productDescription" />
+                                <Card.Title className="productDescription" />
+                              </Card>
+                            </Card.Body>
+                          </div>
+                        ))}
+                    </>
+                  </div>
                 ) : (
                   <>
                     <div className="col-4 d-flex justify-content-end">

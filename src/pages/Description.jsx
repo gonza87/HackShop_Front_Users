@@ -16,7 +16,8 @@ import "./description.css";
 
 function Description() {
   const [isLoading, setIsLoading] = useState(true);
-  const [selectedQuantitiesDestacados, setSelectedQuantitiesDestacados] = useState({});
+  const [selectedQuantitiesDestacados, setSelectedQuantitiesDestacados] =
+    useState({});
   const dispatch = useDispatch();
   const { slug } = useParams();
   const [product, setProduct] = useState(null);
@@ -103,11 +104,14 @@ function Description() {
             </div>
             {isLoading ? (
               <div className="col-8">
-                 <Skeleton width={560} height={640} />
+                <Skeleton width={560} height={640} />
               </div>
             ) : (
               <div className="col-8">
-                <Card style={{ width: "50rem", height: "40rem", border: "none" }} className="m-1">
+                <Card
+                  style={{ width: "50rem", height: "40rem", border: "none" }}
+                  className="m-1"
+                >
                   <Card.Img
                     variant="top"
                     src={`${imgUrl}${product.photo}`}
@@ -119,7 +123,7 @@ function Description() {
             )}
             <div className="col-12 col-md-4 contenido">
               {isLoading ? (
-                <Skeleton count={3} />
+                <Skeleton count={1} width={200} height={30} />
               ) : (
                 <div className="description">
                   <h2>{product.name}</h2>
@@ -134,7 +138,7 @@ function Description() {
                 </div>
               )}
               {isLoading ? (
-                <Skeleton count={4} />
+                <Skeleton count={4} width={300} />
               ) : (
                 <div className="caracteristicas">
                   {product.description}
@@ -165,4 +169,3 @@ function Description() {
 }
 
 export default Description;
-
