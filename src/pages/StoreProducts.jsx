@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import NavbarComponent from "../components/Navbar";
 import Footer from "../components/Footer";
 import Whatsapp from "../components/Whatsapp";
