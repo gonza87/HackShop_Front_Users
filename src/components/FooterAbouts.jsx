@@ -4,17 +4,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import {
   faSquareFacebook,
-  faInstagram,  
+  faInstagram,
   faXTwitter,
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 import "@fortawesome/fontawesome-free/css/all.css";
 
-function FooterAbouts () {
+function FooterAbouts() {
   return (
     <>
       <div className="padding-footer">
-        
         <footer className="footer-color py-4">
           <div className="container footer">
             <div className="row">
@@ -77,21 +76,27 @@ function FooterAbouts () {
                   </a>
                 </div>
                 <div>
-                    <h3 className="news">NEWSLETTER</h3>
-                    <p>Suscribete para recibir novedades en tu e-mail</p>
-                </div>                
+                  <h3 className="news">NEWSLETTER</h3>
+                  <p>Suscribete para recibir novedades en tu e-mail</p>
+                </div>
                 <div>
-                    <input className= "input" type="email" placeholder="Ingresa tu e-mail" />
-                    <button className= "button" type="button">Suscribirme</button>
+                  <input
+                    className="input"
+                    type="email"
+                    placeholder="Ingresa tu e-mail"
+                  />
+                  <button className="button" type="button">
+                    Suscribirme
+                  </button>
                 </div>
               </div>
             </div>
           </div>
           <div className="container">
-          <hr />
-          <div className="HackShop2024">
-            <p>HackShop 2024</p>
-          </div>
+            <hr />
+            <div className="HackShop2024">
+              <p>HackShop 2024</p>
+            </div>
           </div>
         </footer>
       </div>

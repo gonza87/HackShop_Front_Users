@@ -105,8 +105,6 @@ function Carrusel(){
 export default Carrusel; */
 
 import Carousel from "react-bootstrap/Carousel";
-;
-
 import "./carrusel.css";
 
 function Carrusel() {

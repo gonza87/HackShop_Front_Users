@@ -4,18 +4,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import {
   faSquareFacebook,
-  faInstagram,  
+  faInstagram,
   faXTwitter,
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 import "@fortawesome/fontawesome-free/css/all.css";
 
-function Footer () {
+function Footer() {
   return (
     <>
       <div className="padding-footer">
-         <img src="/public/gifCarrito/icons8-intercambio-de-tarjetas.gif" alt="" className="metodos" />
-          <img src="/public/logosNavAside/Metodos_Tarjetas.png" alt="" className="metodos" />
+        <img
+          src="/public/gifCarrito/icons8-intercambio-de-tarjetas.gif"
+          alt=""
+          className="metodos"
+        />
+        <img
+          src="/public/logosNavAside/Metodos_Tarjetas.png"
+          alt=""
+          className="metodos"
+        />
         <footer className="footer-color py-4">
           <div className="container footer">
             <div className="row">
@@ -78,21 +86,27 @@ function Footer () {
                   </a>
                 </div>
                 <div>
-                    <h3 className="news">NEWSLETTER</h3>
-                    <p>Suscribete para recibir novedades en tu e-mail</p>
-                </div>                
+                  <h3 className="news">NEWSLETTER</h3>
+                  <p>Suscribete para recibir novedades en tu e-mail</p>
+                </div>
                 <div>
-                    <input className= "input" type="email" placeholder="Ingresa tu e-mail" />
-                    <button className= "button" type="button">Suscribirme</button>
+                  <input
+                    className="input"
+                    type="email"
+                    placeholder="Ingresa tu e-mail"
+                  />
+                  <button className="button" type="button">
+                    Suscribirme
+                  </button>
                 </div>
               </div>
             </div>
           </div>
           <div className="container">
-          <hr />
-          <div className="HackShop2024">
-            <p>HackShop 2024</p>
-          </div>
+            <hr />
+            <div className="HackShop2024">
+              <p>HackShop 2024</p>
+            </div>
           </div>
         </footer>
       </div>

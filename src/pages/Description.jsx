@@ -1,8 +1,8 @@
 import Footer from "../components/Footer";
 import Whatsapp from "../components/Whatsapp";
-import {addToCart} from "../redux/carritoReducer"
+import { addToCart } from "../redux/carritoReducer";
 import NavbarComponent from "../components/Navbar";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
@@ -17,8 +17,8 @@ import axios from "axios";
 import "./description.css";
 
 function Description() {
-  
-  const [selectedQuantitiesDestacados, setSelectedQuantitiesDestacados] = useState({});
+  const [selectedQuantitiesDestacados, setSelectedQuantitiesDestacados] =
+    useState({});
   const dispatch = useDispatch();
   const { slug } = useParams();
   const [product, setProduct] = useState(null);
@@ -26,22 +26,21 @@ function Description() {
   const imgUrl = "http://localhost:3000/img/";
   const apiUrl = `http://localhost:3000/products/detail/${slug}`;
 
-
   const handleBuyClickDescription = (product) => {
     const maxStock = product.stock;
     const productId = product.id; // Asumiendo que tu producto tiene un campo 'id'
-  
+
     const currentQuantity = selectedQuantitiesDestacados[productId] || 0;
-  
+
     if (currentQuantity < maxStock) {
       const updatedQuantities = {
         ...selectedQuantitiesDestacados,
         [productId]: currentQuantity + 1,
       };
-  
+
       // Actualizar el estado de las cantidades seleccionadas
       setSelectedQuantitiesDestacados(updatedQuantities);
-  
+
       // Verificar si la cantidad seleccionada no supera el stock disponible
       dispatch(addToCart({ ...product, quantity: currentQuantity + 1 }));
       console.log("Producto agregado al carrito");
@@ -54,14 +53,14 @@ function Description() {
         didOpen: (toast) => {
           toast.onmouseenter = Swal.stopTimer;
           toast.onmouseleave = Swal.resumeTimer;
-        }
+        },
       });
       Toast.fire({
         icon: "success",
         title: "Producto agregado exitosamente",
-         customClass: {
-          container: "my-custom-class", 
-        }
+        customClass: {
+          container: "my-custom-class",
+        },
       });
     } else {
       console.log("No hay suficiente stock para la cantidad seleccionada");
@@ -74,19 +73,17 @@ function Description() {
         didOpen: (toast) => {
           toast.onmouseenter = Swal.stopTimer;
           toast.onmouseleave = Swal.resumeTimer;
-        }
+        },
       });
       Toast.fire({
         icon: "error",
         title: "Stock no disponible",
-         customClass: {
-          container: "my-custom-class", 
-        }
+        customClass: {
+          container: "my-custom-class",
+        },
       });
     }
   };
-
-
 
   useEffect(() => {
     axios
@@ -110,7 +107,10 @@ function Description() {
               {/* <NavbarAside /> */}
             </div>
             <div className="col-8">
-              <Card style={{ width: "50rem", height: "40rem", border:"none" }} className="m-1">
+              <Card
+                style={{ width: "50rem", height: "40rem", border: "none" }}
+                className="m-1"
+              >
                 <Card.Img
                   variant="top"
                   src={`${imgUrl}${product.photo}`}
@@ -141,10 +141,17 @@ function Description() {
                 {product.description}
                 <div>
                   <hr />
-                  <Button onClick={() => handleBuyClickDescription(product)} variant="" style={{background: "#09072c", color: "#ffffff"}}>
-                        <FontAwesomeIcon icon={faShoppingCart} style={{ cursor: "pointer", marginRight:"5px" }}
-                        />Comprar
-                      </Button>
+                  <Button
+                    onClick={() => handleBuyClickDescription(product)}
+                    variant=""
+                    style={{ background: "#09072c", color: "#ffffff" }}
+                  >
+                    <FontAwesomeIcon
+                      icon={faShoppingCart}
+                      style={{ cursor: "pointer", marginRight: "5px" }}
+                    />
+                    Comprar
+                  </Button>
                   {/* <AddToCart /> */}
                 </div>
               </div>

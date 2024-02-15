@@ -1,6 +1,6 @@
 import Home from "./pages/Home";
 import { Routes, Route, Navigate, Outlet } from "react-router-dom";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 import Abouts from "./pages/Abouts";
 import CategoryList from "./pages/CategoryList";
 import Description from "./pages/Description";
@@ -11,7 +11,7 @@ import Checkout from "./pages/Checkout";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./App.css";
 
-const ProtectedRoute = ({ user, redirectPath = '/login' }) => {
+const ProtectedRoute = ({ user, redirectPath = "/login" }) => {
   if (!user) {
     return <Navigate to={redirectPath} replace />;
   }
@@ -24,7 +24,6 @@ function App() {
   return (
     <>
       <Routes>
-        
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<Abouts />} />
         <Route path="/category/:categoryName" element={<CategoryList />} />

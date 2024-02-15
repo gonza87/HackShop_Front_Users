@@ -4,11 +4,10 @@ import Whatsapp from "../components/Whatsapp";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import {resetearCarrito} from "../redux/carritoReducer"
-import { useNavigate } from 'react-router-dom';
+import { resetearCarrito } from "../redux/carritoReducer";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
-
 
 import "./checkout.css";
 
@@ -17,10 +16,9 @@ function Checkout() {
   const navigate = useNavigate();
   const carrito = useSelector((state) => state.carrito);
   const token = useSelector((state) => state.user);
-  console.log(carrito)
-  console.log(token.userid)
-  console.log(token.token)
-
+  console.log(carrito);
+  console.log(token.userid);
+  console.log(token.token);
 
   const [email, setEmail] = useState("");
   const [shippingInfo, setShippingInfo] = useState({
@@ -31,7 +29,7 @@ function Checkout() {
     country: "",
     stateProvince: "",
     postalCode: "",
-    phone: ""
+    phone: "",
   });
   const [paymentMethod, setPaymentMethod] = useState("");
   const [cardNumber, setCardNumber] = useState("");
@@ -39,8 +37,8 @@ function Checkout() {
   const [expirationDate, setExpirationDate] = useState("");
   const [cvc, setCvc] = useState("");
 
-   // Función para calcular el total de los precios en el carrito, considerando la cantidad
-   const calcularTotal = () => {
+  // Función para calcular el total de los precios en el carrito, considerando la cantidad
+  const calcularTotal = () => {
     return carrito.reduce((total, producto) => {
       // Asumiendo que cada producto tiene propiedades 'precio' y 'cantidad'
       return total + producto.price * producto.cantidad;
@@ -57,7 +55,7 @@ function Checkout() {
   };
 
   const handleConfirmOrder = () => {
-    console.log("va axios")
+    console.log("va axios");
     const apiUrl = "http://localhost:3000/orders";
     const config = {
       headers: {
@@ -65,16 +63,15 @@ function Checkout() {
         "Content-Type": "application/json", // Puedes ajustar el tipo de contenido según las necesidades de tu API
       },
     };
-  
+
     const checkoutData = {
       userid: token.userid,
-      carrito: {carrito},
+      carrito: { carrito },
       totalPrice: calcularTotal().toFixed(2),
-  
     };
-  
+
     axios
-    .post(apiUrl, checkoutData, config )
+      .post(apiUrl, checkoutData, config)
       .then((response) => {
         console.log("Respuesta exitosa:", response.data);
         Swal.fire({
@@ -84,16 +81,16 @@ function Checkout() {
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#d33",
-          confirmButtonText: "Si, confirmo la orden!"
+          confirmButtonText: "Si, confirmo la orden!",
         }).then((result) => {
           if (result.isConfirmed) {
             Swal.fire({
-    title: "Finalizado",
-    text: "Tu pedido será entregado en las próximas 48 hrs",
-    iconHtml: '<img src="/public/gifCarrito/icons8-enviado.gif">',
-    showConfirmButton: false, // Si no deseas mostrar el botón de confirmación
-    timer: 2000 // Puedes configurar el temporizador para cerrar automáticamente el diálogo
-});
+              title: "Finalizado",
+              text: "Tu pedido será entregado en las próximas 48 hrs",
+              iconHtml: '<img src="/public/gifCarrito/icons8-enviado.gif">',
+              showConfirmButton: false, // Si no deseas mostrar el botón de confirmación
+              timer: 2000, // Puedes configurar el temporizador para cerrar automáticamente el diálogo
+            });
 
             dispatch(resetearCarrito());
             navigate("/");
@@ -115,17 +112,19 @@ function Checkout() {
         //     Swal.fire("Changes are not saved", "", "info");
         //   }
         // });
-        
       })
       .catch((error) => {
         console.error("Error al enviar datos:", error);
-        if (error.response && error.response.data && error.response.data.error) {
+        if (
+          error.response &&
+          error.response.data &&
+          error.response.data.error
+        ) {
           console.log(error.response.data.error);
         } else {
           console.log("Hubo un error al procesar la orden.");
         }
       });
-
 
     // Lógica para confirmar la orden
   };
@@ -241,7 +240,7 @@ function Checkout() {
                 className="form-control"
                 id="phone"
                 name="phone"
-               /*  value={shippingInfo.phone}
+                /*  value={shippingInfo.phone}
                 onChange={handleInputChange} */
                 placeholder="Ingresa tu número de teléfono"
               />
@@ -273,7 +272,7 @@ function Checkout() {
                         type="text"
                         className="form-control"
                         id="cardNumber"
-                       /*  value={cardNumber}
+                        /*  value={cardNumber}
                         onChange={(e) => setCardNumber(e.target.value)} */
                         placeholder="Ingresa el número de tarjeta"
                       />
@@ -284,13 +283,15 @@ function Checkout() {
                         type="text"
                         className="form-control"
                         id="nameOnCard"
-                       /*  value={nameOnCard}
+                        /*  value={nameOnCard}
                         onChange={(e) => setNameOnCard(e.target.value)} */
                         placeholder="Ingresa el nombre en la tarjeta"
                       />
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="expirationDate">Fecha de Expiración (MM/AA)</label>
+                      <label htmlFor="expirationDate">
+                        Fecha de Expiración (MM/AA)
+                      </label>
                       <input
                         type="text"
                         className="form-control"
@@ -306,7 +307,7 @@ function Checkout() {
                         type="text"
                         className="form-control"
                         id="cvc"
-                       /*  value={cvc}
+                        /*  value={cvc}
                         onChange={(e) => setCvc(e.target.value)} */
                         placeholder="Ingresa el CVC"
                       />
@@ -319,29 +320,32 @@ function Checkout() {
               <div className="col">
                 <h2>Resumen del Pedido</h2>
                 <dl className="row">
-              {/* Agregar imagen de producto */}
-              <dt className="col-sm-6">Producto  i5 14600K</dt>
-              <dd className="col-sm-6">
-                <img src="/public/prodi5-12600K.jpg" alt="Nombre del producto" style={{ maxWidth: '100%', maxHeight: '100px' }} />
-              </dd>
-             
-              <dt className="col-sm-6">Precio</dt>
-              <dd className="col-sm-6">USD 195.00</dd>
-              {/* Otros detalles del producto */}
-              {/* Resto del resumen del pedido */}
-              <dt className="col-sm-6">Subtotal</dt>
-              <dd className="col-sm-6">USD 195.00</dd>
-              <dt className="col-sm-6">Envío</dt>
-              <dd className="col-sm-6">USD 5.00</dd>
-              <dt className="col-sm-6">Impuestos</dt>
-              <dd className="col-sm-6">USD 42.90</dd>
-              <dt className="col-sm-6">Total</dt>
-              <dd className="col-sm-6">USD {calcularTotal().toFixed(2)}</dd>
-            </dl>
+                  {/* Agregar imagen de producto */}
+                  <dt className="col-sm-6">Producto i5 14600K</dt>
+                  <dd className="col-sm-6">
+                    <img
+                      src="/public/prodi5-12600K.jpg"
+                      alt="Nombre del producto"
+                      style={{ maxWidth: "100%", maxHeight: "100px" }}
+                    />
+                  </dd>
+
+                  <dt className="col-sm-6">Precio</dt>
+                  <dd className="col-sm-6">USD 195.00</dd>
+                  {/* Otros detalles del producto */}
+                  {/* Resto del resumen del pedido */}
+                  <dt className="col-sm-6">Subtotal</dt>
+                  <dd className="col-sm-6">USD 195.00</dd>
+                  <dt className="col-sm-6">Envío</dt>
+                  <dd className="col-sm-6">USD 5.00</dd>
+                  <dt className="col-sm-6">Impuestos</dt>
+                  <dd className="col-sm-6">USD 42.90</dd>
+                  <dt className="col-sm-6">Total</dt>
+                  <dd className="col-sm-6">USD {calcularTotal().toFixed(2)}</dd>
+                </dl>
                 <button
-                  
                   className="btn btn-primary"
-                   onClick={handleConfirmOrder} 
+                  onClick={handleConfirmOrder}
                 >
                   Confirmar Orden
                 </button>

@@ -119,7 +119,7 @@ function CarruselDestacados() {
                       <Card style={{ width: "14rem" }}>
                         <Skeleton variant="rect" height={300} />
                         <Card.Title className="productDescription">
-                          <Skeleton count={2}/>
+                          <Skeleton count={2} />
                         </Card.Title>
                         <Card.Text className="productDescription"></Card.Text>
                         <Card.Title className="productDescription"></Card.Title>
@@ -205,7 +205,6 @@ function CarruselDestacados() {
 }
 
 export default CarruselDestacados;
-
 
 ///original antes de skeleton///
 
