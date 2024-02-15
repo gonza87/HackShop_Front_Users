@@ -6,19 +6,17 @@ import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
-//import AddToCart from "../components/AddToCart";
+import Skeleton from "react-loading-skeleton";
 import Card from "react-bootstrap/Card";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-//import NavbarAside from "../components/NavbarAside";
-
 import "./description.css";
 
 function Description() {
-  const [selectedQuantitiesDestacados, setSelectedQuantitiesDestacados] =
-    useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [selectedQuantitiesDestacados, setSelectedQuantitiesDestacados] = useState({});
   const dispatch = useDispatch();
   const { slug } = useParams();
   const [product, setProduct] = useState(null);
@@ -28,8 +26,7 @@ function Description() {
 
   const handleBuyClickDescription = (product) => {
     const maxStock = product.stock;
-    const productId = product.id; // Asumiendo que tu producto tiene un campo 'id'
-
+    const productId = product.id;
     const currentQuantity = selectedQuantitiesDestacados[productId] || 0;
 
     if (currentQuantity < maxStock) {
@@ -37,11 +34,7 @@ function Description() {
         ...selectedQuantitiesDestacados,
         [productId]: currentQuantity + 1,
       };
-
-      // Actualizar el estado de las cantidades seleccionadas
       setSelectedQuantitiesDestacados(updatedQuantities);
-
-      // Verificar si la cantidad seleccionada no supera el stock disponible
       dispatch(addToCart({ ...product, quantity: currentQuantity + 1 }));
       console.log("Producto agregado al carrito");
       const Toast = Swal.mixin({
@@ -90,12 +83,15 @@ function Description() {
       .get(apiUrl)
       .then((response) => {
         setProduct(response.data);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 3000);
       })
       .catch((error) => {
         console.error(error);
       });
   }, []);
-  console.log(product);
+
   return (
     <>
       <NavbarComponent />
@@ -104,58 +100,64 @@ function Description() {
           <div className="row">
             <div className="col-12">
               <h2>{product.category.categoryName}</h2>
-              {/* <NavbarAside /> */}
             </div>
-            <div className="col-8">
-              <Card
-                style={{ width: "50rem", height: "40rem", border: "none" }}
-                className="m-1"
-              >
-                <Card.Img
-                  variant="top"
-                  src={`${imgUrl}${product.photo}`}
-                  className="imgListCat img-fluid"
-                  style={{ width: "70%", height: "100%", objectFit: "cover" }}
-                />
-              </Card>
-            </div>
-
+            {isLoading ? (
+              <div className="col-8">
+                 <Skeleton width={560} height={640} />
+              </div>
+            ) : (
+              <div className="col-8">
+                <Card style={{ width: "50rem", height: "40rem", border: "none" }} className="m-1">
+                  <Card.Img
+                    variant="top"
+                    src={`${imgUrl}${product.photo}`}
+                    className="imgListCat img-fluid"
+                    style={{ width: "70%", height: "100%", objectFit: "cover" }}
+                  />
+                </Card>
+              </div>
+            )}
             <div className="col-12 col-md-4 contenido">
-              <div className="description">
-                <h2>{product.name}</h2>
-                <span className="price">
-                  <h5 style={{ color: "#ff6200", fontSize: "1.2rem" }}>
-                    ${product.price}
-                  </h5>
-                </span>
-
-                <span>DISPONIBILIDAD: {product.stock} DISPONIBLES</span>                 
-                <br />
-                <hr />
-              </div>
-              <div className="caracteristicas">
-                {product.description}
-                <div>
+              {isLoading ? (
+                <Skeleton count={3} />
+              ) : (
+                <div className="description">
+                  <h2>{product.name}</h2>
+                  <span className="price">
+                    <h5 style={{ color: "#ff6200", fontSize: "1.2rem" }}>
+                      ${product.price}
+                    </h5>
+                  </span>
+                  <span>DISPONIBILIDAD: {product.stock} DISPONIBLES</span>
+                  <br />
                   <hr />
-                  <Button
-                    onClick={() => handleBuyClickDescription(product)}
-                    variant=""
-                    style={{ background: "#09072c", color: "#ffffff" }}
-                  >
-                    <FontAwesomeIcon
-                      icon={faShoppingCart}
-                      style={{ cursor: "pointer", marginRight: "5px" }}
-                    />
-                    Comprar
-                  </Button>
-                  {/* <AddToCart /> */}
                 </div>
-              </div>
+              )}
+              {isLoading ? (
+                <Skeleton count={4} />
+              ) : (
+                <div className="caracteristicas">
+                  {product.description}
+                  <div>
+                    <hr />
+                    <Button
+                      onClick={() => handleBuyClickDescription(product)}
+                      variant=""
+                      style={{ background: "#09072c", color: "#ffffff" }}
+                    >
+                      <FontAwesomeIcon
+                        icon={faShoppingCart}
+                        style={{ cursor: "pointer", marginRight: "5px" }}
+                      />
+                      Comprar
+                    </Button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
       )}
-
       <Whatsapp />
       <Footer />
     </>
@@ -163,3 +165,4 @@ function Description() {
 }
 
 export default Description;
+
