@@ -129,11 +129,7 @@ function Description() {
                   </h5>
                 </span>
 
-                <span>DISPONIBILIDAD: {product.stock} DISPONIBLES</span>
-                <br />
-                <span>SKU: BX8071512400</span>
-                <br />
-                <span>CATEGORÍAS: PROCESADORES, PROCESADORES INTEL</span>
+                <span>DISPONIBILIDAD: {product.stock} DISPONIBLES</span>                 
                 <br />
                 <hr />
               </div>
