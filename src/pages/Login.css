@@ -1,80 +1,81 @@
-.loginDerecha{
-    background: rgb(54,142,159);
-    background: linear-gradient(141deg, rgba(54,142,159,1) 0%, rgba(9,7,44,1) 20%, rgba(9,7,44,1) 80%, rgba(54,142,159,1) 100%);
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.loginDerecha {
+  background: rgb(54, 142, 159);
+  background: linear-gradient(
+    141deg,
+    rgba(54, 142, 159, 1) 0%,
+    rgba(9, 7, 44, 1) 20%,
+    rgba(9, 7, 44, 1) 80%,
+    rgba(54, 142, 159, 1) 100%
+  );
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.logoLogin{
-    height: 200px;
-
-}
-
-.loginIzquierda p{
-    color: #09072c;
-    font-weight: bold;
-    font-size: xx-large;
-    text-align: center;
-    margin-top: 50px;
-    
-}
-.formLogin{
-    width: 400px;
+.logoLogin {
+  height: 200px;
 }
 
-.textCampoLogin{
-    font-weight: 500;
-    font-size: x-large;
-    color: #09072c;
+.loginIzquierda p {
+  color: #09072c;
+  font-weight: bold;
+  font-size: xx-large;
+  text-align: center;
+  margin-top: 50px;
 }
-.btnLogin{
-    width: 100%;
-    margin-top: 10px;
-    background-color: #09072c;
+.formLogin {
+  width: 400px;
 }
 
-.testRegistro{
-    margin-left: 15px;
-    color: #707070;
-        font-weight: 400;
-    }
-    
-    
-    
-    .formLogin ::placeholder {
-        color: #707070;
-        font-weight: 500;
-        /* Reemplaza 'TuTipoDeFuente' con la fuente que desees utilizar */
-    }
+.textCampoLogin {
+  font-weight: 500;
+  font-size: x-large;
+  color: #09072c;
+}
+.btnLogin {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #09072c;
+}
 
-    .contUserPrueba{
-        width: 400px;
-        border: solid #ccc; /* Establece un borde delgado de 1 píxel y color gris claro */
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        border-width: 1px;
-        border-radius: 5px;
-        margin-top: 50px;
-        padding: 10px;
-    }
-    .contUserPrueba p {
-        font-size:medium;
-        margin-top: 0px;
-        text-align:start;
-        
-    }
-    #usertTextoPrueba{
-        font-size:small;
-        color: #707070;
-        font-weight: 500;
-    }
-    .contUserPrueba ul{
-        font-size:small;
-        color: #707070;
-        padding-left:20px;
-    }
-    
-    /* @media (max-width: 768px) {
+.testRegistro {
+  margin-left: 15px;
+  color: #707070;
+  font-weight: 400;
+}
+
+.formLogin ::placeholder {
+  color: #707070;
+  font-weight: 500;
+  /* Reemplaza 'TuTipoDeFuente' con la fuente que desees utilizar */
+}
+
+.contUserPrueba {
+  width: 400px;
+  border: solid #ccc; /* Establece un borde delgado de 1 píxel y color gris claro */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  border-width: 1px;
+  border-radius: 5px;
+  margin-top: 50px;
+  padding: 10px;
+}
+.contUserPrueba p {
+  font-size: medium;
+  margin-top: 0px;
+  text-align: start;
+}
+#usertTextoPrueba {
+  font-size: small;
+  color: #707070;
+  font-weight: 500;
+}
+.contUserPrueba ul {
+  font-size: small;
+  color: #707070;
+  padding-left: 20px;
+}
+
+/* @media (max-width: 768px) {
     
         .loginDerecha {
             height: 200px;

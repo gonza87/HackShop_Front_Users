@@ -1,18 +1,17 @@
 .prodDestacados {
-    font-weight: bold;
-    font-size: 3rem;
-    color: #09072c;
-    padding-top: 60px;
+  font-weight: bold;
+  font-size: 3rem;
+  color: #09072c;
+  padding-top: 60px;
 }
 .imgDestacados {
-    height: 190px;
-    }
-    #btnPaginacion{
-        background-color: #09072c;
-        color: #ffffff;
-    }
-    
-    /* .cardCarruselDestacados:hover {
+  height: 190px;
+}
+#btnPaginacion {
+  background-color: #09072c;
+  color: #ffffff;
+}
+
+/* .cardCarruselDestacados:hover {
         cursor: pointer;
 } */
-

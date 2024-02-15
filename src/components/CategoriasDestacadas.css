@@ -1,30 +1,28 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 .catDestacadas {
-    font-weight: bold;
-    font-size: 3rem;
-    color: #09072c;
-    padding-top: 40px;
-    text-align: center;
+  font-weight: bold;
+  font-size: 3rem;
+  color: #09072c;
+  padding-top: 40px;
+  text-align: center;
 }
 .cardCatDestacadas {
-    height: 190px;
-
-
+  height: 190px;
 }
 
 .cardCatDestacadas:hover {
-    cursor: pointer;
-    animation: fadeIn 1s;
+  cursor: pointer;
+  animation: fadeIn 1s;
 }
 
-.banner{
- padding-top: 100px;   
- padding-bottom: 20px;
- max-height:calc(100vh - 56px) ;
- position: sticky;
- top: 56px;
+.banner {
+  padding-top: 100px;
+  padding-bottom: 20px;
+  max-height: calc(100vh - 56px);
+  position: sticky;
+  top: 56px;
 }
-.imgBanner{
-    width: 80%;
-    height: 100%;
+.imgBanner {
+  width: 80%;
+  height: 100%;
 }

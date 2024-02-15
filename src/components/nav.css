@@ -1,70 +1,66 @@
-
-.nav{
-    height: 150px;   
+.nav {
+  height: 150px;
 }
-.logo{
-    width: 120px;
-    height: 120px;
-    margin-top: 0px;
-    border-radius: 0px;
+.logo {
+  width: 120px;
+  height: 120px;
+  margin-top: 0px;
+  border-radius: 0px;
 }
 .mianav {
-    position: fixed;
+  position: fixed;
 }
 .contenedorcarro {
-    margin-left: 10px;
-    padding: 10px;
+  margin-left: 10px;
+  padding: 10px;
 }
 
 .contenedorcarro:hover {
-    border: 1px;
-    border-color: #ffffff;
-    border-style: solid;
-
+  border: 1px;
+  border-color: #ffffff;
+  border-style: solid;
 }
 
 .contenedorbtnlogin {
-    margin-left: 10px;
-    padding: 10px;
+  margin-left: 10px;
+  padding: 10px;
 }
 
 .contenedorbtnlogin:hover {
-    border: 1px;
-    border-color: #ffffff;
-    border-style: solid;
+  border: 1px;
+  border-color: #ffffff;
+  border-style: solid;
 }
 
 #btnIngresa {
-    color: #ffffff;
-    text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .contenedorbtncategorias {
-    margin-top: 10px;
-    padding: 10px;
+  margin-top: 10px;
+  padding: 10px;
 }
 
 .contenedorbtncategorias:hover {
-    border: 1px;
-    border-color: #ffffff;
-    border-style: solid;
-    cursor: pointer;
+  border: 1px;
+  border-color: #ffffff;
+  border-style: solid;
+  cursor: pointer;
 }
 .contenedorbtnTodos {
-    margin-top: 10px;
-    padding: 10px;
-    
+  margin-top: 10px;
+  padding: 10px;
 }
-.contenedorbtnTodos link{
-    text-decoration: none;
+.contenedorbtnTodos link {
+  text-decoration: none;
 }
-
 
 .contenedorbtnTodos:hover {
-    border: 1px;
-    border-color: #ffffff;
-    border-style: solid;
-    cursor: pointer;
+  border: 1px;
+  border-color: #ffffff;
+  border-style: solid;
+  cursor: pointer;
 }
 
 /* .contenedorTodos {
@@ -81,21 +77,20 @@
 
 */
 @media (max-width: 992px) {
-    #btnIngresa {
-        display: none;
-    }
-
+  #btnIngresa {
+    display: none;
+  }
 }
 @media (max-width: 767px) {
-    .columna-a {
-        order: 1;
+  .columna-a {
+    order: 1;
 
-        /* Cambia el orden de la Columna A para que aparezca después de la Columna B */
-    }
+    /* Cambia el orden de la Columna A para que aparezca después de la Columna B */
+  }
 
-    .columna-b {
-        order: 2;
-        justify-content: end;
-        /* Cambia el orden de la Columna B para que aparezca antes de la Columna A */
-    }
+  .columna-b {
+    order: 2;
+    justify-content: end;
+    /* Cambia el orden de la Columna B para que aparezca antes de la Columna A */
+  }
 }

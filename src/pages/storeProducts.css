@@ -1,44 +1,34 @@
-.containerCategory{
-    margin-top: 160px;
+.containerCategory {
+  margin-top: 160px;
 }
 
-
-
-.imgListCat{
-    height: 250px;
-} 
-
-
-.productDescription{
-overflow: hidden;
-white-space: nowrap;
-text-overflow: ellipsis;
-color: #09072c;
+.imgListCat {
+  height: 250px;
 }
 
-.cardTodosMia{
-    width: 400px;
-    border: solid #ccc; /* Establece un borde delgado de 1 píxel y color gris claro */
-    box-shadow:  3px 3px 6px rgba(0, 0, 0, 0.1);
-    border-width: 1px;
-    text-align: center;
-    
-   
-   
+.productDescription {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #09072c;
 }
-.textTodosProductos{
-    color: #09072c;
+
+.cardTodosMia {
+  width: 400px;
+  border: solid #ccc; /* Establece un borde delgado de 1 píxel y color gris claro */
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+  border-width: 1px;
+  text-align: center;
+}
+.textTodosProductos {
+  color: #09072c;
 }
 .my-custom-class {
   margin-top: 50px; /* Aquí puedes ajustar el valor del margen superior según sea necesario */
 }
 
-
 @media (max-width: 992px) {
-   
-    .imgBanner{
-        display: none;
-    }
+  .imgBanner {
+    display: none;
+  }
 }
-
-

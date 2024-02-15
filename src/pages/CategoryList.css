@@ -1,22 +1,18 @@
-.containerCategory{
-    margin-top: 160px;
+.containerCategory {
+  margin-top: 160px;
 }
 
+.imgListCat {
+  height: 250px;
+}
 
-
-.imgListCat{
-    height: 250px;
-} 
-
-
-
-.banner{
- padding-top: 100px;   
- padding-bottom: 20px;
- max-height:calc(100vh - 56px) ;
- position: sticky;
- top: 56px;
+.banner {
+  padding-top: 100px;
+  padding-bottom: 20px;
+  max-height: calc(100vh - 56px);
+  position: sticky;
+  top: 56px;
 }
 .d-lg-block {
-    position: relative;
+  position: relative;
 }

@@ -1,26 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 * {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-body{
-    background-color: #ffffff;
-    }
-    
-    .mianav .navbar-toggler-icon {
-        background-color: #35ffd2;
-    
-    }
-    
-    .mianav {
-        background-color: #09072c;
-        color: #ffffff;
-    }
-    
-    .nav-link {
-        color: #ffffff;
-    }
-    
-    .btn-light {
-        color: #09072c;
-    }
+body {
+  background-color: #ffffff;
+}
+
+.mianav .navbar-toggler-icon {
+  background-color: #35ffd2;
+}
+
+.mianav {
+  background-color: #09072c;
+  color: #ffffff;
+}
+
+.nav-link {
+  color: #ffffff;
+}
+
+.btn-light {
+  color: #09072c;
+}
