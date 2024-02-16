@@ -199,7 +199,7 @@ function StoreProducts() {
                               {product.name}
                             </Card.Title>
                             <Card.Text className="productDescription">
-                              {product.description}
+                              {product.productDescription}
                             </Card.Text>
                             <Card.Title className="productDescription">
                               ${product.price}

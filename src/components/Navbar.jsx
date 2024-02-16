@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
-import Carrito from "./Carrito";
+import Carrito from "./ShoppingCart";
 import NavbarAside from "./NavbarAside";
 import "animate.css";
 import "./nav.css";

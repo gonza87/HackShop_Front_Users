@@ -18,9 +18,9 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "./description.css";
+import "./productDescription.css";
 
-function Description() {
+function ProductDescription() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedQuantitiesDestacados, setSelectedQuantitiesDestacados] =
     useState({});
@@ -174,7 +174,7 @@ function Description() {
   );
 }
 
-export default Description;
+export default ProductDescription;
 
 
 

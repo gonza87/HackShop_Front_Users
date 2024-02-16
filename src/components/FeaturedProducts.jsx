@@ -14,9 +14,9 @@ import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton from "react-loading-skeleton";
 import "animate.css";
 import "./carrusel.css";
-import "./CarruselDestacados.css";
+import "./featuredProducts.css";
 
-function CarruselDestacados() {
+function FeaturedProducts() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadingDuration, setLoadingDuration] = useState(3000); // Duración predeterminada de la carga del esqueleto
 
@@ -220,7 +220,7 @@ function CarruselDestacados() {
   );
 }
 
-export default CarruselDestacados;
+export default FeaturedProducts;
 
 ///original antes de skeleton///
 

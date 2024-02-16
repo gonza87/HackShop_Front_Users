@@ -1,6 +1,6 @@
 import Carrusel from "../components/Carrusel";
-import CarruselDestacados from "../components/CarruselDestacados";
-import CategoriasDestacadas from "../components/CategoriasDestacadas";
+import FeaturedProducts from "../components/FeaturedProducts";
+import FeaturedCategories from "../components/FeaturedCategories";
 import NavbarComponent from "../components/Navbar";
 import Footer from "../components/Footer";
 import Whatsapp from "../components/Whatsapp";
@@ -15,10 +15,10 @@ function Home() {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <CategoriasDestacadas />
+              <FeaturedCategories />
             </div>
             <div className="col-12">
-              <CarruselDestacados />
+              <FeaturedProducts />
             </div>
             <p className="text-center fw-bold pt-2 ivaText">
               * Todos los precios del sitio tiene IVA incluído

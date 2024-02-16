@@ -3,9 +3,9 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
-import "./CategoriasDestacadas.css";
+import "./featuredCategories.css";
 
-function CategoriasDestacadas() {
+function FeaturedCategories() {
   return (
     <>
       <div className="catDestacadas">
@@ -42,4 +42,4 @@ function CategoriasDestacadas() {
   );
 }
 
-export default CategoriasDestacadas;
+export default FeaturedCategories;

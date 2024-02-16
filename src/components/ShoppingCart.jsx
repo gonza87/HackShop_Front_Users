@@ -3,7 +3,7 @@ import { ListGroup, Button } from "react-bootstrap";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import AddToCart from "../components/AddToCart";
+import AddToCart from "./AddToCart";
 import { BsXCircle } from "react-icons/bs";
 import { IoMdAdd } from "react-icons/io";
 import { RiSubtractLine } from "react-icons/ri";
@@ -18,9 +18,9 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
-import "./carrito.css";
+import "./shoppingCart.css";
 
-function Carrito() {
+function ShoppingCart() {
   const navigate = useNavigate();
   const imgUrl = "http://localhost:3000/img/";
   const carrito = useSelector((state) => state.carrito);
@@ -162,4 +162,4 @@ function Carrito() {
   );
 }
 
-export default Carrito;
+export default ShoppingCart;
