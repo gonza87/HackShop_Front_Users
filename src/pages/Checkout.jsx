@@ -56,6 +56,14 @@ function Checkout() {
   };
 
   const handleConfirmOrder = () => {
+    if (!paymentMethod) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor, selecciona un método de pago antes de confirmar la orden.',
+      });
+      return; // Salir de la función si no se ha seleccionado un método de pago
+    }
     console.log("va axios");
     const apiUrl = "http://localhost:3000/orders";
     const config = {
@@ -69,6 +77,7 @@ function Checkout() {
       userid: token.userid,
       carrito: { carrito },
       totalPrice: calcularTotal().toFixed(2),
+      paymentMethod: paymentMethod,
     };
 
     axios
@@ -260,12 +269,12 @@ function Checkout() {
                     onChange={handlePaymentMethodChange}
                   >
                     <option value="">Selecciona Método de Pago</option>
-                    <option value="creditCard">Tarjeta de Crédito</option>
-                    <option value="paypal">PayPal</option>
-                    <option value="eTransfer">eTransfer</option>
+                    <option value="CreditCard">Tarjeta de Crédito</option>
+                    <option value="PayPal">PayPal</option>
+                    <option value="MercadoPago">Mercado Pago</option>
                   </select>
                 </div>
-                {paymentMethod === "creditCard" && (
+                {paymentMethod === "CreditCard" && (
                   <>
                     <div className="mb-3">
                       <label htmlFor="cardNumber">Número de Tarjeta</label>
