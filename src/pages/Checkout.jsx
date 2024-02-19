@@ -12,6 +12,7 @@ import Swal from "sweetalert2";
 import "./checkout.css";
 
 function Checkout() {
+  const imgUrl = "http://localhost:3000/img/";
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const carrito = useSelector((state) => state.carrito);
@@ -316,32 +317,27 @@ function Checkout() {
                 )}
               </div>
             </div>
-            <div className="row">
+            <div className="row mt-3">
               <div className="col">
-                <h2>Resumen del Pedido</h2>
+                <h2 className="mb-3">Resumen del Pedido</h2>
                 <dl className="row">
                   {/* Agregar imagen de producto */}
-                  <dt className="col-sm-6">Producto i5 14600K</dt>
-                  <dd className="col-sm-6">
-                    <img
-                      src="/public/prodi5-12600K.jpg"
-                      alt="Nombre del producto"
-                      style={{ maxWidth: "100%", maxHeight: "100px" }}
-                    />
-                  </dd>
+                 
+                  {carrito.map((product, index) => (
+                    <dl className="row">  
+                       <dt className="col-sm-2"><img className="imgCheckout" src={`${imgUrl}${product.photo}`} alt="" /></dt>
+                       <dt className="col-sm-4">{product.name}</dt>
+                        <dd className="col-sm-6">{product.price}</dd>
+                        </dl>
 
-                  <dt className="col-sm-6">Precio</dt>
-                  <dd className="col-sm-6">USD 195.00</dd>
-                  {/* Otros detalles del producto */}
-                  {/* Resto del resumen del pedido */}
-                  <dt className="col-sm-6">Subtotal</dt>
-                  <dd className="col-sm-6">USD 195.00</dd>
-                  <dt className="col-sm-6">Envío</dt>
-                  <dd className="col-sm-6">USD 5.00</dd>
-                  <dt className="col-sm-6">Impuestos</dt>
-                  <dd className="col-sm-6">USD 42.90</dd>
-                  <dt className="col-sm-6">Total</dt>
-                  <dd className="col-sm-6">USD {calcularTotal().toFixed(2)}</dd>
+                     
+                    
+                  
+                  ))}
+                  </dl>
+
+                <dl className="row">  
+                  <dd className="col-sm-6"><span className="checkoutTotalPrice">USD {calcularTotal().toFixed(2)}</span></dd>
                 </dl>
                 <button
                   className="btn btn-primary"

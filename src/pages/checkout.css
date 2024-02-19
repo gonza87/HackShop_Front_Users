@@ -1,3 +1,12 @@
 .container-with-margin {
   margin-top: 200px;
 }
+
+.imgCheckout{
+  height: 50px;
+}
+
+.checkoutTotalPrice{
+  font-weight:500;
+  font-size:x-large;
+}
