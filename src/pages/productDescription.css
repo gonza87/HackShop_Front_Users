@@ -1,14 +1,12 @@
 /* description.css */
 
 .imgListCat {
-  transition: transform 0.3s; /* Agrega una transición suave al efecto de zoom */
+  transition: transform 0.8s; /* Agrega una transición suave al efecto de zoom */
 }
 
 .imgListCat:hover {
-  transform: scale(
-    1.1
-  ); /* Modifica el valor según el nivel de zoom que desees */
-  opacity: 50%;
+
+  opacity: 80%; 
 }
 
 .contenido {
