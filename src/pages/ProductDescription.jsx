@@ -115,7 +115,7 @@ function ProductDescription() {
             ) : (
               <div className="col-8">
                 <Card
-                  style={{ width: "50rem", height: "40rem", border: "none" }}
+                  style={{ border: "none" }}
                   className="m-1"
                 >
                   <Card.Img
