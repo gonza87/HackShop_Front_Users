@@ -19,7 +19,7 @@
 }
 
 .overlay-text {
-  position: absolute;
+  position: relative;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -29,15 +29,21 @@
   padding: 20px;
   width: 70%;
   box-sizing: border-box;
+  margin-top: 300px;
+ 
+ 
 }
 
 .custom-card {
-  padding-top: 80px;
+  padding-top: 40px;
   color: #09072c;
   border: none;
   background-color: gray;
   opacity: 80%;
+  
+  
 }
+
 
 .icons {
   margin-right: 40px;
@@ -54,10 +60,15 @@
   color: #09072c;
 }
 
+.proyecto h3 {
+  margin-bottom: -60px; /* Ajusta el valor según sea necesario */
+}
+
+
 /* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
   .proyecto {
-    margin-top: 250px; /* Espacio adicional en la parte superior para separar la sección de "Sobre este proyecto" de los otros elementos */
+    margin-top: 100px; /* Espacio adicional en la parte superior para separar la sección de "Sobre este proyecto" de los otros elementos */
   }
 
   .proyecto .overlay-text {
