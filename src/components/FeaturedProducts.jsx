@@ -148,6 +148,7 @@ function FeaturedProducts() {
             <Carousel.Item
               interval={5000}
               className="d-flex justify-content-between flex-wrap"
+              id="contProdDestacados"
             >
               {productsDestacados
                 .slice(

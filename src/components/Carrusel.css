@@ -41,3 +41,16 @@
     transform: translateX(-100%);
   }
 }
+
+
+
+
+
+
+@media (max-width: 768px) {
+ .imgCarrusel{
+    
+  height: 30vh;
+ 
+}
+}

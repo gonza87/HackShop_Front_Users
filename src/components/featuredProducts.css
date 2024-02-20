@@ -12,6 +12,13 @@
   color: #ffffff;
 }
 
-/* .cardCarruselDestacados:hover {
-        cursor: pointer;
-} */
+@media (max-width: 768px) {
+  .prodDestacados {
+    text-align: center;
+    font-size: 2rem;
+   
+  }
+  #contProdDestacados{
+    justify-content: center !important;
+  }
+ }
