@@ -6,6 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Swal from "sweetalert2";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
@@ -28,6 +29,16 @@ function NavbarComponent() {
     // Navega a la página de búsqueda con el query en la URL
     navigate(`/search?q=${searchQuery}`);
   };
+
+  const handleViewAllClick = (e) => {
+    e.preventDefault();
+    Swal.fire({
+      title: 'message',
+      text: 'Under development',
+      icon: 'warning',
+      confirmButtonText: 'Ok'
+    });
+      };
 
   return (
     <Navbar collapseOnSelect expand="md" className="mianav" fixed="top">
@@ -59,7 +70,7 @@ function NavbarComponent() {
                   value={searchQuery}
                   onChange={handleSearchChange}
                 />
-                <Button variant="light" type="submit">
+                <Button onClick={handleViewAllClick} variant="light" type="submit">
                   Search
                 </Button>{" "}
               </Form>

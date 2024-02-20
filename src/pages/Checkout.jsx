@@ -97,7 +97,7 @@ function Checkout() {
             Swal.fire({
               title: "Finalizado",
               text: "Tu pedido será entregado en las próximas 48 hrs",
-              iconHtml: '<img src="/public/gifCarrito/icons8-enviado.gif">',
+              iconHtml: '<img class = "gif-img" src="/public/gifCarrito/icons8-enviado.gif">',
               showConfirmButton: false, // Si no deseas mostrar el botón de confirmación
               timer: 2000, // Puedes configurar el temporizador para cerrar automáticamente el diálogo
             });
