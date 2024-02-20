@@ -130,7 +130,7 @@ function ShoppingCart() {
                   </div>
                   <div className="col-3 d-flex align-items-center">
                     <span className="precioItem">
-                      US${product.price * product.cantidad}
+                      U$S {product.price * product.cantidad}
                     </span>
                   </div>
                 </div>
@@ -142,7 +142,7 @@ function ShoppingCart() {
               <div className="col-9 d-flex align-items-center pt-3">
                 {" "}
                 <p className="textresumencarro">
-                  Total <span>{calcularTotal()}</span>
+                  Total <span>U$S {calcularTotal()}</span>
                 </p>
               </div>
               <div className="col-3 d-flex align-items-center">

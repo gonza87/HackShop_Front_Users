@@ -336,7 +336,7 @@ function Checkout() {
                     <dl className="row">  
                        <dt className="col-sm-2"><img className="imgCheckout" src={`${imgUrl}${product.photo}`} alt="" /></dt>
                        <dt className="col-sm-4">{product.name}</dt>
-                        <dd className="col-sm-6">{product.price}</dd>
+                        <dd className="col-sm-6">U$S {product.price}</dd>
                         </dl>
 
                      
@@ -346,7 +346,7 @@ function Checkout() {
                   </dl>
 
                 <dl className="row">  
-                  <dd className="col-sm-6"><span className="checkoutTotalPrice">USD {calcularTotal().toFixed(2)}</span></dd>
+                  <dd className="col-sm-6"><span className="checkoutTotalPrice">U$S {calcularTotal().toFixed(2)}</span></dd>
                 </dl>
                 <button
                   className="btn btn-primary"
