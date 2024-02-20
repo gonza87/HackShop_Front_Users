@@ -80,7 +80,7 @@ function NavbarComponent() {
                 <Link
                   to="/login"
                   className="d-flex align-items-center"
-                  style={{ textDecoration: "none", paddingLeft: "46px" }}
+                  style={{ textDecoration: "none" }}
                 >
                   <FontAwesomeIcon
                     icon={faUser}
