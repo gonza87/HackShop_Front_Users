@@ -77,8 +77,8 @@ function Login() {
       <div className="container-fluid">
         <div className="row flex-column-reverse flex-md-row">
           <div className="col-md-6 loginIzquierda">
-            <p className="textHackshop">Hack Shop</p>
-            <p>Bienvenido</p>
+            <p className="textHackshop"> Bienvenidos a Hack Shop</p>
+            {/* <p>Bienvenido</p> */}
             <div className="d-flex align-items-center justify-content-center">
               <Form onSubmit={handleSubmit} className="formLogin mt-4">
                 <Row>
@@ -131,11 +131,11 @@ function Login() {
                   <li>E-mail: mrodriguez@gmail.com</li>
                   <li>Password: 1234</li>
                 </ul>
-                <p>Iniciar sesión como administrador</p>
+                {/* <p>Iniciar sesión como administrador</p>
                 <ul>
                   <li>E-mail: admin@gmail.com</li>
                   <li>Password: 1234</li>
-                </ul>
+                </ul> */}
               </div>
             </div>
           </div>

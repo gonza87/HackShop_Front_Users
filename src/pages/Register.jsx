@@ -190,9 +190,9 @@ function Register() {
                 </Button>
               </Form>
             </div>
-            <div className="d-flex align-items-center justify-content-center">
+            {/* <div className="d-flex align-items-center justify-content-center">
               <div className="contUserPrueba">
-                <p>Usuarios de Prueba</p>
+                <p>Usuario de Prueba</p>
                 <p id="usertTextoPrueba">
                   Para simplificar el acceso a la aplicación, se proporcionan
                   los siguientes usuarios de prueba:
@@ -208,7 +208,7 @@ function Register() {
                   <li>Password: 1234</li>
                 </ul>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="col-md-6 loginDerecha ">
             <Link to="/">
