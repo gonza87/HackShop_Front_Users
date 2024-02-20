@@ -199,7 +199,7 @@ function CategoryList() {
                               {product.productDescription}
                             </Card.Text>
                             <Card.Title className="productDescription">
-                              ${product.price}
+                            U$S {product.price}
                             </Card.Title>
                             <Button
                               onClick={() => handleAddToCart(product)}

@@ -183,7 +183,7 @@ function FeaturedProducts() {
                         {product.description}
                       </Card.Text>
                       <Card.Title className="productDescription">
-                        ${product.price}
+                      U$S {product.price}
                       </Card.Title>
                       <Button
                         onClick={() => handleBuyClickDestacados(product)}
