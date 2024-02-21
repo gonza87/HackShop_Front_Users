@@ -7,7 +7,6 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-//import Swal from "sweetalert2";
 
 import "./register.css";
 
@@ -70,7 +69,6 @@ function Register() {
       .post(apiUrl, userData)
       .then((response) => {
         console.log("Respuesta exitosa:", response.data);
-        //history.push("/login");
         navigate("/login");
       })
       .catch((error) => {
@@ -95,7 +93,6 @@ function Register() {
         <div className="row flex-column-reverse flex-md-row">
           <div className="col-md-6 loginIzquierda">
             <p className="textHackshop"> Bienvenidos a Hack Shop</p>
-            {/* <p>Bienvenidos</p> */}
             <div className="d-flex align-items-center justify-content-center">
               <Form onSubmit={handleSubmit} className="formLogin mt-4">
                 <Row>
@@ -190,25 +187,6 @@ function Register() {
                 </Button>
               </Form>
             </div>
-            {/* <div className="d-flex align-items-center justify-content-center">
-              <div className="contUserPrueba">
-                <p>Usuario de Prueba</p>
-                <p id="usertTextoPrueba">
-                  Para simplificar el acceso a la aplicación, se proporcionan
-                  los siguientes usuarios de prueba:
-                </p>
-                <p>Iniciar sesión como comprador</p>
-                <ul>
-                  <li>E-mail: mrodriguez@gmail.com.</li>
-                  <li>Password: 1234</li>
-                </ul>
-                <p>Iniciar sesión como administrador</p>
-                <ul>
-                  <li>E-mail: admin@gmail.com</li>
-                  <li>Password: 1234</li>
-                </ul>
-              </div>
-            </div> */}
           </div>
           <div className="col-md-6 loginDerecha ">
             <Link to="/">

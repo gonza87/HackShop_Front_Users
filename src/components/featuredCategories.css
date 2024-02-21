@@ -27,19 +27,12 @@
   height: 100%;
 }
 
-
 @media (max-width: 768px) {
   .catDestacadas {
-    
     font-size: 2rem;
-    
   }
 
-  #contCarDestacadas{
-    
-    
-      justify-content: center!important;
-  
-  
+  #contCarDestacadas {
+    justify-content: center !important;
   }
- }
+}

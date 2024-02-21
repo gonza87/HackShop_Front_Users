@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .logoLogin {
   height: 200px;
 }
@@ -23,6 +24,7 @@
   text-align: center;
   margin-top: 50px;
 }
+
 .formLogin {
   width: 400px;
 }
@@ -59,28 +61,27 @@
   margin-top: 50px;
   padding: 10px;
 }
+
 .contUserPrueba p {
   font-size: medium;
   margin-top: 0px;
   text-align: start;
 }
+
 #usertTextoPrueba {
   font-size: small;
   color: #707070;
   font-weight: 500;
 }
+
 .contUserPrueba ul {
   font-size: small;
   color: #707070;
   padding-left: 20px;
 }
 
-
-
 @media (max-width: 768px) {
-   .loginDerecha {
-  
+  .loginDerecha {
     height: 30vh;
-    
   }
- }
+}

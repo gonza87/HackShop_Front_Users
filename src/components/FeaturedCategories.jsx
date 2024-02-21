@@ -11,7 +11,10 @@ function FeaturedCategories() {
       <div className="catDestacadas">
         <p>CATEGORIAS DESTACADAS</p>
       </div>
-      <div className="d-flex justify-content-between flex-wrap" id="contCarDestacadas">
+      <div
+        className="d-flex justify-content-between flex-wrap"
+        id="contCarDestacadas"
+      >
         <Link to="/category/MONITORES">
           <Card className="cardCatDestacadas" style={{ width: "13rem" }}>
             <Card.Img variant="top" src="catMonitores.jpg" />

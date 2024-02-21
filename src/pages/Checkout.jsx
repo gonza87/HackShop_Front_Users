@@ -58,9 +58,9 @@ function Checkout() {
   const handleConfirmOrder = () => {
     if (!paymentMethod) {
       Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Por favor, selecciona un método de pago antes de confirmar la orden.',
+        icon: "error",
+        title: "Error",
+        text: "Por favor, selecciona un método de pago antes de confirmar la orden.",
       });
       return; // Salir de la función si no se ha seleccionado un método de pago
     }
@@ -97,7 +97,8 @@ function Checkout() {
             Swal.fire({
               title: "Finalizado",
               text: "Tu pedido será entregado en las próximas 48 hrs",
-              iconHtml: '<img class = "gif-img" src="/public/gifCarrito/icons8-enviado.gif">',
+              iconHtml:
+                '<img class = "gif-img" src="/public/gifCarrito/icons8-enviado.gif">',
               showConfirmButton: false, // Si no deseas mostrar el botón de confirmación
               timer: 2000, // Puedes configurar el temporizador para cerrar automáticamente el diálogo
             });
@@ -106,22 +107,6 @@ function Checkout() {
             navigate("/");
           }
         });
-        // Swal.fire({
-        //   title: "Estas seguro de realizar la compra?",
-        //   showDenyButton: true,
-        //   showCancelButton: true,
-        //   confirmButtonText: "Si",
-        //   denyButtonText: `No`
-        // }).then((result) => {
-        //   /* Read more about isConfirmed, isDenied below */
-        //   if (result.isConfirmed) {
-        //     Swal.fire("Saved!", "", "success");
-        //     dispatch(resetearCarrito());
-        //     navigate("/");
-        //   } else if (result.isDenied) {
-        //     Swal.fire("Changes are not saved", "", "info");
-        //   }
-        // });
       })
       .catch((error) => {
         console.error("Error al enviar datos:", error);
@@ -149,7 +134,6 @@ function Checkout() {
 
   return (
     <>
-    
       <NavbarComponent />
       <div className="container container-with-margin">
         <div className="row">
@@ -162,8 +146,6 @@ function Checkout() {
                 className="form-control"
                 id="email"
                 name="email"
-                /* value={email} */
-                /* onChange={(e) => setEmail(e.target.value)} */
                 placeholder="Ingresa tu correo electrónico"
               />
             </div>
@@ -175,8 +157,6 @@ function Checkout() {
                 className="form-control"
                 id="firstName"
                 name="firstName"
-                /* value={shippingInfo.firstName}
-                onChange={handleInputChange} */
                 placeholder="Ingresa tu nombre"
               />
             </div>
@@ -187,8 +167,6 @@ function Checkout() {
                 className="form-control"
                 id="lastName"
                 name="lastName"
-                /* value={shippingInfo.lastName}
-                onChange={handleInputChange} */
                 placeholder="Ingresa tu apellido"
               />
             </div>
@@ -199,8 +177,6 @@ function Checkout() {
                 className="form-control"
                 id="address"
                 name="address"
-                /* value={shippingInfo.address}
-                onChange={handleInputChange} */
                 placeholder="Ingresa tu dirección"
               />
             </div>
@@ -211,8 +187,6 @@ function Checkout() {
                 className="form-control"
                 id="city"
                 name="city"
-                /* value={shippingInfo.city}
-                onChange={handleInputChange} */
                 placeholder="Ingresa tu ciudad"
               />
             </div>
@@ -223,8 +197,6 @@ function Checkout() {
                 className="form-control"
                 id="country"
                 name="country"
-                /* value={shippingInfo.country}
-                onChange={handleInputChange} */
                 placeholder="Ingresa tu país"
               />
             </div>
@@ -235,8 +207,6 @@ function Checkout() {
                 className="form-control"
                 id="stateProvince"
                 name="stateProvince"
-                /* value={shippingInfo.stateProvince}
-                onChange={handleInputChange} */
                 placeholder="Ingresa tu estado/provincia"
               />
             </div>
@@ -247,8 +217,6 @@ function Checkout() {
                 className="form-control"
                 id="postalCode"
                 name="postalCode"
-                /* value={shippingInfo.postalCode}
-                onChange={handleInputChange} */
                 placeholder="Ingresa tu código postal"
               />
             </div>
@@ -259,8 +227,6 @@ function Checkout() {
                 className="form-control"
                 id="phone"
                 name="phone"
-                /*  value={shippingInfo.phone}
-                onChange={handleInputChange} */
                 placeholder="Ingresa tu número de teléfono"
               />
             </div>
@@ -291,8 +257,6 @@ function Checkout() {
                         type="text"
                         className="form-control"
                         id="cardNumber"
-                        /*  value={cardNumber}
-                        onChange={(e) => setCardNumber(e.target.value)} */
                         placeholder="Ingresa el número de tarjeta"
                       />
                     </div>
@@ -302,8 +266,6 @@ function Checkout() {
                         type="text"
                         className="form-control"
                         id="nameOnCard"
-                        /*  value={nameOnCard}
-                        onChange={(e) => setNameOnCard(e.target.value)} */
                         placeholder="Ingresa el nombre en la tarjeta"
                       />
                     </div>
@@ -315,8 +277,6 @@ function Checkout() {
                         type="text"
                         className="form-control"
                         id="expirationDate"
-                        /* value={expirationDate}
-                        onChange={(e) => setExpirationDate(e.target.value)} */
                         placeholder="Ingresa la fecha de expiración"
                       />
                     </div>
@@ -326,8 +286,6 @@ function Checkout() {
                         type="text"
                         className="form-control"
                         id="cvc"
-                        /*  value={cvc}
-                        onChange={(e) => setCvc(e.target.value)} */
                         placeholder="Ingresa el CVC"
                       />
                     </div>
@@ -340,22 +298,28 @@ function Checkout() {
                 <h2 className="mb-3">Resumen del Pedido</h2>
                 <dl className="row">
                   {/* Agregar imagen de producto */}
-                 
+
                   {carrito.map((product, index) => (
-                    <dl className="row">  
-                       <dt className="col-sm-2"><img className="imgCheckout" src={`${imgUrl}${product.photo}`} alt="" /></dt>
-                       <dt className="col-sm-4">{product.name}</dt>
-                        <dd className="col-sm-6">U$S {product.price}</dd>
-                        </dl>
-
-                     
-                    
-                  
+                    <dl className="row">
+                      <dt className="col-sm-2">
+                        <img
+                          className="imgCheckout"
+                          src={`${imgUrl}${product.photo}`}
+                          alt=""
+                        />
+                      </dt>
+                      <dt className="col-sm-4">{product.name}</dt>
+                      <dd className="col-sm-6">U$S {product.price}</dd>
+                    </dl>
                   ))}
-                  </dl>
+                </dl>
 
-                <dl className="row">  
-                  <dd className="col-sm-6"><span className="checkoutTotalPrice">U$S {calcularTotal().toFixed(2)}</span></dd>
+                <dl className="row">
+                  <dd className="col-sm-6">
+                    <span className="checkoutTotalPrice">
+                      U$S {calcularTotal().toFixed(2)}
+                    </span>
+                  </dd>
                 </dl>
                 <button
                   className="btn btn-primary"

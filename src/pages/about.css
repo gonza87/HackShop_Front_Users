@@ -30,33 +30,29 @@
   width: 70%;
   box-sizing: border-box;
   margin-top: 300px;
- 
- 
 }
 
 .custom-card {
   padding-top: 40px;
   color: #09072c;
-  border: none;
-  background-color: gray;
+  border: 1px solid gray;
+  background-color: rgb(177, 173, 173);
   opacity: 80%;
-  
-  
+  height: 350px;
 }
-
 
 .icons {
   margin-right: 40px;
 }
 
 .desarrolladores {
-  background-color: gray;
+  background-color: rgb(177, 173, 173);
   opacity: 80%;
   color: #09072c;
 }
 
 .item {
-  background-color: gray;
+  background-color: rgb(177, 173, 173);
   color: #09072c;
 }
 
@@ -64,6 +60,14 @@
   margin-bottom: -60px; /* Ajusta el valor según sea necesario */
 }
 
+.black-icon {
+  padding-right: 10px;
+  color: #09072c;
+}
+
+.tt {
+  font-size: 27px !important;
+}
 
 /* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {

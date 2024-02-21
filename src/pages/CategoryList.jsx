@@ -27,14 +27,8 @@ function CategoryList() {
   const dispatch = useDispatch();
   const [selectedQuantities, setSelectedQuantities] = useState({});
   const [searchList, setSearchList] = useState([]); // Estado local para almacenar la lista de búsqueda
-  
 
-
-
-
-
-
-   const handleSearchListUpdate = (newSearchList) => {
+  const handleSearchListUpdate = (newSearchList) => {
     // Maneja la actualización de searchList en el componente Home
     console.log("New Search List:", newSearchList);
     // Actualiza el estado local con la nueva lista de búsqueda
@@ -124,197 +118,187 @@ function CategoryList() {
     }
   };
 
- return (
-  <>
-    
-    <NavbarComponent onSearchListUpdate={handleSearchListUpdate} />
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-lg-2 banner d-none d-lg-block d-flex flex-column align-items-center">
-          <img
-            className="imgBanner w-100"
-            src="/public/gifBannerStoreProducts/Black Grey Aqua Grunge Gaming Mobile Video (1).gif"
-            alt="Tu GIF"
-          />
-        </div>
-        <div className="col-lg-10">
-          <div className="container containerCategory">
-            <div className="row">
-              <div className="col-8">
-                <h2 className="textTodosProductos">{categoryName}</h2>
-              </div>
-              <div className="col-4 d-flex justify-content-end">
-                <DropdownButton
-                  align="end"
-                  title="Ordenar Por"
-                  id="dropdown-menu-align-end"
-                  variant="light"
-                  onSelect={handleDropdownSelect}
-                >
-                  <Dropdown.Item eventKey="destacado">
-                    Destacado
-                  </Dropdown.Item>
-                  <Dropdown.Divider />
-                  <Dropdown.Item eventKey="menor">
-                    Precio: Menor a mayor
-                  </Dropdown.Item>
-                  <Dropdown.Divider />
-                  <Dropdown.Item eventKey="mayor">
-                    Precio: Mayor a menor
-                  </Dropdown.Item>
-                  <Dropdown.Divider />
-                  <Dropdown.Item eventKey="todos">Todos</Dropdown.Item>
-                </DropdownButton>
-                <div className="col-4 d-flex justify-content-end mt-2"></div>
-              </div>
-              <div className="col-12 d-flex flex-wrap">
-                {!isLoading && (
-                  searchList.length === 0 ? (
-                    products.length === 0 ? null : (
-                      products.map((product, index) => (
-                        <Card
-                          key={index}
-                          style={{ width: "15rem" }}
-                          className="m-1 cardTodosMia"
-                        >
-                          <Link to={`/products/detail/${product.slug}`}>
-                            {product.featured && (
-                              <button
-                                type="button"
-                                className="btn btn-warning m-auto animate__animated animate__infinite infinite animate__swing fw-bold"
+  return (
+    <>
+      <NavbarComponent onSearchListUpdate={handleSearchListUpdate} />
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-lg-2 banner d-none d-lg-block d-flex flex-column align-items-center">
+            <img
+              className="imgBanner w-100"
+              src="/public/gifBannerStoreProducts/Black Grey Aqua Grunge Gaming Mobile Video (1).gif"
+              alt="Tu GIF"
+            />
+          </div>
+          <div className="col-lg-10">
+            <div className="container containerCategory">
+              <div className="row">
+                <div className="col-8">
+                  <h2 className="textTodosProductos">{categoryName}</h2>
+                </div>
+                <div className="col-4 d-flex justify-content-end">
+                  <DropdownButton
+                    align="end"
+                    title="Ordenar Por"
+                    id="dropdown-menu-align-end"
+                    variant="light"
+                    onSelect={handleDropdownSelect}
+                  >
+                    <Dropdown.Item eventKey="destacado">
+                      Destacado
+                    </Dropdown.Item>
+                    <Dropdown.Divider />
+                    <Dropdown.Item eventKey="menor">
+                      Precio: Menor a mayor
+                    </Dropdown.Item>
+                    <Dropdown.Divider />
+                    <Dropdown.Item eventKey="mayor">
+                      Precio: Mayor a menor
+                    </Dropdown.Item>
+                    <Dropdown.Divider />
+                    <Dropdown.Item eventKey="todos">Todos</Dropdown.Item>
+                  </DropdownButton>
+                  <div className="col-4 d-flex justify-content-end mt-2"></div>
+                </div>
+                <div className="col-12 d-flex flex-wrap">
+                  {!isLoading &&
+                    (searchList.length === 0
+                      ? products.length === 0
+                        ? null
+                        : products.map((product, index) => (
+                            <Card
+                              key={index}
+                              style={{ width: "15rem" }}
+                              className="m-1 cardTodosMia"
+                            >
+                              <Link to={`/products/detail/${product.slug}`}>
+                                {product.featured && (
+                                  <button
+                                    type="button"
+                                    className="btn btn-warning m-auto animate__animated animate__infinite infinite animate__swing fw-bold"
+                                    style={{
+                                      position: "absolute",
+                                      top: "0",
+                                      left: "30%",
+                                    }}
+                                  >
+                                    En Oferta
+                                  </button>
+                                )}
+                                <Card.Img
+                                  variant="top"
+                                  src={`${imgUrl}${product.photo}`}
+                                  className="imgListCat"
+                                />
+                              </Link>
+                              <Card.Body>
+                                <Card.Title className="productDescription">
+                                  {product.name}
+                                </Card.Title>
+                                <Card.Text className="productDescription">
+                                  {product.productDescription}
+                                </Card.Text>
+                                <Card.Title className="productDescription">
+                                  U$S {product.price}
+                                </Card.Title>
+                                <Button
+                                  onClick={() => handleAddToCart(product)}
+                                  variant=""
+                                  style={{
+                                    background: "#09072c",
+                                    color: "#ffffff",
+                                  }}
+                                >
+                                  <FontAwesomeIcon
+                                    icon={faShoppingCart}
+                                    style={{
+                                      cursor: "pointer",
+                                      marginRight: "5px",
+                                    }}
+                                  />
+                                  Comprar
+                                </Button>
+                              </Card.Body>
+                            </Card>
+                          ))
+                      : searchList.map((product, index) => (
+                          <Card
+                            key={index}
+                            style={{ width: "15rem" }}
+                            className="m-1 cardTodosMia"
+                          >
+                            <Link to={`/products/detail/${product.slug}`}>
+                              {product.featured && (
+                                <button
+                                  type="button"
+                                  className="btn btn-warning m-auto animate__animated animate__infinite infinite animate__swing fw-bold"
+                                  style={{
+                                    position: "absolute",
+                                    top: "0",
+                                    left: "30%",
+                                  }}
+                                >
+                                  En Oferta
+                                </button>
+                              )}
+                              <Card.Img
+                                variant="top"
+                                src={`${imgUrl}${product.photo}`}
+                                className="imgListCat"
+                              />
+                            </Link>
+                            <Card.Body>
+                              <Card.Title className="productDescription">
+                                {product.name}
+                              </Card.Title>
+                              <Card.Text className="productDescription">
+                                {product.productDescription}
+                              </Card.Text>
+                              <Card.Title className="productDescription">
+                                U$S {product.price}
+                              </Card.Title>
+                              <Button
+                                onClick={() => handleAddToCart(product)}
+                                variant=""
                                 style={{
-                                  position: "absolute",
-                                  top: "0",
-                                  left: "30%",
+                                  background: "#09072c",
+                                  color: "#ffffff",
                                 }}
                               >
-                                En Oferta
-                              </button>
-                            )}
-                            <Card.Img
-                              variant="top"
-                              src={`${imgUrl}${product.photo}`}
-                              className="imgListCat"
-                            />
-                          </Link>
-                          <Card.Body>
-                            <Card.Title className="productDescription">
-                              {product.name}
-                            </Card.Title>
-                            <Card.Text className="productDescription">
-                              {product.productDescription}
-                            </Card.Text>
-                            <Card.Title className="productDescription">
-                              U$S {product.price}
-                            </Card.Title>
-                            <Button
-                              onClick={() => handleAddToCart(product)}
-                              variant=""
-                              style={{
-                                background: "#09072c",
-                                color: "#ffffff",
-                              }}
-                            >
-                              <FontAwesomeIcon
-                                icon={faShoppingCart}
-                                style={{
-                                  cursor: "pointer",
-                                  marginRight: "5px",
-                                }}
-                              />
-                              Comprar
-                            </Button>
-                          </Card.Body>
-                        </Card>
-                      ))
-                    )
-                  ) : (
-                    
-                    searchList.map((product, index) => (
-                      
+                                <FontAwesomeIcon
+                                  icon={faShoppingCart}
+                                  style={{
+                                    cursor: "pointer",
+                                    marginRight: "5px",
+                                  }}
+                                />
+                                Comprar
+                              </Button>
+                            </Card.Body>
+                          </Card>
+                        )))}
+                  {isLoading &&
+                    Array.from({ length: 5 }).map((_, index) => (
                       <Card
                         key={index}
                         style={{ width: "15rem" }}
                         className="m-1 cardTodosMia"
                       >
-                        <Link to={`/products/detail/${product.slug}`}>
-                          {product.featured && (
-                            <button
-                              type="button"
-                              className="btn btn-warning m-auto animate__animated animate__infinite infinite animate__swing fw-bold"
-                              style={{
-                                position: "absolute",
-                                top: "0",
-                                left: "30%",
-                              }}
-                            >
-                              En Oferta
-                            </button>
-                          )}
-                          <Card.Img
-                            variant="top"
-                            src={`${imgUrl}${product.photo}`}
-                            className="imgListCat"
-                          />
-                        </Link>
-                        <Card.Body>
-                          <Card.Title className="productDescription">
-                            {product.name}
-                          </Card.Title>
-                          <Card.Text className="productDescription">
-                            {product.productDescription}
-                          </Card.Text>
-                          <Card.Title className="productDescription">
-                            U$S {product.price}
-                          </Card.Title>
-                          <Button
-                            onClick={() => handleAddToCart(product)}
-                            variant=""
-                            style={{
-                              background: "#09072c",
-                              color: "#ffffff",
-                            }}
-                          >
-                            <FontAwesomeIcon
-                              icon={faShoppingCart}
-                              style={{
-                                cursor: "pointer",
-                                marginRight: "5px",
-                              }}
-                            />
-                            Comprar
-                          </Button>
-                        </Card.Body>
+                        <Skeleton height={238} width={220} />
+                        <Skeleton count={2} width={120} />
+                        <Skeleton count={2} width={80} />
                       </Card>
-                    ))
-                  )
-                )}
-                {isLoading && (
-                  Array.from({ length: 5 }).map((_, index) => (
-                    <Card
-                      key={index}
-                      style={{ width: "15rem" }}
-                      className="m-1 cardTodosMia"
-                    >
-                      <Skeleton height={238} width={220} />
-                      <Skeleton count={2} width={120} />
-                      <Skeleton count={2} width={80} />
-                    </Card>
-                  ))
-                )}
+                    ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <Whatsapp />
-    <Footer />
-  </>
-);
-
-
-
+      <Whatsapp />
+      <Footer />
+    </>
+  );
 }
 
 export default CategoryList;

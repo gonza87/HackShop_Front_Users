@@ -55,17 +55,15 @@
   margin-top: 40px;
 }
 
-
 @media (max-width: 768px) {
   .precioItem {
-  font-size:large;
-  margin-left: 0px;
+    font-size: large;
+    margin-left: 0px;
+  }
+  .testTituloItem {
+    padding-top: 20px;
+    margin-left: 5px;
+    font-size: large;
+    color: #09072c;
+  }
 }
-.testTituloItem {
-  padding-top: 20px;
-  margin-left: 5px;
-  font-size: large;
-  color: #09072c;
-}
- }
-

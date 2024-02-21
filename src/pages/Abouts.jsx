@@ -56,7 +56,9 @@ function Abouts() {
                   El proyecto fue desarrollado en 6 semanas, durante enero y
                   febrero del 2024. El mismo se dividió en 3 sprints (Scrum) de
                   dos semanas de duración.
-                  <br /><br /><br />
+                  <br />
+                  <br />
+                  <br />
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -134,7 +136,7 @@ function Abouts() {
                   </a>
                   <a href="#">
                     <FontAwesomeIcon
-                      className="black-icon"
+                      className="black-icon tt"
                       icon={faTiktok}
                       size="2x"
                     />
@@ -183,7 +185,7 @@ function Abouts() {
                   </a>
                   <a href="#">
                     <FontAwesomeIcon
-                      className="black-icon"
+                      className="black-icon tt"
                       icon={faTiktok}
                       size="2x"
                     />
@@ -232,7 +234,7 @@ function Abouts() {
                   </a>
                   <a href="#">
                     <FontAwesomeIcon
-                      className="black-icon"
+                      className="black-icon tt"
                       icon={faTiktok}
                       size="2x"
                     />
@@ -250,4 +252,3 @@ function Abouts() {
 }
 
 export default Abouts;
-

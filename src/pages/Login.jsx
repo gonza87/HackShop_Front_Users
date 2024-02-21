@@ -78,7 +78,6 @@ function Login() {
         <div className="row flex-column-reverse flex-md-row">
           <div className="col-md-6 loginIzquierda">
             <p className="textHackshop"> Bienvenidos a Hack Shop</p>
-            {/* <p>Bienvenido</p> */}
             <div className="d-flex align-items-center justify-content-center">
               <Form onSubmit={handleSubmit} className="formLogin mt-4">
                 <Row>
@@ -90,7 +89,6 @@ function Login() {
                       No tenés cuenta?{" "}
                       <Link to="/register">Registraté acá</Link>
                     </span>
-
                     <Form.Control
                       type="email"
                       name="email"
@@ -131,11 +129,6 @@ function Login() {
                   <li>E-mail: mrodriguez@gmail.com</li>
                   <li>Password: 1234</li>
                 </ul>
-                {/* <p>Iniciar sesión como administrador</p>
-                <ul>
-                  <li>E-mail: admin@gmail.com</li>
-                  <li>Password: 1234</li>
-                </ul> */}
               </div>
             </div>
           </div>

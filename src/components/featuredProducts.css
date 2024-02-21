@@ -16,9 +16,8 @@
   .prodDestacados {
     text-align: center;
     font-size: 2rem;
-   
   }
-  #contProdDestacados{
+  #contProdDestacados {
     justify-content: center !important;
   }
- }
+}
