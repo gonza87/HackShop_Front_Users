@@ -107,7 +107,7 @@ function NavbarComponent({ onSearchListUpdate }) {
                     style={{ color: "#ffffff" }}
                   />
                   <span className="ms-2" id="btnIngresa">
-                    {token ? "Salir" : "Ingresá"}
+                    {token ? "Salir" : "Ingresar"}
                   </span>
                 </Link>
               </div>
