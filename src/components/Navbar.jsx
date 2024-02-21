@@ -93,8 +93,8 @@ useEffect(() => {
                   value={searchQuery}
                   onChange={handleSearchChange}
                 />
-                <Button  variant="light" type="submit">   
-                  Search
+                <Button  variant="light" type="submit" style={{ backgroundColor: "#0f0a40", color:"white" }}>   
+                 Salir
                 </Button>{" "}
               </Form>
             </div>
