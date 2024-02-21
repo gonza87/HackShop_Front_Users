@@ -16,52 +16,35 @@ import NavbarAside from "./NavbarAside";
 import "animate.css";
 import "./nav.css";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-//const prodPrueba = "asus";
 
 function NavbarComponent({ onSearchListUpdate }) {
   const [searchQuery, setSearchQuery] = useState(""); // Nuevo estado para la búsqueda
   const [searchList, setSearchList] = useState(null); //guardar lista de api
   const navigate = useNavigate(); // Hook de React Router para la navegación
-   const apiUrl = `http://localhost:3000/products/search?term=${searchQuery}`;
-  //const apiUrl= "http://localhost:3000/products/search?term=asus";
+  const apiUrl = `http://localhost:3000/products/search?term=${searchQuery}`;
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
-  //console.log(searchQuery)
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     // Navega a la página de búsqueda con el query en la URL
     //navigate(`/search?q=${searchQuery}`);
-
   };
 
-
-
-useEffect(() => {
-  axios
-    .get(apiUrl)
-    .then((response) => {
-      
-      setSearchList(response.data);
-      onSearchListUpdate(response.data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-}, [searchQuery]);
- console.log(searchList)
-
-  // const handleViewAllClick = (e) => {
-  //   e.preventDefault();
-  //   Swal.fire({
-  //     title: 'message',
-  //     text: 'Under development',
-  //     icon: 'warning',
-  //     confirmButtonText: 'Ok'
-  //   });
-  //     };
+  useEffect(() => {
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        setSearchList(response.data);
+        onSearchListUpdate(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, [searchQuery]);
+  console.log(searchList);
 
   return (
     <Navbar collapseOnSelect expand="md" className="mianav" fixed="top">
@@ -93,9 +76,6 @@ useEffect(() => {
                   value={searchQuery}
                   onChange={handleSearchChange}
                 />
-                <Button  variant="light" type="submit" style={{ backgroundColor: "#0f0a40", color:"white" }}>   
-                 Salir
-                </Button>{" "}
               </Form>
             </div>
             <div className="col-md-2 columna-b d-flex">

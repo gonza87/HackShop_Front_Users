@@ -1,15 +1,18 @@
 .nav {
   height: 150px;
 }
+
 .logo {
   width: 120px;
   height: 120px;
   margin-top: 0px;
   border-radius: 0px;
 }
+
 .mianav {
   position: fixed;
 }
+
 .contenedorcarro {
   margin-left: 10px;
   padding: 10px;
@@ -63,21 +66,6 @@
   cursor: pointer;
 }
 
-
-
-/* .contenedorTodos {
-    margin-top: 10px;
-    padding: 10px;
-}
-
-.contenedorTodos:hover {
-    border: 1px;
-    border-color: #ffffff;
-    border-style: solid;
-    cursor: pointer;
-}
-
-*/
 @media (max-width: 992px) {
   #btnIngresa {
     display: none;
@@ -86,7 +74,6 @@
 @media (max-width: 767px) {
   .columna-a {
     order: 1;
-
     /* Cambia el orden de la Columna A para que aparezca después de la Columna B */
   }
 
