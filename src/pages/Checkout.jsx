@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavbarComponent from "../components/Navbar";
 import Whatsapp from "../components/Whatsapp";
 import Footer from "../components/Footer";
@@ -139,8 +139,17 @@ function Checkout() {
     // Lógica para confirmar la orden
   };
 
+  useEffect(() => {
+    // Verificar si el carrito está vacío
+    if (carrito.length === 0) {
+      // Redirigir al home
+      navigate("/");
+    }
+  }, [carrito, navigate]);
+
   return (
     <>
+    
       <NavbarComponent />
       <div className="container container-with-margin">
         <div className="row">
