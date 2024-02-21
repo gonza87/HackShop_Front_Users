@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Swal from "sweetalert2";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
@@ -15,30 +16,52 @@ import NavbarAside from "./NavbarAside";
 import "animate.css";
 import "./nav.css";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+//const prodPrueba = "asus";
 
-function NavbarComponent() {
+function NavbarComponent({ onSearchListUpdate }) {
   const [searchQuery, setSearchQuery] = useState(""); // Nuevo estado para la búsqueda
+  const [searchList, setSearchList] = useState(null); //guardar lista de api
   const navigate = useNavigate(); // Hook de React Router para la navegación
+   const apiUrl = `http://localhost:3000/products/search?term=${searchQuery}`;
+  //const apiUrl= "http://localhost:3000/products/search?term=asus";
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
+  //console.log(searchQuery)
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     // Navega a la página de búsqueda con el query en la URL
-    navigate(`/search?q=${searchQuery}`);
+    //navigate(`/search?q=${searchQuery}`);
+
   };
 
-  const handleViewAllClick = (e) => {
-    e.preventDefault();
-    Swal.fire({
-      title: 'message',
-      text: 'Under development',
-      icon: 'warning',
-      confirmButtonText: 'Ok'
+
+
+useEffect(() => {
+  axios
+    .get(apiUrl)
+    .then((response) => {
+      
+      setSearchList(response.data);
+      onSearchListUpdate(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
     });
-      };
+}, [searchQuery]);
+ console.log(searchList)
+
+  // const handleViewAllClick = (e) => {
+  //   e.preventDefault();
+  //   Swal.fire({
+  //     title: 'message',
+  //     text: 'Under development',
+  //     icon: 'warning',
+  //     confirmButtonText: 'Ok'
+  //   });
+  //     };
 
   return (
     <Navbar collapseOnSelect expand="md" className="mianav" fixed="top">
@@ -70,7 +93,7 @@ function NavbarComponent() {
                   value={searchQuery}
                   onChange={handleSearchChange}
                 />
-                <Button onClick={handleViewAllClick} variant="light" type="submit">
+                <Button  variant="light" type="submit">   
                   Search
                 </Button>{" "}
               </Form>
