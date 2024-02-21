@@ -19,12 +19,20 @@ import "./storeProducts.css";
 
 function StoreProducts() {
   const [isLoading, setIsLoading] = useState(true);
+  const [searchList, setSearchList] = useState([]); // Estado local para almacenar la lista de búsqueda
   const [products, setProducts] = useState([]);
   const [selectedQuantities, setSelectedQuantities] = useState({});
   const { slug } = useParams();
   const dispatch = useDispatch();
   const imgUrl = "http://localhost:3000/img/";
   const apiUrl = "http://localhost:3000/products";
+
+  const handleSearchListUpdate = (newSearchList) => {
+    // Maneja la actualización de searchList en el componente Home
+    console.log("New Search List:", newSearchList);
+    // Actualiza el estado local con la nueva lista de búsqueda
+    setSearchList(newSearchList);
+  };
 
   const handleDropdownSelect = async (eventKey) => {
     try {
@@ -104,7 +112,7 @@ function StoreProducts() {
 
   return (
     <>
-      <NavbarComponent />
+      <NavbarComponent onSearchListUpdate={handleSearchListUpdate} />
 
       <div className="container-fluid">
         <div className="row">
@@ -125,45 +133,91 @@ function StoreProducts() {
                     Todos nuestros productos
                   </h2>
                 </div>
-                {isLoading ? (
+
+                {/* Renderizar los resultados de búsqueda si searchList no está vacío */}
+                {searchList.length !== 0 && (
                   <div className="col-12 d-flex flex-wrap">
-                    <>
-                      {Array(27)
-                        .fill(undefined)
-                        .map((_, index) => (
-                          <div className="col-2.4" key={index}>
-                            {" "}
-                            {/* ver este skeleton */}
-                            <Card.Body>
-                              <Card style={{ width: "15rem" }}>
-                                <Skeleton variant="rect" height={260} />
-                                <Card.Title className="productDescription">
-                                  <div
-                                    style={{
-                                      display: "flex",
-                                      justifyContent: "center",
-                                    }}
-                                  >
-                                    <Skeleton count={2} width={120} />
-                                  </div>
-                                  <div
-                                    style={{
-                                      display: "flex",
-                                      justifyContent: "center",
-                                    }}
-                                  >
-                                    <Skeleton count={2} width={80} />
-                                  </div>
-                                </Card.Title>
-                                <Card.Text className="productDescription" />
-                                <Card.Title className="productDescription" />
-                              </Card>
-                            </Card.Body>
-                          </div>
-                        ))}
-                    </>
+                    {searchList.map((product, index) => (
+                      <Card
+                        key={index}
+                        style={{ width: "15rem" }}
+                        className="m-1 cardTodosMia"
+                      >
+                        <Link to={`/products/detail/${product.slug}`}>
+                          {product.featured && (
+                            <button
+                              type="button"
+                              className="btn btn-warning m-auto animate__animated animate__infinite infinite animate__swing fw-bold"
+                              style={{
+                                position: "absolute",
+                                top: "0",
+                                left: "30%",
+                              }}
+                            >
+                              En Oferta
+                            </button>
+                          )}
+                          <Card.Img
+                            variant="top"
+                            src={`${imgUrl}${product.photo}`}
+                            className="imgListCat"
+                          />
+                        </Link>
+                        <Card.Body>
+                          <Card.Title className="productDescription">
+                            {product.name}
+                          </Card.Title>
+                          <Card.Text className="productDescription">
+                            {product.productDescription}
+                          </Card.Text>
+                          <Card.Title className="productDescription">
+                            U$S {product.price}
+                          </Card.Title>
+                        </Card.Body>
+                      </Card>
+                    ))}
                   </div>
-                ) : (
+                )}
+
+                {/* Renderizar contenido de carga si isLoading es verdadero */}
+                {isLoading && (
+                  <div className="col-12 d-flex flex-wrap">
+                    {Array(27)
+                      .fill(undefined)
+                      .map((_, index) => (
+                        <div className="col-2.4" key={index}>
+                          <Card.Body>
+                            <Card style={{ width: "15rem" }}>
+                              <Skeleton variant="rect" height={260} />
+                              <Card.Title className="productDescription">
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                  }}
+                                >
+                                  <Skeleton count={2} width={120} />
+                                </div>
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                  }}
+                                >
+                                  <Skeleton count={2} width={80} />
+                                </div>
+                              </Card.Title>
+                              <Card.Text className="productDescription" />
+                              <Card.Title className="productDescription" />
+                            </Card>
+                          </Card.Body>
+                        </div>
+                      ))}
+                  </div>
+                )}
+
+                {/* Renderizar contenido filtrado si searchList está vacío y no hay carga */}
+                {!isLoading && searchList.length === 0 && (
                   <>
                     <div className="col-4 d-flex justify-content-end">
                       <DropdownButton
@@ -263,3 +317,20 @@ function StoreProducts() {
 }
 
 export default StoreProducts;
+
+
+
+
+
+
+
+/* Claro, aquí están los cambios y correcciones que se realizaron:
+
+1. **Condición de renderizado del contenido de búsqueda**: Se modificó la condición de renderizado del contenido de búsqueda para que verifique si `searchList` no está vacío antes de renderizar los productos encontrados. Antes, esta condición estaba utilizando un operador ternario, ahora se cambió a un operador lógico `&&`, lo que permite que el contenido se renderice solo si `searchList` no está vacío.
+
+2. **Condición de renderizado del contenido de carga**: Se cambió la condición de renderizado del contenido de carga para verificar si `isLoading` es verdadero. Antes, esta condición también estaba utilizando un operador ternario, ahora se cambió a un operador lógico `&&`.
+
+3. **Condición de renderizado del contenido filtrado**: Se añadió una nueva condición para renderizar el contenido filtrado cuando `searchList` está vacío y no hay carga (`isLoading` es falso). Esta condición utiliza un operador ternario para verificar si `searchList` está vacío y si `isLoading` es falso.
+
+Estos cambios aseguran que el contenido se renderice correctamente dependiendo del estado de la búsqueda (`searchList`) y si la carga (`isLoading`) está en progreso o no.
+ */
