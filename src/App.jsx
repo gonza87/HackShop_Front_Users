@@ -8,6 +8,7 @@ import StoreProducts from "./pages/StoreProducts";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Checkout from "./pages/Checkout";
+import NotFound404 from './pages/pageError/NotFound404';
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./App.css";
 
@@ -34,6 +35,7 @@ function App() {
         <Route element={<ProtectedRoute user={user} />}>
           <Route path="/checkout" element={<Checkout />} />
         </Route>
+        <Route path='*' element={<NotFound404/>}/> 
       </Routes>
     </>
   );
