@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/carritoReducer";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
@@ -27,10 +27,9 @@ function StoreProducts() {
   const imgUrl = "http://localhost:3000/img/";
   const apiUrl = "http://localhost:3000/products";
 
+  const cart = useSelector((state) => state.carrito);
+
   const handleSearchListUpdate = (newSearchList) => {
-    // Maneja la actualización de searchList en el componente Home
-    console.log("New Search List:", newSearchList);
-    // Actualiza el estado local con la nueva lista de búsqueda
     setSearchList(newSearchList);
   };
 
@@ -117,7 +116,6 @@ function StoreProducts() {
       <div className="container-fluid">
         <div className="row">
           <div className="col-lg-3 banner d-flex flex-column align-items-center ban">
-            {/* Contenido fijo de la columna */}
             <img
               className="imgBanner"
               src="/public/gifBannerStoreProducts/Black Grey Aqua Grunge Gaming Mobile Video (1).gif"
@@ -134,7 +132,6 @@ function StoreProducts() {
                   </h2>
                 </div>
 
-                {/* Renderizar los resultados de búsqueda si searchList no está vacío */}
                 {searchList.length !== 0 && (
                   <div className="col-12 d-flex flex-wrap">
                     {searchList.map((product, index) => (
@@ -173,13 +170,29 @@ function StoreProducts() {
                           <Card.Title className="productDescription">
                             U$S {product.price}
                           </Card.Title>
+                          <Button
+                            onClick={() => handleBuyClick(product)}
+                            variant=""
+                            style={{
+                              background: "#09072c",
+                              color: "#ffffff",
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              icon={faShoppingCart}
+                              style={{
+                                cursor: "pointer",
+                                marginRight: "5px",
+                              }}
+                            />
+                            Comprar
+                          </Button>
                         </Card.Body>
                       </Card>
                     ))}
                   </div>
                 )}
 
-                {/* Renderizar contenido de carga si isLoading es verdadero */}
                 {isLoading && (
                   <div className="col-12 d-flex flex-wrap">
                     {Array(27)
@@ -216,7 +229,6 @@ function StoreProducts() {
                   </div>
                 )}
 
-                {/* Renderizar contenido filtrado si searchList está vacío y no hay carga */}
                 {!isLoading && searchList.length === 0 && (
                   <>
                     <div className="col-4 d-flex justify-content-end">
@@ -317,20 +329,3 @@ function StoreProducts() {
 }
 
 export default StoreProducts;
-
-
-
-
-
-
-
-/* Claro, aquí están los cambios y correcciones que se realizaron:
-
-1. **Condición de renderizado del contenido de búsqueda**: Se modificó la condición de renderizado del contenido de búsqueda para que verifique si `searchList` no está vacío antes de renderizar los productos encontrados. Antes, esta condición estaba utilizando un operador ternario, ahora se cambió a un operador lógico `&&`, lo que permite que el contenido se renderice solo si `searchList` no está vacío.
-
-2. **Condición de renderizado del contenido de carga**: Se cambió la condición de renderizado del contenido de carga para verificar si `isLoading` es verdadero. Antes, esta condición también estaba utilizando un operador ternario, ahora se cambió a un operador lógico `&&`.
-
-3. **Condición de renderizado del contenido filtrado**: Se añadió una nueva condición para renderizar el contenido filtrado cuando `searchList` está vacío y no hay carga (`isLoading` es falso). Esta condición utiliza un operador ternario para verificar si `searchList` está vacío y si `isLoading` es falso.
-
-Estos cambios aseguran que el contenido se renderice correctamente dependiendo del estado de la búsqueda (`searchList`) y si la carga (`isLoading`) está en progreso o no.
- */

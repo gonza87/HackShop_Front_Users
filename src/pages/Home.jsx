@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../redux/carritoReducer";
 import Carrusel from "../components/Carrusel";
 import FeaturedProducts from "../components/FeaturedProducts";
 import FeaturedCategories from "../components/FeaturedCategories";
@@ -10,13 +12,15 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-
+import Swal from "sweetalert2";
 import "./Home.css";
 
 function Home() {
+  const cart = useSelector((state) => state.carrito);
+  const dispatch = useDispatch();
   const imgUrl = "http://localhost:3000/img/";
   const [searchList, setSearchList] = useState([]); // Estado local para almacenar la lista de búsqueda
-
+  const [selectedQuantities, setSelectedQuantities] = useState({});
   const handleSearchListUpdate = (newSearchList) => {
     // Maneja la actualización de searchList en el componente Home
     console.log("New Search List:", newSearchList);
@@ -24,6 +28,62 @@ function Home() {
     setSearchList(newSearchList);
   };
 
+  const handleBuyClick = (product) => {
+    const maxStock = product.stock;
+    const productId = product.id;
+  
+    const currentQuantity = selectedQuantities[productId] || 0;
+
+    if (currentQuantity < maxStock) {
+      const updatedQuantities = {
+        ...selectedQuantities,
+        [productId]: currentQuantity + 1,
+      };
+
+      setSelectedQuantities(updatedQuantities);
+
+      dispatch(addToCart({ ...product, quantity: currentQuantity + 1 }));
+      console.log("Producto agregado al carrito");
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        },
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Producto agregado exitosamente",
+        customClass: {
+          container: "my-custom-class",
+        },
+      });
+    } else {
+      console.log("No hay suficiente stock para la cantidad seleccionada");
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        },
+      });
+      Toast.fire({
+        icon: "error",
+        title: "Stock no disponible",
+        customClass: {
+          container: "my-custom-class",
+        },
+      });
+    }
+  };
   return (
     <>
       <NavbarComponent onSearchListUpdate={handleSearchListUpdate} />
@@ -70,7 +130,7 @@ function Home() {
                             <Card.Title className="productDescription">
                               U$S {product.price}
                             </Card.Title>
-                            {/* <Button
+                             <Button
                               onClick={() => handleBuyClick(product)}
                               variant=""
                               style={{
@@ -86,7 +146,7 @@ function Home() {
                                 }}
                               />
                               Comprar
-                            </Button> */}
+                            </Button> 
                           </Card.Body>
                         </Card>
                       ))}
