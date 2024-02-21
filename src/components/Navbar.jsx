@@ -8,19 +8,22 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Swal from "sweetalert2";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faBars } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from 'react-redux';
+import { resetToken } from '../redux/userReducer';
 
 import Carrito from "./ShoppingCart";
 import NavbarAside from "./NavbarAside";
 import "animate.css";
 import "./nav.css";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 function NavbarComponent({ onSearchListUpdate }) {
-  const [searchQuery, setSearchQuery] = useState(""); // Nuevo estado para la búsqueda
-  const [searchList, setSearchList] = useState(null); //guardar lista de api
-  const navigate = useNavigate(); // Hook de React Router para la navegación
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchList, setSearchList] = useState(null);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const token = useSelector((state) => state.user);
+
   const apiUrl = `http://localhost:3000/products/search?term=${searchQuery}`;
 
   const handleSearchChange = (event) => {
@@ -29,8 +32,7 @@ function NavbarComponent({ onSearchListUpdate }) {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    // Navega a la página de búsqueda con el query en la URL
-    //navigate(`/search?q=${searchQuery}`);
+    // Realizar búsqueda o navegar a la página de resultados
   };
 
   useEffect(() => {
@@ -44,7 +46,19 @@ function NavbarComponent({ onSearchListUpdate }) {
         console.error(error);
       });
   }, [searchQuery]);
-  console.log(searchList);
+
+  const handleLoginOrLogout = () => {
+    if (token) {
+      // El usuario está logueado, por lo tanto, realizar cierre de sesión
+      dispatch(resetToken());
+      // Redirigir a la página principal
+      navigate("/");
+      // Otras acciones de cierre de sesión que puedas necesitar
+    } else {
+      // El usuario no está logueado, redirigir a la página de inicio
+      navigate("/login");
+    }
+  };
 
   return (
     <Navbar collapseOnSelect expand="md" className="mianav" fixed="top">
@@ -66,7 +80,7 @@ function NavbarComponent({ onSearchListUpdate }) {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <div className="row container">
-            <div className="col-md-10 ">
+            <div className="col-md-10">
               <Form onSubmit={handleSearchSubmit} className="d-flex">
                 <Form.Control
                   type="search"
@@ -76,14 +90,22 @@ function NavbarComponent({ onSearchListUpdate }) {
                   value={searchQuery}
                   onChange={handleSearchChange}
                 />
+                <Button
+                  variant="light"
+                  type="submit"
+                  style={{ backgroundColor: "#0f0a40", color: "white" }}
+                >
+                  Salir
+                </Button>{" "}
               </Form>
             </div>
             <div className="col-md-2 columna-b d-flex">
               <div className="d-flex align-items-end contenedorbtnlogin">
                 <Link
-                  to="/login"
+                  to={token ? "/" : "/login"}
                   className="d-flex align-items-center"
                   style={{ textDecoration: "none" }}
+                  onClick={handleLoginOrLogout}
                 >
                   <FontAwesomeIcon
                     icon={faUser}
@@ -91,7 +113,7 @@ function NavbarComponent({ onSearchListUpdate }) {
                     style={{ color: "#ffffff" }}
                   />
                   <span className="ms-2" id="btnIngresa">
-                    Ingresá
+                    {token ? "Salir" : "Ingresá"}
                   </span>
                 </Link>
               </div>
