@@ -90,13 +90,7 @@ function NavbarComponent({ onSearchListUpdate }) {
                   value={searchQuery}
                   onChange={handleSearchChange}
                 />
-                <Button
-                  variant="light"
-                  type="submit"
-                  style={{ backgroundColor: "#0f0a40", color: "white" }}
-                >
-                  Salir
-                </Button>{" "}
+               
               </Form>
             </div>
             <div className="col-md-2 columna-b d-flex">
