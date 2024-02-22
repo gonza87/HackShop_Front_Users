@@ -131,33 +131,38 @@ function CategoryList() {
           <div className="col-lg-10">
             <div className="container containerCategory">
               <div className="row">
-                <div className="col-8">
-                  <h2 className="textTodosProductos">{categoryName}</h2>
-                </div>
-                <div className="col-4 d-flex justify-content-end">
-                  <DropdownButton
-                    align="end"
-                    title="Ordenar Por"
-                    id="dropdown-menu-align-end"
-                    variant="light"
-                    onSelect={handleDropdownSelect}
-                  >
-                    <Dropdown.Item eventKey="destacado">
-                      Destacado
-                    </Dropdown.Item>
-                    <Dropdown.Divider />
-                    <Dropdown.Item eventKey="menor">
-                      Precio: Menor a mayor
-                    </Dropdown.Item>
-                    <Dropdown.Divider />
-                    <Dropdown.Item eventKey="mayor">
-                      Precio: Mayor a menor
-                    </Dropdown.Item>
-                    <Dropdown.Divider />
-                    <Dropdown.Item eventKey="todos">Todos</Dropdown.Item>
-                  </DropdownButton>
-                  <div className="col-4 d-flex justify-content-end mt-2"></div>
-                </div>
+                {searchList.length === 0 && (
+                  <>
+                    <div className="col-8">
+                      <h2 className="textTodosProductos">{categoryName}</h2>
+                    </div>
+
+                    <div className="col-4 d-flex justify-content-end">
+                      <DropdownButton
+                        align="end"
+                        title="Ordenar Por"
+                        id="dropdown-menu-align-end"
+                        variant="light"
+                        onSelect={handleDropdownSelect}
+                      >
+                        <Dropdown.Item eventKey="destacado">
+                          Destacado
+                        </Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item eventKey="menor">
+                          Precio: Menor a mayor
+                        </Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item eventKey="mayor">
+                          Precio: Mayor a menor
+                        </Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item eventKey="todos">Todos</Dropdown.Item>
+                      </DropdownButton>
+                      <div className="col-4 d-flex justify-content-end mt-2"></div>
+                    </div>
+                  </>
+                )}
                 <div className="col-12 d-flex flex-wrap">
                   {!isLoading &&
                     (searchList.length === 0

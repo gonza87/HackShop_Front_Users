@@ -128,11 +128,7 @@ function StoreProducts() {
           <div className="col-lg-9">
             <div className="container containerCategory">
               <div className="row">
-                <div className="col-8">
-                  <h2 className="textTodosProductos">
-                    Todos nuestros productos
-                  </h2>
-                </div>
+               
 
                 {searchList.length !== 0 && (
                   <div className="col-12 d-flex flex-wrap">
@@ -233,6 +229,11 @@ function StoreProducts() {
 
                 {!isLoading && searchList.length === 0 && (
                   <>
+                   <div className="col-8">
+                  <h2 className="textTodosProductos">
+                    Todos nuestros productos
+                  </h2>
+                </div>
                     <div className="col-4 d-flex justify-content-end">
                       <DropdownButton
                         align="end"
