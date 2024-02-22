@@ -15,9 +15,9 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import "./storeProducts.css";
+import "./ProductList.css";
 
-function StoreProducts() {
+function ProductList() {
   const [isLoading, setIsLoading] = useState(true);
   const [searchList, setSearchList] = useState([]); // Estado local para almacenar la lista de búsqueda
   const [products, setProducts] = useState([]);
@@ -128,8 +128,6 @@ function StoreProducts() {
           <div className="col-lg-9">
             <div className="container containerCategory">
               <div className="row">
-               
-
                 {searchList.length !== 0 && (
                   <div className="col-12 d-flex flex-wrap">
                     {searchList.map((product, index) => (
@@ -229,11 +227,11 @@ function StoreProducts() {
 
                 {!isLoading && searchList.length === 0 && (
                   <>
-                   <div className="col-8">
-                  <h2 className="textTodosProductos">
-                    Todos nuestros productos
-                  </h2>
-                </div>
+                    <div className="col-8">
+                      <h2 className="textTodosProductos">
+                        Todos nuestros productos
+                      </h2>
+                    </div>
                     <div className="col-4 d-flex justify-content-end">
                       <DropdownButton
                         align="end"
@@ -331,4 +329,4 @@ function StoreProducts() {
   );
 }
 
-export default StoreProducts;
+export default ProductList;
