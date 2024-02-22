@@ -52,9 +52,7 @@ function CategoryList() {
       .then((response) => {
         setProducts(response.data);
 
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 3000); // Una vez que se obtienen los datos, se marca como no cargando
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error en la solicitud:", error.message);

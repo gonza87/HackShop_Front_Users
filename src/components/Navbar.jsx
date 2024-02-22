@@ -21,7 +21,7 @@ import NavbarAside from "./NavbarAside";
 import "animate.css";
 import "./nav.css";
 
-function NavbarComponent({ onSearchListUpdate }) {
+function NavbarComponent({ onSearchListUpdate, setIsLoading = null}) {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchList, setSearchList] = useState(null);
   const navigate = useNavigate();
@@ -40,11 +40,14 @@ function NavbarComponent({ onSearchListUpdate }) {
   };
 
   useEffect(() => {
+    setIsLoading && setIsLoading(true); 
     axios
       .get(apiUrl)
       .then((response) => {
+        setIsLoading && setIsLoading(false);
         setSearchList(response.data);
         onSearchListUpdate(response.data);
+
       })
       .catch((error) => {
         console.error(error);

@@ -34,9 +34,9 @@ function FeaturedProducts() {
       .get(apiUrl)
       .then((response) => {
         setProductsDestacados(response.data);
-        setTimeout(() => {
+        
           setIsLoading(false);
-        }, loadingDuration); // Establecer isLoading en false después de la duración especificada
+        
       })
       .catch((error) => {
         console.error("Error en la solicitud:", error.message);
