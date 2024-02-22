@@ -100,9 +100,8 @@ function StoreProducts() {
       .get(apiUrl)
       .then((response) => {
         setProducts(response.data);
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 3000);
+
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error en la solicitud:", error.message);
@@ -111,7 +110,10 @@ function StoreProducts() {
 
   return (
     <>
-      <NavbarComponent onSearchListUpdate={handleSearchListUpdate} />
+      <NavbarComponent
+        onSearchListUpdate={handleSearchListUpdate}
+        setIsLoading={setIsLoading}
+      />
 
       <div className="container-fluid">
         <div className="row">
@@ -195,7 +197,7 @@ function StoreProducts() {
 
                 {isLoading && (
                   <div className="col-12 d-flex flex-wrap">
-                    {Array(27)
+                    {Array(10)
                       .fill(undefined)
                       .map((_, index) => (
                         <div className="col-2.4" key={index}>

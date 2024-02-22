@@ -85,9 +85,9 @@ function ProductDescription() {
       .get(apiUrl)
       .then((response) => {
         setProduct(response.data);
-        setTimeout(() => {
+        
           setIsLoading(false);
-        }, 3000);
+      
       })
       .catch((error) => {
         console.error(error);
