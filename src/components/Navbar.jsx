@@ -7,10 +7,14 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { FaUser } from "react-icons/fa6";
+import { FaUserGear } from "react-icons/fa6";
+
 import Swal from "sweetalert2";
 import { faUser, faBars } from "@fortawesome/free-solid-svg-icons";
-import { useDispatch, useSelector } from 'react-redux';
-import { resetToken } from '../redux/userReducer';
+import { useDispatch, useSelector } from "react-redux";
+import { resetToken } from "../redux/userReducer";
 
 import Carrito from "./ShoppingCart";
 import NavbarAside from "./NavbarAside";
@@ -23,7 +27,7 @@ function NavbarComponent({ onSearchListUpdate }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const token = useSelector((state) => state.user);
-
+  const webFrontAdmin = "http://localhost:5174/";
   const apiUrl = `http://localhost:3000/products/search?term=${searchQuery}`;
 
   const handleSearchChange = (event) => {
@@ -90,7 +94,6 @@ function NavbarComponent({ onSearchListUpdate }) {
                   value={searchQuery}
                   onChange={handleSearchChange}
                 />
-               
               </Form>
             </div>
             <div className="col-md-2 columna-b d-flex">
@@ -101,13 +104,33 @@ function NavbarComponent({ onSearchListUpdate }) {
                   style={{ textDecoration: "none" }}
                   onClick={handleLoginOrLogout}
                 >
-                  <FontAwesomeIcon
-                    icon={faUser}
-                    size="xl"
-                    style={{ color: "#ffffff" }}
+                  <FaUser
+                    style={{
+                      color: "#ffffff",
+
+                      fontSize: "1.3rem",
+                    }}
                   />
                   <span className="ms-2" id="btnIngresa">
                     {token ? "Salir" : "Ingresar"}
+                  </span>
+                </Link>
+              </div>
+              <div className="contenedorAdmin">
+                <Link
+                  to={webFrontAdmin}
+                  className="d-flex align-items-center"
+                  style={{ textDecoration: "none" }}
+                >
+                  <FaUserGear
+                    style={{
+                      color: "#ffffff",
+
+                      fontSize: "1.5rem",
+                    }}
+                  />
+                  <span className="ms-2" id="btnIngresa">
+                    Admin
                   </span>
                 </Link>
               </div>
