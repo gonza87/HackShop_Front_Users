@@ -77,7 +77,8 @@ function Login() {
       <div className="container-fluid">
         <div className="row flex-column-reverse flex-md-row">
           <div className="col-md-6 loginIzquierda">
-            <p className="textHackshop"> Bienvenidos a Hack Shop</p>
+            <p className="textHackshop">Hack Shop</p>
+            <p>Bienvenido</p>
             <div className="d-flex align-items-center justify-content-center">
               <Form onSubmit={handleSubmit} className="formLogin mt-4">
                 <Row>
