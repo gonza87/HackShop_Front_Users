@@ -18,7 +18,7 @@ import "./featuredProducts.css";
 
 function FeaturedProducts() {
   const [isLoading, setIsLoading] = useState(true);
- /*  const [loadingDuration, setLoadingDuration] = useState(3000); */ // Duración predeterminada de la carga del esqueleto
+  /*  const [loadingDuration, setLoadingDuration] = useState(3000); */ // Duración predeterminada de la carga del esqueleto
 
   const [selectedQuantitiesDestacados, setSelectedQuantitiesDestacados] =
     useState({});
@@ -56,7 +56,7 @@ function FeaturedProducts() {
 
       setSelectedQuantitiesDestacados(updatedQuantities);
       dispatch(addToCart({ ...product, quantity: currentQuantity + 1 }));
-      console.log("Producto agregado al carrito");
+
       const Toast = Swal.mixin({
         toast: true,
         position: "top-end",
@@ -76,7 +76,6 @@ function FeaturedProducts() {
         },
       });
     } else {
-      console.log("No hay suficiente stock para la cantidad seleccionada");
       const Toast = Swal.mixin({
         toast: true,
         position: "top-end",

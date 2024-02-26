@@ -6,8 +6,6 @@ import "./Whatsapp.css";
 
 function Whatsapp() {
   const handleWhatsappClick = () => {
-    console.log("Click en whatsapp");
-
     const whatsappLink = `https://web.whatsapp.com/`;
 
     window.location.href = whatsappLink;

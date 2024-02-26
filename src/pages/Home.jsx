@@ -22,8 +22,6 @@ function Home() {
   const [searchList, setSearchList] = useState([]);
   const [selectedQuantities, setSelectedQuantities] = useState({});
   const handleSearchListUpdate = (newSearchList) => {
-    console.log("New Search List:", newSearchList);
-
     setSearchList(newSearchList);
   };
 
@@ -42,7 +40,7 @@ function Home() {
       setSelectedQuantities(updatedQuantities);
 
       dispatch(addToCart({ ...product, quantity: currentQuantity + 1 }));
-      console.log("Producto agregado al carrito");
+
       const Toast = Swal.mixin({
         toast: true,
         position: "top-end",

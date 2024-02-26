@@ -73,7 +73,7 @@ function CategoryList() {
       setSelectedQuantities(updatedQuantities);
 
       dispatch(addToCart({ ...product, quantity: currentQuantity + 1 }));
-      console.log("Producto agregado al carrito");
+
       const Toast = Swal.mixin({
         toast: true,
         position: "top-end",

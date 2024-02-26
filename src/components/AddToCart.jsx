@@ -6,10 +6,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import "./addToCart.css"; // Asegúrate de importar tu hoja de estilos
 
 const AddToCart = () => {
-  const handleClick = () => {
-    // Lógica para añadir al carrito
-    console.log("Añadir al carrito");
-  };
+  const handleClick = () => {};
 
   return (
     <div className="addToCartContainer">

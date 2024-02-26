@@ -17,9 +17,6 @@ function Checkout() {
   const navigate = useNavigate();
   const carrito = useSelector((state) => state.carrito);
   const token = useSelector((state) => state.user);
-  console.log(carrito);
-  console.log(token.userid);
-  console.log(token.token);
 
   const [email, setEmail] = useState("");
   const [shippingInfo, setShippingInfo] = useState({
@@ -62,7 +59,7 @@ function Checkout() {
       });
       return;
     }
-    console.log("va axios");
+
     const apiUrl = "http://localhost:3000/orders";
     const config = {
       headers: {
