@@ -71,22 +71,20 @@ function Register() {
         console.log("Respuesta exitosa:", response.data);
         navigate("/login");
       }) */
-axios
+    axios
       .post(apiUrl, userData)
       .then((response) => {
         console.log("Respuesta exitosa:", response.data);
         Swal.fire({
-          text:"Registro exitoso. Ahora puedes iniciar sesión.",
+          text: "Registro exitoso. Ahora puedes iniciar sesión.",
           showConfirmButton: false,
-          icon:"success",
+          icon: "success",
         }).then((result) => {
-    if (result.isConfirmed || result.isDismissed) {
-      navigate("/login");
-       } 
-      });
-})
-
-
+          if (result.isConfirmed || result.isDismissed) {
+            navigate("/login");
+          }
+        });
+      })
 
       .catch((error) => {
         console.error("Error al enviar datos:", error);
