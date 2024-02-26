@@ -23,15 +23,14 @@ function CategoryList() {
   const imgUrl = "http://localhost:3000/img/";
   const apiUrl = "http://localhost:3000/category";
   const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // Estado para controlar la carga de datos
+  const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
   const [selectedQuantities, setSelectedQuantities] = useState({});
-  const [searchList, setSearchList] = useState([]); // Estado local para almacenar la lista de búsqueda
+  const [searchList, setSearchList] = useState([]);
 
   const handleSearchListUpdate = (newSearchList) => {
-    // Maneja la actualización de searchList en el componente Home
     console.log("New Search List:", newSearchList);
-    // Actualiza el estado local con la nueva lista de búsqueda
+
     setSearchList(newSearchList);
   };
 

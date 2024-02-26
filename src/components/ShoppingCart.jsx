@@ -37,10 +37,9 @@ function ShoppingCart() {
     }
   };
   const incrementarCantidadHandler = (product) => {
-    dispatch(addToCart(product)); // Utiliza la acción addToCart para aumentar la cantidad
+    dispatch(addToCart(product));
   };
 
-  // Calcula el total sumando los precios de todos los productos en el carrito
   const calcularTotal = () => {
     return carrito.reduce(
       (total, product) => total + product.price * product.cantidad,

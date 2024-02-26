@@ -23,7 +23,6 @@
   padding: 10px;
 }
 
-
 .contenedorcarro:hover {
   border: 1px;
   border-color: #ffffff;
@@ -77,28 +76,24 @@
   cursor: pointer;
 }
 
-
 @media (max-width: 767px) {
   .columna-a {
     order: 1;
-    /* Cambia el orden de la Columna A para que aparezca después de la Columna B */
   }
 
   .columna-b {
     order: 2;
     justify-content: end;
-    /* Cambia el orden de la Columna B para que aparezca antes de la Columna A */
   }
 }
-
 
 @media (max-width: 1300px) {
   #btnIngresa {
     display: none;
   }
-  .contenedorbtnlogin{
+  .contenedorbtnlogin {
     margin-left: auto;
-     padding: 10px; 
+    padding: 10px;
     padding-bottom: 11px;
   }
 }

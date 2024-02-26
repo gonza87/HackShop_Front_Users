@@ -21,7 +21,7 @@ import NavbarAside from "./NavbarAside";
 import "animate.css";
 import "./nav.css";
 
-function NavbarComponent({ onSearchListUpdate, setIsLoading = null}) {
+function NavbarComponent({ onSearchListUpdate, setIsLoading = null }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchList, setSearchList] = useState(null);
   const navigate = useNavigate();
@@ -36,18 +36,16 @@ function NavbarComponent({ onSearchListUpdate, setIsLoading = null}) {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    // Realizar búsqueda o navegar a la página de resultados
   };
 
   useEffect(() => {
-    setIsLoading && setIsLoading(true); 
+    setIsLoading && setIsLoading(true);
     axios
       .get(apiUrl)
       .then((response) => {
         setIsLoading && setIsLoading(false);
         setSearchList(response.data);
         onSearchListUpdate(response.data);
-
       })
       .catch((error) => {
         console.error(error);
@@ -56,13 +54,10 @@ function NavbarComponent({ onSearchListUpdate, setIsLoading = null}) {
 
   const handleLoginOrLogout = () => {
     if (token) {
-      // El usuario está logueado, por lo tanto, realizar cierre de sesión
       dispatch(resetToken());
-      // Redirigir a la página principal
+
       navigate("/");
-      // Otras acciones de cierre de sesión que puedas necesitar
     } else {
-      // El usuario no está logueado, redirigir a la página de inicio
       navigate("/login");
     }
   };

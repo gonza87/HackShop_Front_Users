@@ -1,18 +1,3 @@
-/* .loginDerecha {
-  background: rgb(54, 142, 159);
-  background: linear-gradient(
-    141deg,
-    rgba(54, 142, 159, 1) 0%,
-    rgba(9, 7, 44, 1) 20%,
-    rgba(9, 7, 44, 1) 80%,
-    rgba(54, 142, 159, 1) 100%
-  );
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
 .loginDerecha {
   background: rgb(54, 142, 159);
   background: linear-gradient(
@@ -128,12 +113,11 @@
 .formLogin ::placeholder {
   color: #707070;
   font-weight: 500;
-  /* Reemplaza 'TuTipoDeFuente' con la fuente que desees utilizar */
 }
 
 .contUserPrueba {
   width: 400px;
-  border: solid #ccc; /* Establece un borde delgado de 1 píxel y color gris claro */
+  border: solid #ccc;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   border-width: 1px;
   border-radius: 5px;

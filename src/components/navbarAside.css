@@ -1,24 +1,22 @@
 .customAsideVar {
-  background-image: url("/public/logosNavAside/Juegs\ Vórtice.png"); /* Reemplaza 'ruta-de-tu-imagen.jpg' con la ruta correcta de tu imagen */
-  background-size: cover; /* Ajusta el tamaño para cubrir todo el contenedor */
-  background-repeat: no-repeat; /* Evita la repetición de la imagen */
+  background-image: url("/public/logosNavAside/Juegs\ Vórtice.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .customAsideVar {
   height: 100vh;
 }
 .espacioTabla {
-  margin-bottom: -10px; /* Puedes ajustar este valor según tus necesidades */
+  margin-bottom: -10px;
   text-decoration: none;
   color: rgb(255, 251, 251);
 }
 
-/* Puedes ajustar estos estilos según tus preferencias */
 .logos {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  /* background-color: #f0f0f0; */
 
   padding: 9px;
   margin: 10px 0;
@@ -27,13 +25,11 @@
 }
 
 .logos img {
-  margin: 0 5px; /* Ajusta el espacio entre las imágenes */
+  margin: 0 5px;
   width: 90px;
   height: 50px;
   transition: transform 0.5s;
 }
 .logos img:hover {
-  transform: scale(
-    1.4
-  ); /* Modifica el valor según el nivel de zoom que desees */
+  transform: scale(1.4);
 }

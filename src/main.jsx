@@ -14,8 +14,7 @@ import "./index.css";
 
 const rootReducer = combineReducers({
   carrito: carritoReducer,
-  user: userReducer, // Agrega el nuevo slice aquí
-  // Otros slices si los tienes
+  user: userReducer,
 });
 const persistConfig = {
   key: "root",

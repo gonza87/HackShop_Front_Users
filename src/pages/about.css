@@ -57,7 +57,7 @@
 }
 
 .proyecto h3 {
-  margin-bottom: -60px; /* Ajusta el valor según sea necesario */
+  margin-bottom: -60px;
 }
 
 .black-icon {
@@ -69,13 +69,12 @@
   font-size: 27px !important;
 }
 
-/* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
   .proyecto {
-    margin-top: 100px; /* Espacio adicional en la parte superior para separar la sección de "Sobre este proyecto" de los otros elementos */
+    margin-top: 100px;
   }
 
   .proyecto .overlay-text {
-    padding-top: 300px; /* Agrega espacio adicional en la parte superior del texto */
+    padding-top: 300px;
   }
 }

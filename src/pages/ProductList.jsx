@@ -19,7 +19,7 @@ import "./ProductList.css";
 
 function ProductList() {
   const [isLoading, setIsLoading] = useState(true);
-  const [searchList, setSearchList] = useState([]); // Estado local para almacenar la lista de búsqueda
+  const [searchList, setSearchList] = useState([]);
   const [products, setProducts] = useState([]);
   const [selectedQuantities, setSelectedQuantities] = useState({});
   const { slug } = useParams();

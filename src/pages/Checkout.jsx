@@ -38,10 +38,8 @@ function Checkout() {
   const [expirationDate, setExpirationDate] = useState("");
   const [cvc, setCvc] = useState("");
 
-  // Función para calcular el total de los precios en el carrito, considerando la cantidad
   const calcularTotal = () => {
     return carrito.reduce((total, producto) => {
-      // Asumiendo que cada producto tiene propiedades 'precio' y 'cantidad'
       return total + producto.price * producto.cantidad;
     }, 0);
   };
@@ -62,14 +60,14 @@ function Checkout() {
         title: "Error",
         text: "Por favor, selecciona un método de pago antes de confirmar la orden.",
       });
-      return; // Salir de la función si no se ha seleccionado un método de pago
+      return;
     }
     console.log("va axios");
     const apiUrl = "http://localhost:3000/orders";
     const config = {
       headers: {
         Authorization: `Bearer ${token.token}`,
-        "Content-Type": "application/json", // Puedes ajustar el tipo de contenido según las necesidades de tu API
+        "Content-Type": "application/json",
       },
     };
 
@@ -99,8 +97,8 @@ function Checkout() {
               text: "Tu pedido será entregado en las próximas 48 hrs",
               iconHtml:
                 '<img class = "gif-img" src="/public/gifCarrito/icons8-enviado.gif">',
-              showConfirmButton: false, // Si no deseas mostrar el botón de confirmación
-              timer: 2000, // Puedes configurar el temporizador para cerrar automáticamente el diálogo
+              showConfirmButton: false,
+              timer: 2000,
             });
 
             dispatch(resetearCarrito());
@@ -120,14 +118,10 @@ function Checkout() {
           console.log("Hubo un error al procesar la orden.");
         }
       });
-
-    // Lógica para confirmar la orden
   };
 
   useEffect(() => {
-    // Verificar si el carrito está vacío
     if (carrito.length === 0) {
-      // Redirigir al home
       navigate("/");
     }
   }, [carrito, navigate]);
@@ -297,8 +291,6 @@ function Checkout() {
               <div className="col">
                 <h2 className="mb-3">Resumen del Pedido</h2>
                 <dl className="row">
-                  {/* Agregar imagen de producto */}
-
                   {carrito.map((product, index) => (
                     <dl className="row">
                       <dt className="col-sm-2">

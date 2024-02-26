@@ -18,7 +18,7 @@ import "./featuredProducts.css";
 
 function FeaturedProducts() {
   const [isLoading, setIsLoading] = useState(true);
-  const [loadingDuration, setLoadingDuration] = useState(3000); // Duración predeterminada de la carga del esqueleto
+ /*  const [loadingDuration, setLoadingDuration] = useState(3000); */ // Duración predeterminada de la carga del esqueleto
 
   const [selectedQuantitiesDestacados, setSelectedQuantitiesDestacados] =
     useState({});
@@ -34,9 +34,8 @@ function FeaturedProducts() {
       .get(apiUrl)
       .then((response) => {
         setProductsDestacados(response.data);
-        
-          setIsLoading(false);
-        
+
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error en la solicitud:", error.message);

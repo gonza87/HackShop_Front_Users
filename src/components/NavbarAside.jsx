@@ -4,7 +4,6 @@ import Button from "react-bootstrap/Button";
 import { NavLink } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
-/* import { BsX } from 'react-icons/bs'; */
 import { BsXCircle } from "react-icons/bs";
 
 import "./navbarAside.css";
@@ -17,7 +16,6 @@ function NavbarAside() {
   const handleShow = () => setShow(true);
 
   useEffect(() => {
-    // Cerrar el Offcanvas cuando cambia la ubicación
     handleClose();
   }, []);
 

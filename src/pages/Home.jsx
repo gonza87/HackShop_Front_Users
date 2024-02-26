@@ -19,12 +19,11 @@ function Home() {
   const cart = useSelector((state) => state.carrito);
   const dispatch = useDispatch();
   const imgUrl = "http://localhost:3000/img/";
-  const [searchList, setSearchList] = useState([]); // Estado local para almacenar la lista de búsqueda
+  const [searchList, setSearchList] = useState([]);
   const [selectedQuantities, setSelectedQuantities] = useState({});
   const handleSearchListUpdate = (newSearchList) => {
-    // Maneja la actualización de searchList en el componente Home
     console.log("New Search List:", newSearchList);
-    // Actualiza el estado local con la nueva lista de búsqueda
+
     setSearchList(newSearchList);
   };
 
