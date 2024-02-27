@@ -13,7 +13,7 @@ import Swal from "sweetalert2";
 import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton from "react-loading-skeleton";
 import "animate.css";
-import "./carrusel.css";
+import "./Carrusel.css";
 import "./featuredProducts.css";
 
 function FeaturedProducts() {
