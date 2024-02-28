@@ -13,7 +13,7 @@ function Carrusel() {
           <Carousel.Item interval={5000}>
             <img
               className="d-block imgCarrusel"
-              src="/public/01.jpg"
+              src="01.jpg"
               alt="First slide"
             />
             <Carousel.Caption>
@@ -24,7 +24,7 @@ function Carrusel() {
           <Carousel.Item interval={5000}>
             <img
               className="d-block imgCarrusel"
-              src="/public/02.jpg"
+              src="02.jpg"
               alt="Second slide"
             />
             <Carousel.Caption>
@@ -36,7 +36,7 @@ function Carrusel() {
           <Carousel.Item interval={5000}>
             <img
               className="d-block imgCarrusel"
-              src="/public/03.jpg"
+              src="03.jpg"
               alt="Third slide"
             />
             <Carousel.Caption>
