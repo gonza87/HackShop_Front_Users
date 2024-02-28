@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 import { BsXCircle } from "react-icons/bs";
@@ -12,8 +13,10 @@ import Card from "react-bootstrap/Card";
 function NavbarAside() {
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const navigate = useNavigate();
+
+  const handleClose = () => navigate(false); // Puedes ajustar esto según tus necesidades
+  const handleShow = () => navigate(true);
 
   useEffect(() => {
     handleClose();
@@ -71,14 +74,14 @@ function NavbarAside() {
                       }}
                     >
                       <NavLink
-                        to="/category/GPU"
+                        to="/category/CPU"
                         className="espacioTabla"
                         onClick={() => {
                           handleClose();
-                          navigate("/category/GPU");
+                          navigate("/category/CPU"); // Usa navigate para navegar
                         }}
                       >
-                        GPU
+                        CPU
                       </NavLink>
                     </td>
                   </tr>
