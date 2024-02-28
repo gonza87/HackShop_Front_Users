@@ -23,8 +23,10 @@ function ProductDescription() {
   const { slug } = useParams();
   const [product, setProduct] = useState(null);
 
-  const imgUrl = "http://localhost:3000/img/";
-  const apiUrl = `http://localhost:3000/products/detail/${slug}`;
+  //const imgUrl = "http://localhost:3000/img/";
+  //const apiUrl = `http://localhost:3000/products/detail/${slug}`;
+  const imgUrl = import.meta.env.VITE_BUCKET_URL;
+  const apiUrl = `${import.meta.env.VITE_API_URL}products/detail/${slug}`;
 
   const handleBuyClickDescription = (product) => {
     const maxStock = product.stock;

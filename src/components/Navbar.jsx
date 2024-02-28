@@ -28,7 +28,10 @@ function NavbarComponent({ onSearchListUpdate, setIsLoading = null }) {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.user);
   const webFrontAdmin = "http://localhost:5174/";
-  const apiUrl = `http://localhost:3000/products/search?term=${searchQuery}`;
+  //const apiUrl = `http://localhost:3000/products/search?term=${searchQuery}`;
+  const apiUrl = `${
+    import.meta.env.VITE_API_URL
+  }products/search?term=${searchQuery}`;
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);

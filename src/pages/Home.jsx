@@ -18,7 +18,8 @@ import "./Home.css";
 function Home() {
   const cart = useSelector((state) => state.carrito);
   const dispatch = useDispatch();
-  const imgUrl = "http://localhost:3000/img/";
+  const imgUrl = import.meta.env.VITE_BUCKET_URL;
+  //const imgUrl = "http://localhost:3000/img/";
   const [searchList, setSearchList] = useState([]);
   const [selectedQuantities, setSelectedQuantities] = useState({});
   const handleSearchListUpdate = (newSearchList) => {

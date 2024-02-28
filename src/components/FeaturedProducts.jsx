@@ -23,8 +23,12 @@ function FeaturedProducts() {
   const [selectedQuantitiesDestacados, setSelectedQuantitiesDestacados] =
     useState({});
   const dispatch = useDispatch();
-  const imgUrl = "http://localhost:3000/img/";
-  const apiUrl = "http://localhost:3000/products/destacado";
+
+  //const imgUrl = "http://localhost:3000/img/";
+  //const apiUrl = "http://localhost:3000/products/destacado";
+
+  const imgUrl = import.meta.env.VITE_BUCKET_URL;
+  const apiUrl = `${import.meta.env.VITE_API_URL}products/destacado`;
   const [productsDestacados, setProductsDestacados] = useState([]);
   const [activePage, setActivePage] = useState(1);
   const itemsPerPage = 4;

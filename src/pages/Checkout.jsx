@@ -12,7 +12,8 @@ import Swal from "sweetalert2";
 import "./Checkout.css";
 
 function Checkout() {
-  const imgUrl = "http://localhost:3000/img/";
+  //const imgUrl = "http://localhost:3000/img/";
+  const imgUrl = import.meta.env.VITE_BUCKET_URL;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const carrito = useSelector((state) => state.carrito);

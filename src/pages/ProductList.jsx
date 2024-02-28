@@ -24,8 +24,10 @@ function ProductList() {
   const [selectedQuantities, setSelectedQuantities] = useState({});
   const { slug } = useParams();
   const dispatch = useDispatch();
-  const imgUrl = "http://localhost:3000/img/";
-  const apiUrl = "http://localhost:3000/products";
+  // const imgUrl = "http://localhost:3000/img/";
+  // const apiUrl = "http://localhost:3000/products";
+  const imgUrl = import.meta.env.VITE_BUCKET_URL;
+  const apiUrl = `${import.meta.env.VITE_API_URL}products`;
 
   const cart = useSelector((state) => state.carrito);
 

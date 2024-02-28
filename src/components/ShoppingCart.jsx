@@ -22,7 +22,9 @@ import "./ShoppingCart.css";
 
 function ShoppingCart() {
   const navigate = useNavigate();
-  const imgUrl = "http://localhost:3000/img/";
+  //const imgUrl = "http://localhost:3000/img/";
+  const imgUrl = import.meta.env.VITE_BUCKET_URL;
+
   const carrito = useSelector((state) => state.carrito);
   const token = useSelector((state) => state.user);
   const [show, setShow] = useState(false);

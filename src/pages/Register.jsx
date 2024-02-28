@@ -12,7 +12,8 @@ import "./Register.css";
 
 function Register() {
   const navigate = useNavigate();
-  const apiUrl = "http://localhost:3000/users";
+  //const apiUrl = "http://localhost:3000/users";
+  const apiUrl = `${import.meta.env.VITE_API_URL}users`;
 
   const [formData, setFormData] = useState({
     firstName: "",

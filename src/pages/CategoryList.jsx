@@ -20,8 +20,11 @@ import "./CategoryList.css";
 
 function CategoryList() {
   const { categoryName } = useParams();
-  const imgUrl = "http://localhost:3000/img/";
-  const apiUrl = "http://localhost:3000/category";
+  //const imgUrl = "http://localhost:3000/img/";
+  //const apiUrl = "http://localhost:3000/category";
+  const imgUrl = import.meta.env.VITE_BUCKET_URL;
+  const apiUrl = `${import.meta.env.VITE_API_URL}category`;
+
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
@@ -37,7 +40,10 @@ function CategoryList() {
   const handleDropdownSelect = async (eventKey) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/category/search/${eventKey}/${categoryName}`
+        `${
+          import.meta.env.VITE_API_URL
+        }category/search/${eventKey}/${categoryName}`
+        //`http://localhost:3000/category/search/${eventKey}/${categoryName}`
       );
       setProducts(response.data);
     } catch (error) {
