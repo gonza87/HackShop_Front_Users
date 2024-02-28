@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
-import "./addToCart.css"; // Asegúrate de importar tu hoja de estilos
+import "./AddToCart.css"; // Asegúrate de importar tu hoja de estilos
 
 const AddToCart = () => {
   const handleClick = () => {};

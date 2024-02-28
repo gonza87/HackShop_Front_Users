@@ -14,7 +14,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton from "react-loading-skeleton";
 import "animate.css";
 import "./Carrusel.css";
-import "./featuredProducts.css";
+import "./FeaturedProducts.css";
 
 function FeaturedProducts() {
   const [isLoading, setIsLoading] = useState(true);
