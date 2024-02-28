@@ -1,0 +1,99 @@
+.nav {
+  height: 150px;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  margin-top: 0px;
+  border-radius: 0px;
+}
+
+.mianav {
+  position: fixed;
+}
+
+.contenedorcarro {
+  margin-left: 10px;
+  padding: 10px;
+}
+
+.contenedorAdmin {
+  margin-left: 10px;
+  padding: 10px;
+}
+
+.contenedorcarro:hover {
+  border: 1px;
+  border-color: #ffffff;
+  border-style: solid;
+}
+
+.contenedorAdmin:hover {
+  border: 1px;
+  border-color: #ffffff;
+  border-style: solid;
+}
+.contenedorbtnlogin {
+  margin-left: auto;
+  padding: 10px;
+}
+
+.contenedorbtnlogin:hover {
+  border: 1px;
+  border-color: #ffffff;
+  border-style: solid;
+}
+
+#btnIngresa {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contenedorbtncategorias {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.contenedorbtncategorias:hover {
+  border: 1px;
+  border-color: #ffffff;
+  border-style: solid;
+  cursor: pointer;
+}
+.contenedorbtnTodos {
+  margin-top: 10px;
+  padding: 10px;
+}
+.contenedorbtnTodos link {
+  text-decoration: none;
+}
+
+.contenedorbtnTodos:hover {
+  border: 1px;
+  border-color: #ffffff;
+  border-style: solid;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .columna-a {
+    order: 1;
+  }
+
+  .columna-b {
+    order: 2;
+    justify-content: end;
+  }
+}
+
+@media (max-width: 1300px) {
+  #btnIngresa {
+    display: none;
+  }
+  .contenedorbtnlogin {
+    margin-left: auto;
+    padding: 10px;
+    padding-bottom: 11px;
+  }
+}
