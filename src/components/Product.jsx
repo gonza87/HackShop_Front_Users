@@ -7,7 +7,7 @@ function ProductCard() {
     <div className="row mt-2">
       <div className="col-3">
         <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="/public/logo.png" />
+          <Card.Img variant="top" src="/logo.png" />
           <Card.Body>
             <Card.Title>Nombre del Producto</Card.Title>
             <Card.Text>Descripción corta del producto.</Card.Text>
@@ -17,7 +17,7 @@ function ProductCard() {
       </div>
       <div className="col-3">
         <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="/public/logo.png" />
+          <Card.Img variant="top" src="/logo.png" />
           <Card.Body>
             <Card.Title>Nombre del Producto</Card.Title>
             <Card.Text>Descripción corta del producto.</Card.Text>
@@ -27,7 +27,7 @@ function ProductCard() {
       </div>
       <div className="col-3">
         <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="/public/logo.png" />
+          <Card.Img variant="top" src="/logo.png" />
           <Card.Body>
             <Card.Title>Nombre del Producto</Card.Title>
             <Card.Text>Descripción corta del producto.</Card.Text>
@@ -37,7 +37,7 @@ function ProductCard() {
       </div>
       <div className="col-3">
         <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="/public/logo.png" />
+          <Card.Img variant="top" src="/logo.png" />
           <Card.Body>
             <Card.Title>Nombre del Producto</Card.Title>
             <Card.Text>Descripción corta del producto.</Card.Text>

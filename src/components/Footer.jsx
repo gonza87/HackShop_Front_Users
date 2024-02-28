@@ -15,12 +15,12 @@ function Footer() {
     <>
       <div className="padding-footer">
         <img
-          src="/public/gifCarrito/icons8-intercambio-de-tarjetas.gif"
+          src="/gifCarrito/icons8-intercambio-de-tarjetas.gif"
           alt=""
           className="metodos"
         />
         <img
-          src="/public/logosNavAside/Metodos_Tarjetas.png"
+          src="/logosNavAside/Metodos_Tarjetas.png"
           alt=""
           className="metodos"
         />

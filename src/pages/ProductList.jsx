@@ -122,7 +122,7 @@ function ProductList() {
           <div className="col-lg-3 banner d-flex flex-column align-items-center ban">
             <img
               className="imgBanner"
-              src="/public/gifBannerStoreProducts/Black Grey Aqua Grunge Gaming Mobile Video (1).gif"
+              src="/gifBannerStoreProducts/Black Grey Aqua Grunge Gaming Mobile Video (1).gif"
               alt="Tu GIF"
             />
           </div>

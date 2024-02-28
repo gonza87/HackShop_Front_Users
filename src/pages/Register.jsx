@@ -201,7 +201,7 @@ function Register() {
           </div>
           <div className="col-md-6 loginDerecha ">
             <Link to="/">
-              <img src="/public/logo2.png" alt="" className="logoLogin" />
+              <img src="/logo2.png" alt="" className="logoLogin" />
             </Link>
           </div>
         </div>

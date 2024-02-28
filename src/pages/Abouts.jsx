@@ -26,7 +26,7 @@ function Abouts() {
         <div className="row">
           <div className="col-12">
             <img
-              src="/public/Anuncio Video LinkedIn Comunicado de Prensa Corporativo Verde (2).gif"
+              src="/Anuncio Video LinkedIn Comunicado de Prensa Corporativo Verde (2).gif"
               alt=""
               className="about-image img-fluid"
             />
@@ -99,7 +99,7 @@ function Abouts() {
         <div className="row mt-4">
           <div className="col-md-4 mb-4">
             <Card className="desarrolladores">
-              <Card.Img src="/public/Oficina.jpg" />
+              <Card.Img src="/Oficina.jpg" />
               <Card.Body>
                 <Card.Title>Santiago Ourthe Cabalé</Card.Title>
                 <ListGroup className="list-group-flush">
@@ -148,7 +148,7 @@ function Abouts() {
 
           <div className="col-md-4 mb-4">
             <Card className="desarrolladores">
-              <Card.Img src="/public/601906fb4153a.jpeg" />
+              <Card.Img src="/601906fb4153a.jpeg" />
               <Card.Body>
                 <Card.Title>Gonzalo Viglioni</Card.Title>
                 <ListGroup className="list-group-flush">
@@ -197,7 +197,7 @@ function Abouts() {
 
           <div className="col-md-4 mb-4">
             <Card className="desarrolladores">
-              <Card.Img src="/public/oficina.webp" />
+              <Card.Img src="/oficina.webp" />
               <Card.Body>
                 <Card.Title>Mario Silveira</Card.Title>
                 <ListGroup className="list-group-flush">
@@ -252,4 +252,3 @@ function Abouts() {
 }
 
 export default Abouts;
-

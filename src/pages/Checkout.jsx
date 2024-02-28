@@ -95,7 +95,7 @@ function Checkout() {
               title: "Finalizado",
               text: "Tu pedido será entregado en las próximas 48 hrs",
               iconHtml:
-                '<img class = "gif-img" src="/public/gifCarrito/icons8-enviado.gif">',
+                '<img class = "gif-img" src="/gifCarrito/icons8-enviado.gif">',
               showConfirmButton: false,
               timer: 2000,
             });
