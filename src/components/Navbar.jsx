@@ -27,7 +27,7 @@ function NavbarComponent({ onSearchListUpdate, setIsLoading = null }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const token = useSelector((state) => state.user);
-  const webFrontAdmin = "http://localhost:5174/";
+  const webFrontAdmin = "https://hack-shop-front-admin.vercel.app/";
   //const apiUrl = `http://localhost:3000/products/search?term=${searchQuery}`;
   const apiUrl = `${
     import.meta.env.VITE_API_URL
