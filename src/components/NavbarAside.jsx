@@ -3,15 +3,16 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import { NavLink } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { useHistory } from "react-router-dom";
-import { BsXCircle } from "react-icons/bs";
 
+import { BsXCircle } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 import "./NavbarAside.css";
 
 import Card from "react-bootstrap/Card";
 function NavbarAside() {
+  const navigate = useNavigate();
   const [show, setShow] = useState(false);
-  const history = useHistory();
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -55,7 +56,7 @@ function NavbarAside() {
                         className="espacioTabla"
                         onClick={() => {
                           handleClose();
-                          history.push("/category/CPU");
+                          navigate("/category/CPU");
                         }}
                       >
                         CPU
@@ -75,7 +76,7 @@ function NavbarAside() {
                         className="espacioTabla"
                         onClick={() => {
                           handleClose();
-                          history.push("/category/GPU");
+                          navigate("/category/GPU");
                         }}
                       >
                         GPU
@@ -95,7 +96,7 @@ function NavbarAside() {
                         className="espacioTabla"
                         onClick={() => {
                           handleClose();
-                          history.push("/category/PCS ARMADAS");
+                          navigate("/category/PCS ARMADAS");
                         }}
                       >
                         PCS ARMADAS
@@ -115,7 +116,7 @@ function NavbarAside() {
                         className="espacioTabla"
                         onClick={() => {
                           handleClose();
-                          history.push("/category/SILLAS GAMER");
+                          navigate("/category/SILLAS GAMER");
                         }}
                       >
                         SILLAS GAMER
@@ -137,7 +138,7 @@ function NavbarAside() {
                         className="espacioTabla"
                         onClick={() => {
                           handleClose();
-                          history.push("/category/MONITORES");
+                          navigate("/category/MONITORES");
                         }}
                       >
                         MONITORES
@@ -159,7 +160,7 @@ function NavbarAside() {
                         className="espacioTabla"
                         onClick={() => {
                           handleClose();
-                          history.push("/category/NOTEBOOKS");
+                          navigate("/category/NOTEBOOKS");
                         }}
                       >
                         NOTEBOOKS
@@ -181,7 +182,7 @@ function NavbarAside() {
                         className="espacioTabla"
                         onClick={() => {
                           handleClose();
-                          history.push("/category/PERIFERICOS");
+                          navigate("/category/PERIFERICOS");
                         }}
                       >
                         PERIFERICOS
