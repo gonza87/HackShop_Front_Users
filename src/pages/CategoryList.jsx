@@ -24,7 +24,7 @@ function CategoryList() {
   //const apiUrl = "http://localhost:3000/category";
   const imgUrl = import.meta.env.VITE_BUCKET_URL;
   const apiUrl = `${import.meta.env.VITE_API_URL}category`;
-
+  const [categoryProducts, setCategoryProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
