@@ -18,27 +18,27 @@ function FeaturedCategories() {
       >
         <Link to="/category/MONITORES">
           <Card className="cardCatDestacadas" style={{ width: "13rem" }}>
-            <Card.Img variant="top" src="catMonitores.jpg" />
+            <Card.Img  src="catMonitores.jpg" />
           </Card>
         </Link>
         <Link to="/category/GPU">
           <Card className="cardCatDestacadas" style={{ width: "13rem" }}>
-            <Card.Img variant="top" src="catGpu.jpg" />
+            <Card.Img  src="catGpu.jpg" />
           </Card>
         </Link>
         <Link to="/category/NOTEBOOKS">
           <Card className="cardCatDestacadas" style={{ width: "13rem" }}>
-            <Card.Img variant="top" src="catNotebooks.jpg" />
+            <Card.Img  src="catNotebooks.jpg" />
           </Card>
         </Link>
         <Link to="/category/PCS ARMADAS">
           <Card className="cardCatDestacadas" style={{ width: "13rem" }}>
-            <Card.Img variant="top" src="catPc.jpg" />
+            <Card.Img src="catPc.jpg" />
           </Card>
         </Link>
         <Link to="/category/SILLAS GAMER">
           <Card className="cardCatDestacadas" style={{ width: "13rem" }}>
-            <Card.Img variant="top" src="catSillas.jpg" />
+            <Card.Img  src="catSillas.jpg" />
           </Card>
         </Link>
       </div>
