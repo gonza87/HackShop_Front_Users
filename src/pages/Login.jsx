@@ -83,7 +83,7 @@ function Login() {
                 <Row>
                   <Col>
                     <Form.Label className="textCampoLogin">
-                      Email Addres
+                      Email Address
                     </Form.Label>
                     <span className="testRegistro">
                       No tenés cuenta?{" "}

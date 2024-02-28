@@ -109,7 +109,7 @@ function Register() {
                 <Row>
                   <Col>
                     <Form.Label className="textCampoLogin">
-                      Email Addres
+                      Email Address
                     </Form.Label>
                     <span className="testRegistro">
                       Ya tenés cuenta? <Link to="/login">Inicia sesión</Link>
