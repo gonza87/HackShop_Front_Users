@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
-
+import { useHistory } from "react-router-dom";
 import { BsXCircle } from "react-icons/bs";
 
 import "./NavbarAside.css";
@@ -12,11 +11,9 @@ import "./NavbarAside.css";
 import Card from "react-bootstrap/Card";
 function NavbarAside() {
   const [show, setShow] = useState(false);
-
-  const navigate = useNavigate();
-
-  const handleClose = () => navigate(false); // Puedes ajustar esto según tus necesidades
-  const handleShow = () => navigate(true);
+  const history = useHistory();
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     handleClose();
@@ -58,7 +55,7 @@ function NavbarAside() {
                         className="espacioTabla"
                         onClick={() => {
                           handleClose();
-                          navigate("/category/CPU");
+                          history.push("/category/CPU");
                         }}
                       >
                         CPU
@@ -74,14 +71,14 @@ function NavbarAside() {
                       }}
                     >
                       <NavLink
-                        to="/category/CPU"
+                        to="/category/GPU"
                         className="espacioTabla"
                         onClick={() => {
                           handleClose();
-                          navigate("/category/CPU"); // Usa navigate para navegar
+                          history.push("/category/GPU");
                         }}
                       >
-                        CPU
+                        GPU
                       </NavLink>
                     </td>
                   </tr>
@@ -98,7 +95,7 @@ function NavbarAside() {
                         className="espacioTabla"
                         onClick={() => {
                           handleClose();
-                          navigate("/category/PCS ARMADAS");
+                          history.push("/category/PCS ARMADAS");
                         }}
                       >
                         PCS ARMADAS
@@ -118,7 +115,7 @@ function NavbarAside() {
                         className="espacioTabla"
                         onClick={() => {
                           handleClose();
-                          navigate("/category/SILLAS GAMER");
+                          history.push("/category/SILLAS GAMER");
                         }}
                       >
                         SILLAS GAMER
@@ -140,7 +137,7 @@ function NavbarAside() {
                         className="espacioTabla"
                         onClick={() => {
                           handleClose();
-                          navigate("/category/MONITORES");
+                          history.push("/category/MONITORES");
                         }}
                       >
                         MONITORES
@@ -162,7 +159,7 @@ function NavbarAside() {
                         className="espacioTabla"
                         onClick={() => {
                           handleClose();
-                          navigate("/category/NOTEBOOKS");
+                          history.push("/category/NOTEBOOKS");
                         }}
                       >
                         NOTEBOOKS
@@ -184,7 +181,7 @@ function NavbarAside() {
                         className="espacioTabla"
                         onClick={() => {
                           handleClose();
-                          navigate("/category/PERIFERICOS");
+                          history.push("/category/PERIFERICOS");
                         }}
                       >
                         PERIFERICOS
