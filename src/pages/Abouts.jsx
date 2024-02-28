@@ -41,7 +41,7 @@ function Abouts() {
         <div className="row">
           <div className="col-12">
             <img
-              src="/public/Anuncio Video LinkedIn Comunicado de Prensa Corporativo Verde (2).gif"
+              src="/Anuncio Video LinkedIn Comunicado de Prensa Corporativo Verde (2).gif"
               alt=""
               className="about-image img-fluid"
             />
