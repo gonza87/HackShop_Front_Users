@@ -62,7 +62,7 @@ function CategoryList() {
       .catch((error) => {
         console.error("Error en la solicitud:", error.message);
       });
-  }, []);
+  }, [products]);
 
   const handleAddToCart = (product) => {
     const maxStock = product.stock;
