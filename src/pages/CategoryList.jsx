@@ -129,7 +129,7 @@ function CategoryList() {
           <div className="col-lg-2 banner d-none d-lg-block d-flex flex-column align-items-center">
             <img
               className="imgBanner w-100"
-              src="/gifBannerStoreProducts/Black Grey Aqua Grunge Gaming Mobile Video (1).gif"
+              src="gifBannerStoreProducts/Black Grey Aqua Grunge Gaming Mobile Video (1).gif"
               alt="Tu GIF"
             />
           </div>

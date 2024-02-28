@@ -90,7 +90,7 @@ function ShoppingCart() {
             >
               <img
                 className="gifCarrito"
-                src="/gifCarrito/icons8-comprar.gif"
+                src="gifCarrito/icons8-comprar.gif"
                 alt="Carrito Vacío GIF"
               />
               {carrito.length === 0 && (
