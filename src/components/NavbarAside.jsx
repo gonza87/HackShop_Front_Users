@@ -200,10 +200,7 @@ function NavbarAside() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
-                    src="/public/logosNavAside/klipartz.com.png"
-                    alt="ryzen"
-                  />
+                  <img src="/logosNavAside/klipartz.com.png" alt="ryzen" />
                 </a>
                 <a
                   href="https://www.coolermaster.com"
@@ -211,7 +208,7 @@ function NavbarAside() {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="/public/logosNavAside/pngegg (5).png"
+                    src="/logosNavAside/pngegg (5).png"
                     alt="cooler master"
                   />
                 </a>
@@ -220,10 +217,7 @@ function NavbarAside() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
-                    src="/public/logosNavAside/pngegg (4).png"
-                    alt="gigabyte"
-                  />
+                  <img src="/logosNavAside/pngegg (4).png" alt="gigabyte" />
                 </a>
               </div>
               <div className="col-12 logos">
@@ -232,27 +226,21 @@ function NavbarAside() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/public/logosNavAside/pngegg (12).png" alt="lg" />
+                  <img src="/logosNavAside/pngegg (12).png" alt="lg" />
                 </a>
                 <a
                   href="https://www.razer.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
-                    src="/public/logosNavAside/pngegg (13).png"
-                    alt="razer"
-                  />
+                  <img src="/logosNavAside/pngegg (13).png" alt="razer" />
                 </a>
                 <a
                   href="https://www.hyperxgaming.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
-                    src="/public/logosNavAside/pngegg (14).png"
-                    alt="hyper"
-                  />
+                  <img src="/logosNavAside/pngegg (14).png" alt="hyper" />
                 </a>
               </div>
 
@@ -262,27 +250,21 @@ function NavbarAside() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
-                    src="/public/logosNavAside/pngegg (8).png"
-                    alt="logitech"
-                  />
+                  <img src="/logosNavAside/pngegg (8).png" alt="logitech" />
                 </a>
                 <a
                   href="https://www.asrock.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
-                    src="/public/logosNavAside/Asrock_logo_PNG1.png"
-                    alt="asrock"
-                  />
+                  <img src="/logosNavAside/Asrock_logo_PNG1.png" alt="asrock" />
                 </a>
                 <a
                   href="https://www.nvidia.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/public/logosNavAside/pngegg.png" alt="nvidia" />
+                  <img src="/logosNavAside/pngegg.png" alt="nvidia" />
                 </a>
               </div>
 
@@ -292,27 +274,21 @@ function NavbarAside() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
-                    src="/public/logosNavAside/pngwing.com (1).png"
-                    alt="intel"
-                  />
+                  <img src="/logosNavAside/pngwing.com (1).png" alt="intel" />
                 </a>
                 <a
                   href="https://www.amd.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
-                    src="/public/logosNavAside/pngwing.com (3).png"
-                    alt="amd"
-                  />
+                  <img src="/logosNavAside/pngwing.com (3).png" alt="amd" />
                 </a>
                 <a
                   href="https://www.msi.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/public/logosNavAside/nuevomsi.png" alt="msi" />
+                  <img src="/logosNavAside/nuevomsi.png" alt="msi" />
                 </a>
               </div>
             </div>
