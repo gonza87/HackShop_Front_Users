@@ -114,7 +114,7 @@ function Abouts() {
         <div className="row mt-4">
           <div className="col-md-4 mb-4">
             <Card className="desarrolladores" onClick={toggleDescripcion1}>
-              <Card.Img src="/public/gifCarrito/WhatsApp Image 2024-02-28 at 10.43.06.jpg" />
+              <Card.Img src="/aboutsImage/WhatsApp Image 2024-02-28 at 10.43.06.jpg" />
               <Card.Body>
                 <Card.Title>Santiago Ourthe Cabalé</Card.Title>
                 <ListGroup className="list-group-flush">
@@ -170,7 +170,7 @@ function Abouts() {
 
           <div className="col-md-4 mb-4">
             <Card className="desarrolladores" onClick={toggleDescripcion2}>
-              <Card.Img src="/public/gifCarrito/WhatsApp Image 2024-02-28 at 12.52.32.jpg" />
+              <Card.Img src="/aboutsImage/WhatsApp Image 2024-02-28 at 12.52.32.jpg" />
               <Card.Body>
                 <Card.Title>Gonzalo Viglioni</Card.Title>
                 <ListGroup className="list-group-flush">
@@ -230,7 +230,7 @@ function Abouts() {
 
           <div className="col-md-4 mb-4">
             <Card className="desarrolladores" onClick={toggleDescripcion3}>
-              <Card.Img src="/public/gifCarrito/IMG_8876.jpg" />
+              <Card.Img src="/aboutsImage/IMG_8876.jpg" />
               <Card.Body>
                 <Card.Title>Mario Silveira</Card.Title>
                 <ListGroup className="list-group-flush">
